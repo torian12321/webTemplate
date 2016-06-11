@@ -1,0 +1,238 @@
+/*
+## Form elements
+# Inputs
+```
+<div>
+	<div class="form-input">
+		<input id="check-1" type="text">
+		<label for="check-1">test</label>
+	</div>
+
+	<div class="form-input">
+		<input id="check-2" type="password">
+		<label for="check-2">password</label>
+	</div>
+
+	<div class="form-input">
+		<textarea id="check-3"></textarea>
+		<label for="check-3">Description</label>
+	</div>
+</div>
+```
+*/
+.form-input{
+	position: relative;
+	padding :  @inputHeight 0 10px;
+
+	label{
+		position   : absolute;
+		left       : 10px;
+		top        : @inputHeight;
+		line-height: @inputHeight;
+		color      : @themeColor_1;
+		.transition();
+	}
+	input:focus + label,
+	textarea:focus + label,
+	input.filled + label,
+	textarea.filled + label{
+		top: -5px;
+	}
+}
+
+
+/*
+# Checkbox
+```
+<div>
+	<div class="form-check">
+		<input id="check-4" type="checkbox">
+		<label for="check-4"></label>
+	</div>
+
+	<div class="form-check">
+		<input id="check-5" type="checkbox" checked>
+		<label for="check-5"></label>
+	</div>
+
+	<div class="form-check texted">
+		<input id="check-6" type="checkbox">
+		<label for="check-6"></label>
+	</div>
+
+	<div class="form-check texted">
+		<input id="check-7" type="checkbox" checked>
+		<label for="check-7"></label>
+	</div>
+</div>
+```
+*/
+.form-check{
+	@height         : @inputHeight;
+	@width          : @height * 2;
+	@ball-height    : @height * 0.8;
+	@transition-time: 0.20s;
+
+	input[type="checkbox"]{
+		display: none;
+
+		& + label{
+			position        : relative;
+			display         : block;
+			width           : @width;
+			height          : @height;
+			background-color: @colorState_disable;
+			cursor          : pointer;
+			.rounded(@height);
+			.transition(@property: background-color; @time: @transition-time);
+			&:after{
+				position        : absolute;
+				content         : '';
+				left            : (@height - @ball-height) / 2;
+				top             : (@height - @ball-height) / 2;
+				height          : @ball-height;
+				width           : @ball-height;
+				background-color: @themeColor_1;
+				.rounded(50%);
+				.transition(@transition-time);
+			}
+		}
+		&:checked + label{
+			background-color: @themeColor_2;
+			&:after{
+				left: @width - @ball-height - ((@height - @ball-height) / 2);
+			}
+		}
+	}
+
+
+	&.texted input[type="checkbox"]{
+		& + label{
+			&:before{
+				position   : absolute;
+				content    : 'Off';
+				right      : 12.5%;
+				font-size  : @height * 0.5;
+				line-height: @height;
+				color      : @white;
+				.transition(@transition-time);
+			}
+		}
+		&:checked + label{
+			&:before{
+				content: 'On';
+				right      : 55%;
+			}
+		}
+	}
+}
+
+/*
+# Select Single
+```
+<div>
+	<ul class="form-selectSingle">
+		<li>
+			<input type="radio" id="option_01" name="selector" checked>
+	    	<label for="option_01">All types</label>
+		</li>
+		<li>
+			<input type="radio" id="option_02" name="selector">
+	    	<label for="option_02">Second-hand</label>
+		</li>
+		<li>
+			<input type="radio" id="option_03" name="selector">
+	    	<label for="option_03">New</label>
+		</li>
+	</ul>
+</div>
+```
+# Select Multiple
+```
+<div>
+	<ul class="form-selectMultiple">
+		<li>
+			<input type="checkbox" id="option_04" name="selector" checked>
+	    	<label for="option_04">All types</label>
+		</li>
+		<li>
+			<input type="checkbox" id="option_05" name="selector">
+	    	<label for="option_05">Second-hand</label>
+		</li>
+		<li>
+			<input type="checkbox" id="option_06" name="selector">
+	    	<label for="option_06">New</label>
+		</li>
+	</ul>
+</div>
+```
+*/
+
+.form-selectSingle,
+.form-selectMultiple{
+
+	text-transform: uppercase;
+	color         : @fontColor_grey;
+
+	input{
+		display: none;
+		& + label{
+			display         : block;
+			padding         : 9px 12px;
+			margin          : 0 0 6px;
+			background-color: darken(@themeColor_2, 10%);
+			cursor: pointer;
+			.transition();
+			.rounded(@BRadious);
+			.themeFont_1();
+			&:hover{
+				background-color: darken(@themeColor_1, 25%);
+			}
+		}
+		&:checked + label{
+			background-color: @themeColor_1;
+			color           : @fontColor_white;
+			//.themeFont_1-bold();
+		}
+	}
+
+}
+
+/*
+# Select List
+```
+<div>
+	<div class="form-selectList">
+		<select name="slct" id="slct">
+			<option>Choose an option</option>
+			<option value="1">Option A</option>
+			<option value="2">Option B</option>
+			<option value="3">Option C</option>
+			<option value="4">Option D</option>
+		</select>
+	</div>
+</div>
+```
+*/
+
+.form-selectList{
+	position   : relative;
+	display    : block;
+	width      : 100%;
+	height     : @inputHeight;
+	line-height: @inputHeight;
+	background : red;
+	overflow   : hidden;
+	.rounded(@BRadious);
+	// Arrow
+	&::after {
+		content       : '\25BC';
+		position      : absolute;
+		top           : 0;
+		right         : 0;
+		bottom        : 0;
+		padding       : 0 1em;
+		color: @fontColor_white;
+		pointer-events: none;
+	}
+}

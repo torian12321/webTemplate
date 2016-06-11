@@ -1,0 +1,145 @@
+/*
+## Buttons - colors
+```
+	<button class="btn btn-green">Green</button>
+	<button class="btn btn-red">Red</button>
+	<button class="btn btn-blue">Blue</button>
+	<button class="btn btn-white">White</button>
+	<button class="btn btn-grey">Grey</button>
+	<button class="btn btn-black">Black</button>
+```
+## Buttons - Status
+```
+	<button class="btn btn-default">Default</button>
+	<button class="btn btn-sec">Sec</button>
+	<button class="btn btn-success">Success</button>
+	<button class="btn btn-danger">Danger</button>
+	<button class="btn btn-warning">Warning</button>
+	<button class="btn btn-large">Large</button>
+	<button class="btn" disabled="Disabled">black</button>
+```
+*/
+button,
+input[type="button"],
+input[type="submit"],
+.btn{
+	min-width       : 100px;
+	padding         : 8px 24px;
+	font-size       : 14px;
+	cursor          : pointer;
+	text-transform  : uppercase;
+	text-decoration : none;
+	outline         : none !important;
+	letter-spacing  : 0.8px;
+
+	.rounded(@BRadious);
+	.transition(@time:0.20s);
+
+	//Status
+	.btn_palette();
+	&:active,
+	&.active{
+		.shadow(0 2px 6px 1px rgba(0,0,0,0.3))
+	}
+	&:disabled,
+	&.disabled,
+  	&[disabled]{
+		background-color: @colorState_disable;
+		border-color    : @colorState_disable;
+		color           : @white;
+		cursor          : no-drop;
+		.opacity(0.8);
+	}
+
+	//Options
+	&.btn-large{
+		min-width: 200px;
+	}
+	&.btn-auto{
+		min-width: auto;
+	}
+
+	//Elements
+	i{
+		margin-right: 10px;
+		font-size   : 16px;
+	}
+
+	//Styles
+	&.btn-default,
+	&.btn-main{
+		.btn_palette();
+	}
+	&.btn-sec{
+		.btn_palette(@themeColor_2; @white;);
+	}
+	&.btn-green,
+	&.btn-accept,
+	&.btn-success{
+		.btn_palette(@green; @white;);
+	}
+	&.btn-red,
+	&.btn-cancel,
+	&.btn-danger{
+		.btn_palette(@red; @white;);
+	}
+	&.btn-orange,
+	&.btn-warning{
+		.btn_palette(@orange; @white);
+	}
+	&.btn-white{
+		.btn_palette(@white; @themeColor_1);
+	}
+	&.btn-grey{
+		.btn_palette(@grey; @white);
+	}
+	&.btn-black{
+		.btn_palette(@black; @white);
+	}
+	&.btn-blue{
+		.btn_palette(@blue; @white);
+	}
+}
+
+
+
+
+.btn_palette(@color-main: @themeColor_1; @color-sec: @white;){
+	color           : @color-sec;
+	background-color: @color-main;
+	border          : 1px @color-sec solid;
+
+	&:hover,
+	&:focus{
+		color           : @color-main;
+		background-color: @color-sec;
+		border-color    : @color-main;
+
+		& when (@color-sec = @white) {
+			color: @color-main;
+		}
+	}
+
+	&.btn-3D{
+		@deepSize: 4px;
+
+		top         :0;
+		position    : relative;
+		border-width: 0;
+		box-shadow  : 0px @deepSize 0px 0px darken(@color-main, 15%);
+
+		& when (@color-main = @black) {
+			background-color: lighten(@black, 25%);
+		}
+		&:hover,
+		&:focus{
+			color: @color-sec;
+			background-color: darken(@color-main, 10%);
+		}
+		&:active,
+		&.active{
+			top       : @deepSize;
+			box-shadow: 0px 0px 0px 0px darken(@color-main, 15%);
+		}
+	}
+}

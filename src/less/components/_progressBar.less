@@ -1,0 +1,38 @@
+/*
+# Progress Bar
+```
+<div>
+	<div class="progressBar">
+		<div class="bar" style="width: 42%;">
+			42%
+		</div>
+	</div>
+	<div class="progressBar">
+		<div class="bar" style="width: 95%;">
+			95%
+		</div>
+	</div>
+</div>
+```
+*/
+.progressBar{
+	@height    : 32px;
+	@color_main: @themeColor_1;
+	@color_sec : @themeColor_2;
+
+	width           : 100%;
+	height          : @height;
+	background-color: @color_sec;
+	overflow        : hidden;
+	.rounded(@height);
+	.bar{
+		height          : 100%;
+		padding         : 0 20px;
+		font-size       : @height / 2;
+		line-height     : @height;
+		color           : @color_sec;
+		background-color: @color_main;
+		.themeFont_1-bold();
+		.transition();
+	}
+}

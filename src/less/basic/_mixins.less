@@ -1,0 +1,202 @@
+//-------------------
+//-- Generic mixins -
+//-------------------
+.transition(@property: all; @time: 0.5s; @delay: 0; @timing: ease-out){
+	-webkit-transition        : @property; /* For Safari 3.1 to 6.0 */
+	transition                : @property;
+	transition-timing-function: @timing;
+
+	-webkit-transition-duration: @time; /* Safari */
+    transition-duration        : @time;
+
+    -webkit-transition-delay: @delay; /* Safari */
+    transition-delay        : @delay;
+}
+
+.border(@width: 2px; @color: @white){
+	border: @width solid @color;
+}
+.border(@width: 2px){
+	.border(@width; @white);
+}
+
+.rounded(@topLeft: 5px; @topRight: 5px; @bottomRight: 5px; @bottomLeft: 5px){
+	border-radius        : @topLeft @topRight @bottomRight @bottomLeft;
+	-moz-border-radius   : @topLeft @topRight @bottomRight @bottomLeft;
+	-webkit-border-radius: @topLeft @topRight @bottomRight @bottomLeft;
+}
+.rounded(@radius: 5px;){
+	border-radius        : @radius;
+	-moz-border-radius   : @radius;
+	-webkit-border-radius: @radius;
+}
+.opacity(@opacity: 0.8;) {
+  opacity: @opacity;
+  // IE8 filter
+  @opacity-ie: (@opacity * 100);
+  filter: ~"alpha(opacity=@{opacity-ie})";
+}
+
+.transform(@transformation){
+	-ms-transform    : @transformation; /* IE 9 */
+	-webkit-transform: @transformation; /* Chrome, Safari, Opera */
+	-o-transform     : @transformation;
+	transform        : @transformation;
+}
+.rotate(@angle: 90deg, @x-axis: 0, @y-axis:0){
+	-ms-transform           : rotate(@angle);       /* IE 9 */
+	-ms-transform-origin    : @x-axis @y-axis;      /* IE 9 */
+
+	-webkit-transform       : rotate(@angle);       /* Chrome, Safari, Opera */
+	-webkit-transform-origin: @x-axis @y-axis; 		/* Chrome, Safari, Opera */
+	transform               : rotate(@angle);
+	transform-origin        : @x-axis @y-axis;
+}
+.rotate(@angle: 90deg){
+	.rotate(@angle, 0, 0)
+}
+
+.gradient(@iniColor, @endColor, @angle){
+	background: -webkit-linear-gradient(@angle, @iniColor, @endColor); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(@angle, @iniColor, @endColor);      /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(@angle, @iniColor, @endColor);    /* For Firefox 3.6 to 15 */
+    background: linear-gradient(@angle, @iniColor, @endColor);         /* Standard syntax (must be last) */
+}
+
+.gradient(@iniColor, @endColor){
+	.gradient(@iniColor, @endColor, 90deg);
+}
+
+.shadow(@shadow){
+	-webkit-box-shadow: @shadow;
+	-moz-box-shadow   : @shadow;
+	box-shadow        : @shadow;
+}
+
+
+.oneLineText(){
+	text-overflow: ellipsis;
+	overflow     : hidden;
+	white-space  : nowrap;
+
+    &.pinned {
+        white-space  : initial !important;
+    }
+}
+.filter(@filter){
+	-webkit-filter: @filter;
+    -moz-filter   : @filter;
+    -o-filter     : @filter;
+    -ms-filter    : @filter;
+    filter        : @filter;
+}
+.blur(@blur:5px){
+	.filter(blur(@blur));
+}
+.background-img(@BG-url; @position: center center){
+	background-repeat      : no-repeat;
+	background-position    : @position;
+
+	background-size        : cover;
+	-moz-background-size   : cover;
+	-webkit-background-size: cover;
+
+	background-image       : url(@BG-url);
+}
+.background-parallax(@BG-url){
+	background             : top right no-repeat;
+	background-attachment  : fixed;
+
+	background-size        : cover;
+	-moz-background-size   : cover;
+	-webkit-background-size: cover;
+
+	background-image       : url(@BG-url);
+}
+
+.animation (@animation) {
+	animation        : @animation;
+	-moz-animation   : @animation;
+	-webkit-animation: @animation;
+	-ms-animation    : @animation;
+	-o-animation     : @animation;
+}
+.animation_keyframes(@name, @keyframes){
+	@-webkit-keyframes @name {@keyframes();}
+	@-moz-keyframes    @name {@keyframes();}
+	@-ms-keyframes     @name {@keyframes();}
+	@-o-keyframes      @name {@keyframes();}
+	@keyframes         @name {@keyframes();}
+}
+
+
+
+//triangles used for the pendants on the sections
+.triangle_left(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+	content     : "";
+	position    : absolute;
+	z-index     : 1;
+	bottom      : -@tirangleH;
+	width       : 0;
+	left 		: 100vw - @tirangleW;
+	height      : 0;
+	padding-top : 1px;
+	border-style: solid;
+	border-width: 0 @tirangleW @tirangleH 0;
+
+	border-top-color   : transparent;
+	border-bottom-color: transparent;
+	border-left-color  : transparent;
+}
+.triangle_right(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+	content     : "";
+	position    : absolute;
+	z-index     : 1;
+	bottom      : -@tirangleH;
+	width       : 0;
+	right 		: 100vw - @tirangleW;
+	height      : 0;
+	padding-top : 1px;
+	border-style: solid;
+	border-width: @tirangleH @tirangleW 0 0;
+
+	border-right-color : transparent;
+	border-bottom-color: transparent;
+	border-left-color  : transparent;
+}
+
+
+.triangle_left_top(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+	content     : "";
+	color       : transparent;
+	position    : absolute;
+	z-index     : 1;
+	top         : -@tirangleH;
+	width       : 0;
+	left 		: 100vw - @tirangleW;
+	height      : 0;
+	padding-top : 1px;
+	border-style: solid;
+	border-width: 0px @tirangleW @tirangleH 0px;
+
+	border-top-color   : transparent;
+	border-bottom-color: @color;
+	border-left-color  : transparent;
+}
+.triangle_right_top(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+	content     : "";
+	color       : transparent;
+	position    : absolute;
+	z-index     : 1;
+	top         : -@tirangleH;
+	width       : 0;
+	right 		: 100vw - @tirangleW;
+	height      : 0;
+	padding-top : 1px;
+	border-style: solid;
+	border-width: @tirangleH @tirangleW 0 0;
+
+	border-right-color : @color;
+	border-bottom-color: transparent;
+	border-left-color  : transparent;
+}

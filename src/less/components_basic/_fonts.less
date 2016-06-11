@@ -1,0 +1,117 @@
+ /*
+## Headings
+```
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 6</h6>
+```
+
+## Lists - ul
+```
+<ul>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ul>
+```
+
+## Lists - ol
+```
+<ol>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ol>
+```
+
+## Paragraps
+```
+	<p class="fixie txt-l"><p>
+	<p class="fixie txt-c"><p>
+	<p class="fixie txt-r"><p>
+	<p class="fixie txt-j"><p>
+```
+*/
+
+body {
+	font-size  : @baseFontSize;
+	line-height: 1.25;
+	color      : @fontColor_black;
+	.themeFont_1();
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	color: @themeColor_1;
+	&.negative{
+		background-color: @themeColor_1;
+		color           : @fontColor_white;
+	}
+	&.title_sec{
+		color: @themeColor_2;
+			&.negative{
+			background-color: @themeColor_2;
+			color           : @fontColor_white;
+		}
+	}
+}
+h1{
+	font-size     : 2em;
+	text-transform: uppercase;
+}
+h2{
+	font-size: 1.8em;
+}
+h3{
+	font-size: 1.5em;
+}
+
+p{
+	text-align: justify;
+	.hightline{
+		background-color: darken(@white, 20%);
+	}
+}
+strong{
+	color: @themeColor_2;
+	.themeFont_1-bold();
+}
+blockquote{
+
+}
+
+
+// Alignment
+.txt-j	{ text-align: justify;}
+.txt-c	{ text-align: center; }
+.txt-r	{ text-align: right; }
+.txt-l 	{ text-align: left; }
+.text-nowrap         { white-space: nowrap; }
+
+// Transformation
+.txt-lowercase	{ text-transform: lowercase; }
+.txt-uppercase	{ text-transform: uppercase; }
+.txt-capitalize	{ text-transform: capitalize; }
+
+// Test selected
+*::selection{
+	.textSelected();
+}
+::-moz-selection{
+	.textSelected();
+}
+.textSelected(){
+	background : fadeout(@themeColor_1, 40%);
+	color      : @fontColor_white;
+	text-shadow: none;
+}

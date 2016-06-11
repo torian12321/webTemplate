@@ -1,0 +1,111 @@
+//-------------------
+//--- Breakpints ----
+//-------------------
+@bp_xs: 767px;
+@bp_sm: 768px;		//@bp_xs + 1px
+@bp_md: 992px;
+@bp_lg: 1200px;
+
+@prefix-xs : xs;
+@prefix-sm : sm;
+@prefix-md : md;
+@prefix-lg : lg;
+
+@grid-columns     : 12;
+@grid-gutter-width: 30px;
+
+//== Container sizes
+//## Define the maximum width of `.container` for different screen sizes.
+@container-sm: (720px  + @grid-gutter-width);
+@container-md: (940px  + @grid-gutter-width);
+@container-lg: (1140px + @grid-gutter-width);
+
+//-------------------
+//--- Directories ---
+//-------------------
+@imgDir   : '../img';
+@iconsDir : '@{imgDir}/icons';
+@defImgDir: '@{imgDir}/default';
+
+//-------------------
+//----- Colors ------
+//-------------------
+@black    : #000;
+@black2   : #4c4c4c;
+@white    : #FFF;
+@white2   : #ECEEE3;
+@grey     : #797d86;
+@grey2    : #595e69;
+@grey3    : #f1f1f1;
+@red      : #ff0000;
+@yellow   : #F5DF6C;
+@orange   : #FBA444;
+@turquoise: #3CCDC3;
+@pink     : #ff006b;
+@blue     : #3E86D4;
+@purple   : #B209A9;
+@green    : #B2E672;
+
+@colorState_danger : @red;
+@colorState_warning: @orange;
+@colorState_success: @green;
+@colorState_disable: #DDD;
+
+
+@fontColor_white: @white;
+@fontColor_grey : @grey;
+@fontColor_black: @black2;
+
+
+@themeColor_1: @blue;
+@themeColor_2: @orange;
+
+
+//-------------------
+//-- Font families --
+//-------------------
+@baseFontSize: 16px;
+.themeFont_1(){.Lato();}
+.themeFont_1-bold(){.Lato-Bold();}
+
+.themeFont_2(){.Droid-Bold();}
+
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,300italic,900);
+.Lato(){
+	font-family: 'Lato', sans-serif;
+}
+.Lato-Light(){
+	.Lato();
+	font-weight: 300;
+}
+.Lato-Regular(){
+	.Lato();
+	font-weight: 400;
+}
+.Lato-Bold(){
+	.Lato();
+	font-weight: 700;
+}
+.Lato-Italic(){
+	.Lato();
+	font-style: italic;
+}
+
+.Lato-Black(){
+	.Lato();
+	font-weight: 900;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Droid+Serif:700);
+.Droid-Bold(){
+	font-family: 'Droid Serif', serif;
+	font-weight: 700;
+}
+
+
+//-------------------
+//------- Form ------
+//-------------------
+@BRadious    : 6px;
+@inputHeight : 32px;
