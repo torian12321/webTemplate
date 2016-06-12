@@ -1,0 +1,63 @@
+/*
+## Form elements
+# Inputs
+```
+<div class="card-user" style="width: 250px;">
+	<div class="img"></div>
+	<div class="text">
+		<h3>Name</h3>
+		<span>Title</span>
+	</div>
+</div>
+```
+*/
+
+
+.card-user{
+	@color_main: @themeColor_2; 
+
+	.img{
+		position        : relative;
+		height          : 250px;
+		background-color: fadein(@color_main, 30%);
+		.BW();
+		.background-img('@{defImgDir}/user_avatar.jpg'; center top);
+		.transition();
+	}
+	.text{
+		position : relative;
+		height   : 75px;
+		padding  : 10px 15px;
+		font-size: 1em;
+		.transition();
+		.oneLineText();
+		h3{
+			font-size     : 1.5em;
+			text-transform: capitalize;
+		}
+		&:after{
+			content         : '';
+			position        : absolute;
+			bottom          : 0;
+			right           : 50%;
+			left            : 50%;
+			height          : 3px;
+			background-color: @color_main;
+			.transition();
+		}
+	}
+	&:hover{
+		.img{
+			.BW(0);
+		}
+		.text{
+			overflow        : visible;
+			padding-top     : 5px;
+			background-color: fadeout(@color_main, 80%);
+			&:after{
+				left : 0;
+				right: 0;
+			}
+		}
+	}
+}

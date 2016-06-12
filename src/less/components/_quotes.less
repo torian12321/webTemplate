@@ -1,0 +1,35 @@
+/*
+# Progress Bar
+```
+<div class="quote" style="background-color:#DDD;">
+	<i class="fa fa-quote-left"></i>
+		In ancient times cats were worshipped as gods. They have not forgotten this
+	<i class="fa fa-quote-right"></i>
+	<span class="author">
+		Terry Pratchett
+	</span>
+</div>
+```
+*/
+
+.quote{
+	@color: @fontColor_black;
+
+	max-width  : @bp_lg * 0.8;
+	padding    : 10px 15px;
+	text-align : center;
+	color      : @color;
+	line-height: 1.75;
+	.font_elegant();
+	.author{
+		display   : block;
+		margin-top: 10px;
+		font-size : 0.8em;
+		text-align: right;
+		color     : fadeout(@color, 40%);
+	}
+	i{
+		margin    : 0 10px;
+		.font_icons();
+	}
+}

@@ -2,21 +2,19 @@
 ## Form elements
 # Inputs
 ```
-<div>
-	<div class="form-input">
-		<input id="check-1" type="text">
-		<label for="check-1">test</label>
-	</div>
+<div class="form-input">
+	<input id="check-1" type="text">
+	<label for="check-1">test</label>
+</div>
 
-	<div class="form-input">
-		<input id="check-2" type="password">
-		<label for="check-2">password</label>
-	</div>
+<div class="form-input">
+	<input id="check-2" type="password">
+	<label for="check-2">password</label>
+</div>
 
-	<div class="form-input">
-		<textarea id="check-3"></textarea>
-		<label for="check-3">Description</label>
-	</div>
+<div class="form-input">
+	<textarea id="check-3"></textarea>
+	<label for="check-3">Description</label>
 </div>
 ```
 */
@@ -184,7 +182,7 @@
 			cursor: pointer;
 			.transition();
 			.rounded(@BRadious);
-			.themeFont_1();
+			.font();
 			&:hover{
 				background-color: darken(@themeColor_1, 25%);
 			}
@@ -192,7 +190,7 @@
 		&:checked + label{
 			background-color: @themeColor_1;
 			color           : @fontColor_white;
-			//.themeFont_1-bold();
+			//.font-bold();
 		}
 	}
 
@@ -232,7 +230,7 @@
 		right         : 0;
 		bottom        : 0;
 		padding       : 0 1em;
-		color: @fontColor_white;
+		color         : @fontColor_white;
 		pointer-events: none;
 	}
 }

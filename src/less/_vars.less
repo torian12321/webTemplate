@@ -65,42 +65,43 @@
 //-- Font families --
 //-------------------
 @baseFontSize: 16px;
-.themeFont_1(){.Lato();}
-.themeFont_1-bold(){.Lato-Bold();}
-
-.themeFont_2(){.Droid-Bold();}
-
 
 @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,400italic,700,300italic,900);
-.Lato(){
+.font(){
 	font-family: 'Lato', sans-serif;
 }
-.Lato-Light(){
-	.Lato();
-	font-weight: 300;
+.font-regular(){
+	.font();
 }
-.Lato-Regular(){
-	.Lato();
-	font-weight: 400;
-}
-.Lato-Bold(){
-	.Lato();
+.font-bold(){
 	font-weight: 700;
+	.font();
 }
-.Lato-Italic(){
-	.Lato();
-	font-style: italic;
-}
-
-.Lato-Black(){
-	.Lato();
+.font-black(){
 	font-weight: 900;
+	.font();
+}
+.font-italic(){
+	font-style: italic;
+	.font();
+}
+.font-regular(){
+	.font();
 }
 
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:700);
-.Droid-Bold(){
-	font-family: 'Droid Serif', serif;
-	font-weight: 700;
+
+//Special
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Playball);
+
+.font_special(){
+	font-family: 'Lobster';
+}
+.font_elegant(){
+	font-family: 'Playball', 'Lobster';
+}
+.font_icons(){
+	font-family: 'FontAwesome';
 }
 
 

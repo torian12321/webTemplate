@@ -2,7 +2,9 @@ WebTemplate
 =============
 
 Basic web template to start a new page
+
 Use a php server to run the project
+
 To compile less and js files, use koala http://koala-app.com/
 
 
@@ -10,6 +12,7 @@ Setup
 ---------------
 
 Change the path of the project on src/php/config.php
+
 ```$GLOBALS['projectPath'] = 'http://mywebsite.es';```
 
 
@@ -22,6 +25,7 @@ Whe publish the project:
 - Do not publish src/less
 
 **Styleguide:**
+
 If including styleguide folder, also add src/less/style.less
 
 
