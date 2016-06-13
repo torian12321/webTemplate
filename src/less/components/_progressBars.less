@@ -1,16 +1,82 @@
 /*
 # Progress Bar
 ```
-<div class="progressBar">
-	<div class="bar" style="width: 42%;">
-		42%
+<div style="background-color: #EEE; padding: 25px;">
+	<div class="progressBar" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 72%;">
+			72%
+		</div>
+	</div>
+	<div class="progressBar" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 30%;">
+			€30k
+			<label>€70k</label>
+		</div>
+	</div>
+	<div class="progressBar bordered">
+		<div class="bar" style="width: 45%;">
+			€45k
+			<label>€55k</label>
+		</div>
 	</div>
 </div>
+```
 
-<div class="progressBar">
-	<div class="bar" style="width: 95%;">
-		95%
+
+# Progress Bar - Right
+```
+<div style="background-color: #EEE; padding: 25px;">
+
+	<div class="progressBar pb-right" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 42%;">
+			Dublin
+			<label>€450.00</label>
+		</div>
 	</div>
+
+	<div class="progressBar pb-right" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 80%;">
+			Cork
+			<label>€800.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-right" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 50%;">
+			Limerick
+			<label>€500.00</label>
+		</div>
+	</div>
+
+</div>
+```
+
+
+# Progress Bar - Left
+```
+<div style="background-color: #EEE; padding: 25px;">
+
+	<div class="progressBar pb-left" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 42%;">
+			Dublin
+			<label>€450.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-left" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 80%;">
+			Cork
+			<label>€800.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-left" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 50%;">
+			Limerick
+			<label>€500.000</label>
+		</div>
+	</div>
+
 </div>
 ```
 */
@@ -19,19 +85,76 @@
 	@color_main: @themeColor_1;
 	@color_sec : @themeColor_2;
 
-	width           : 100%;
-	height          : @height;
-	background-color: @color_sec;
-	overflow        : hidden;
+	position   : relative;
+	width      : 100%;
+	height     : @height;
+	background : @color_sec;
+	overflow   : hidden;
+	font-size  : @height / 2;
+	line-height: @height;
+	.font-bold();
 	.rounded(@height);
+	&.bordered{
+		border     : solid 2px @color_main;
+		line-height: @height - 2px;
+	}
 	.bar{
-		height          : 100%;
-		padding         : 0 20px;
-		font-size       : @height / 2;
-		line-height     : @height;
-		color           : @color_sec;
-		background-color: @color_main;
-		.font-bold();
+		color      : @color_sec;
+		height     : 100%;
+		padding    : 0 20px;
+		background : @color_main;
+		text-align : left;
+		text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 		.transition();
+	}
+	label{
+		position: absolute;
+		height  : 100%;
+		padding : 0 20px;
+		top     : 0;
+		right   : 0;
+		color   : @color_main;
+	}
+	&:before{
+		// Fix the problem with the "dirty shadow" on the left border
+		position  : absolute;
+		content   : '';
+		top       : 0;
+		bottom    : 0;
+		left      : 0;
+		width     : 20px;	
+		background: @color_main;
+	}
+
+
+	// No BG
+	&.pb-right,
+	&.pb-left{
+		background: transparent;
+		.rounded(0);
+		.bar{
+			position: relative;
+			.gradient(darken(@color_main, 10%), @color_main, 90deg);
+		}
+		label{
+			color: @white;
+			.font-light();
+		}
+		&:before{
+			content: none;
+		}
+	}
+
+	&.pb-left .bar{
+		.rounded(0, @height, @height, 0);
+	}
+	&.pb-right .bar{
+		float     : right;
+		text-align: right;
+		.rounded(@height, 0, 0, @height);
+		label{
+			left : 0;
+			right: initial;
+		}
 	}
 }

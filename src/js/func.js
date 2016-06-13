@@ -42,8 +42,8 @@ function sayHello(){
 	}
 	css_shadow = css_shadow.slice(0, -1); //remove last coma
 
-	var css = 'text-shadow: '+ css_shadow +';font-size: 50px; color: #163b63;';
-	console.log('%c %s', css, '\ud83c\udf10 XWERX - UX Design agency');
+	var css = 'text-shadow: '+ css_shadow +';font-size: 50px; color: '+ colors.main +';';
+	console.log('%c %s', css, '\ud83c\udf10 '+ project.title +' - '+ project.desc);
 }
 
 //Smooth Scrolling

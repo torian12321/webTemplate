@@ -42,26 +42,24 @@
 /*
 # Checkbox
 ```
-<div>
-	<div class="form-check">
-		<input id="check-4" type="checkbox">
-		<label for="check-4"></label>
-	</div>
+<div class="form-check">
+	<input id="check-4" type="checkbox">
+	<label for="check-4"></label>
+</div>
 
-	<div class="form-check">
-		<input id="check-5" type="checkbox" checked>
-		<label for="check-5"></label>
-	</div>
+<div class="form-check">
+	<input id="check-5" type="checkbox" checked>
+	<label for="check-5"></label>
+</div>
 
-	<div class="form-check texted">
-		<input id="check-6" type="checkbox">
-		<label for="check-6"></label>
-	</div>
+<div class="form-check texted">
+	<input id="check-6" type="checkbox">
+	<label for="check-6"></label>
+</div>
 
-	<div class="form-check texted">
-		<input id="check-7" type="checkbox" checked>
-		<label for="check-7"></label>
-	</div>
+<div class="form-check texted">
+	<input id="check-7" type="checkbox" checked>
+	<label for="check-7"></label>
 </div>
 ```
 */
@@ -126,43 +124,40 @@
 }
 
 /*
-# Select Single
+# Select - Single
 ```
-<div>
-	<ul class="form-selectSingle">
-		<li>
-			<input type="radio" id="option_01" name="selector" checked>
-	    	<label for="option_01">All types</label>
-		</li>
-		<li>
-			<input type="radio" id="option_02" name="selector">
-	    	<label for="option_02">Second-hand</label>
-		</li>
-		<li>
-			<input type="radio" id="option_03" name="selector">
-	    	<label for="option_03">New</label>
-		</li>
-	</ul>
-</div>
+<ul class="form-selectSingle">
+	<li>
+		<input type="radio" id="option_01" name="selector" checked>
+    	<label for="option_01">All types</label>
+	</li>
+	<li>
+		<input type="radio" id="option_02" name="selector">
+    	<label for="option_02">Second-hand</label>
+	</li>
+	<li>
+		<input type="radio" id="option_03" name="selector">
+    	<label for="option_03">New</label>
+	</li>
+</ul>
 ```
-# Select Multiple
+
+# Select - Multiple
 ```
-<div>
-	<ul class="form-selectMultiple">
-		<li>
-			<input type="checkbox" id="option_04" name="selector" checked>
-	    	<label for="option_04">All types</label>
-		</li>
-		<li>
-			<input type="checkbox" id="option_05" name="selector">
-	    	<label for="option_05">Second-hand</label>
-		</li>
-		<li>
-			<input type="checkbox" id="option_06" name="selector">
-	    	<label for="option_06">New</label>
-		</li>
-	</ul>
-</div>
+<ul class="form-selectMultiple">
+	<li>
+		<input type="checkbox" id="option_04" name="selector" checked>
+    	<label for="option_04">All types</label>
+	</li>
+	<li>
+		<input type="checkbox" id="option_05" name="selector">
+    	<label for="option_05">Second-hand</label>
+	</li>
+	<li>
+		<input type="checkbox" id="option_06" name="selector">
+    	<label for="option_06">New</label>
+	</li>
+</ul>
 ```
 */
 
@@ -195,20 +190,78 @@
 	}
 
 }
+/*
+# Select - Single single line
+```
+<ul class="form-selectSingle singleLine">
+	<li>
+		<input type="radio" id="option_01-1" name="selector" checked>
+    	<label for="option_01-1">All types</label>
+	</li>
+	<li>
+		<input type="radio" id="option_01-2" name="selector">
+    	<label for="option_01-2">Second-hand</label>
+	</li>
+	<li>
+		<input type="radio" id="option_01-3" name="selector">
+    	<label for="option_01-3">New</label>
+	</li>
+</ul>
+```
 
+
+# Select - Multiple single line
+```
+<ul class="form-selectMultiple singleLine">
+	<li>
+		<input type="checkbox" id="option_02-1" name="selector" checked>
+    	<label for="option_02-1">All types</label>
+	</li>
+	<li>
+		<input type="checkbox" id="option_02-2" name="selector">
+    	<label for="option_02-2">Second-hand</label>
+	</li>
+	<li>
+		<input type="checkbox" id="option_02-3" name="selector">
+    	<label for="option_02-3">New</label>
+	</li>
+</ul>
+```
+*/
+
+.form-selectSingle.singleLine,
+.form-selectMultiple.singleLine{
+	li{
+		display: inline-block;
+		margin : 0 -2px;
+		label{
+			border-right : 2px solid @themeColor_1;
+			padding-left : 30px;
+			padding-right: 30px;
+			.rounded(0);
+		}
+
+		@BR: @BRadious * 5;
+		&:first-child label{
+			.rounded(@BR , 0, 0, @BR);
+		}
+		&:last-child label{
+			border-right: 0;
+			.rounded(0, @BR, @BR, 0);
+		}
+	}
+}
 /*
 # Select List
 ```
-<div>
-	<div class="form-selectList">
-		<select name="slct" id="slct">
-			<option>Choose an option</option>
-			<option value="1">Option A</option>
-			<option value="2">Option B</option>
-			<option value="3">Option C</option>
-			<option value="4">Option D</option>
-		</select>
-	</div>
+<div class="form-selectList">
+	<select name="slct" id="slct">
+		<option>Choose an option</option>
+		<option value="1">Option A</option>
+		<option value="2">Option B</option>
+		<option value="3">Option C</option>
+		<option value="4">Option D</option>
+	</select>
 </div>
 ```
 */
@@ -219,7 +272,6 @@
 	width      : 100%;
 	height     : @inputHeight;
 	line-height: @inputHeight;
-	background : red;
 	overflow   : hidden;
 	.rounded(@BRadious);
 	// Arrow

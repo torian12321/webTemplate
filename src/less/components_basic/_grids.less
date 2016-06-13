@@ -1,8 +1,29 @@
  /*
-## Grids
+## Grids - Estandar
 ```
 <div class="container">
 	<div class="row">
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+	</div>
+</div>
+```
+
+## Grids - Spacing
+Use row-spacing instead of just row to add padding to the columns
+```
+<div class="container">
+	<div class="row-spacing">
 		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
 		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
 		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
@@ -24,7 +45,7 @@
 .container-fluid {
 	margin-right : auto;
 	margin-left  : auto;
-	padding-left :  floor((@grid-gutter-width / 2));
+	padding-left : floor((@grid-gutter-width / 2));
 	padding-right: ceil((@grid-gutter-width / 2));
 	&:extend(.clearfix all);
 }
@@ -38,7 +59,8 @@
 }
 
 // Rows contain and clear the floats of your columns.
-.row {
+.row,
+.row-spacing{
 	margin-left :  ceil((@grid-gutter-width / -2));
 	margin-right: floor((@grid-gutter-width / -2));
 	&:extend(.clearfix all);
@@ -87,9 +109,28 @@
 			// Prevent columns from collapsing when empty
 			min-height   : 1px;
 			// Inner gutter via padding
+			//padding-left :  ceil((@grid-gutter-width / 2));
+			//padding-right: floor((@grid-gutter-width / 2));
+			float        : left;
+		}
+	}
+	.col(1); // kickstart it
+}
+
+.make-grid-columns-spacing(@class) {
+	.col(@index) { // initial
+		@item: ~".row-spacing > .@{class}-@{index}";
+		.col((@index + 1), @item);
+	}
+	.col(@index, @list) when (@index =< @grid-columns) { // general
+		@item: ~".@{class}-@{index}";
+		.col((@index + 1), ~"@{list}, .row-spacing @{item}");
+	}
+	.col(@index, @list) when (@index > @grid-columns) { // terminal
+		@{list} {
+			// Inner gutter via padding
 			padding-left :  ceil((@grid-gutter-width / 2));
 			padding-right: floor((@grid-gutter-width / 2));
-			float        : left;
 		}
 	}
 	.col(1); // kickstart it
@@ -136,6 +177,7 @@
 // Create grid for specific class
 .make-grid(@class) {
 	.make-grid-columns(@class);
+	.make-grid-columns-spacing(@class);
 	.loop-grid-columns(@grid-columns, @class, width);
 	.loop-grid-columns(@grid-columns, @class, pull);
 	.loop-grid-columns(@grid-columns, @class, push);

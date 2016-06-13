@@ -18,7 +18,7 @@ $('input, textarea').focusout(function(){
 function field_validate(field){
 	var isValid = true;
 
-	if($(this).hasClass('mandatory')){
+	if(field.hasClass('mandatory')){
 		if(field.val() == ''){
 			isValid = false;
 		}else if(field.hasClass('mandatory-email')){
@@ -29,13 +29,13 @@ function field_validate(field){
 				isValid = false;
 			}
 		}
-
 		if(!isValid){
 			field.addClass('error');
 		}else{
 			field.removeClass('error');
 		}
 	}
+
 	return(isValid);
 }
 

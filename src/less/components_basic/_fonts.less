@@ -32,6 +32,7 @@
 ```
 
 ## Paragraps
+Different align examples
 ```
 	<p class="fixie txt-l"><p>
 	<p class="fixie txt-c"><p>
@@ -114,4 +115,21 @@ blockquote{
 	background : fadeout(@themeColor_1, 40%);
 	color      : @fontColor_white;
 	text-shadow: none;
+}
+
+ol li{
+	@ballSize: 6px;
+
+	position   : relative;
+	margin-left: @ballSize + 10;
+	&:before{
+		content         : '';
+		position        : absolute;
+		left            : -1 * (@ballSize + 10);
+		top             : 6px;
+		height          : @ballSize;
+		width           : @ballSize;
+		background-color: @themeColor_2;
+		.rounded(50%);
+	}
 }
