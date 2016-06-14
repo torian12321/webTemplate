@@ -1,8 +1,16 @@
-/* ### Basic ### */
-@import "_vars.less";
-@import "basic/_reset.less";
-@import "basic/_mixins.less";
-@import "basic/_animations.less";
+//------------------
+//------ Basic -----
+//------------------
+.basic();
+.basic(){
+	// Call by a function to not show this on the styleguide menu
+	@import "_vars.less";
+	& when (@firstLoad = true) {
+		@import "basic/_reset.less";
+		@import "basic/_mixins.less";
+		@import "basic/_animations.less";
+	}
+}
 
 
 /* ### Basic Components ### */
@@ -26,17 +34,23 @@
 @import "components/_cookiesAdvice.less";
 
 
-/* ### Viewports ### */
-@import "_default.less";
-@media (max-width: @bp_xs){
-	@import "viewports/_screen_xs.less";
-}
-@media (min-width: @bp_sm) {
-	@import "viewports/_screen_sm.less";
-}
-@media (min-width: @bp_md) {
-	@import "viewports/_screen_md.less";
-}
-@media (min-width: @bp_lg) {
-	@import "viewports/_screen_lg.less";
+//------------------
+//---- Viewports ---
+//------------------
+.viewports();
+.viewports(){
+	// Call by a function to not show this on the styleguide menu
+	@import "_default.less";
+	@media (max-width: @bp_xs){
+		@import "viewports/_screen_xs.less";
+	}
+	@media (min-width: @bp_sm) {
+		@import "viewports/_screen_sm.less";
+	}
+	@media (min-width: @bp_md) {
+		@import "viewports/_screen_md.less";
+	}
+	@media (min-width: @bp_lg) {
+		@import "viewports/_screen_lg.less";
+	}
 }
