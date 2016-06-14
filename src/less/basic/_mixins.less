@@ -203,3 +203,20 @@
 	border-bottom-color: transparent;
 	border-left-color  : transparent;
 }
+
+.smart-text-color(
+	@BG        : @themeColor_BG,
+	@colorLight: @fontColor_white,
+	@colorDark : @fontColor_black
+	) when (lightness(@BG) >= 50%) {
+  // Its a light color return a dark output
+  color: @colorDark;
+}
+.smart-text-color(
+	@BG        : @themeColor_BG,
+	@colorLight: @fontColor_white,
+	@colorDark : @fontColor_black
+	) when (lightness(@BG) < 50%) {
+  // Its a dark color return a dark output
+  color: @colorLight;
+}
