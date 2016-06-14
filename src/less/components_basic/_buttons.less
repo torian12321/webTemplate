@@ -1,5 +1,11 @@
 /*
-## Buttons - colors
+## Buttons
+```
+	<button class="btn">Button</button>
+	<a href="#" class="btn">Link</a>
+```
+
+## Buttons - Colors
 ```
 	<button class="btn btn-green">Green</button>
 	<button class="btn btn-red">Red</button>
@@ -8,6 +14,7 @@
 	<button class="btn btn-grey">Grey</button>
 	<button class="btn btn-black">Black</button>
 ```
+
 ## Buttons - Status
 ```
 	<button class="btn btn-default">Default</button>
@@ -16,9 +23,22 @@
 	<button class="btn btn-danger">Danger</button>
 	<button class="btn btn-warning">Warning</button>
 	<button class="btn btn-large">Large</button>
-	<button class="btn" disabled="Disabled">black</button>
+	<button class="btn" disabled="Disabled">Disabled</button>
+```
+
+## Buttons 3D
+```
+	<button class="btn btn-3D">Default</button>
+	<button class="btn btn-3D btn-sec">Secundary</button>
+	<button class="btn btn-3D btn-warning">Warning</button>
+	<button class="btn btn-3D btn-large">Large</button>
+	<button class="btn btn-3D" disabled="Disabled">Disabled</button>
 ```
 */
+
+@3D_deep: 4px;
+
+
 button,
 input[type="button"],
 input[type="submit"],
@@ -44,10 +64,11 @@ input[type="submit"],
 	&:disabled,
 	&.disabled,
   	&[disabled]{
-		background-color: @colorState_disable;
-		border-color    : @colorState_disable;
-		color           : @white;
-		cursor          : no-drop;
+		background  : @colorState_disable !important;
+		border-color: @colorState_disable !important;
+		color       : @white;
+		box-shadow  : none !important;
+		cursor      : no-drop;
 		.opacity(0.8);
 	}
 
@@ -57,6 +78,15 @@ input[type="submit"],
 	}
 	&.btn-auto{
 		min-width: auto;
+	}
+	&.btn-3D{
+		top         : 0;
+		position    : relative;
+		border-width: 0 !important;
+		&:active,
+		&.active{
+			top: @3D_deep;
+		}
 	}
 
 	//Elements
@@ -102,18 +132,17 @@ input[type="submit"],
 }
 
 
-
-
+// Mixin for colors
 .btn_palette(@color-main: @themeColor_1; @color-sec: @white;){
-	color           : @color-sec;
-	background-color: @color-main;
-	border          : 1px @color-sec solid;
+	color     : @color-sec;
+	background: @color-main;
+	border    : 1px @color-sec solid;
 
 	&:hover,
 	&:focus{
-		color           : @color-main;
-		background-color: @color-sec;
-		border-color    : @color-main;
+		color       : @color-main;
+		background  : @color-sec;
+		border-color: @color-main;
 
 		& when (@color-sec = @white) {
 			color: @color-main;
@@ -121,24 +150,18 @@ input[type="submit"],
 	}
 
 	&.btn-3D{
-		@deepSize: 4px;
-
-		top         :0;
-		position    : relative;
-		border-width: 0;
-		box-shadow  : 0px @deepSize 0px 0px darken(@color-main, 15%);
+		box-shadow  : 0px @3D_deep 0px 0px darken(@color-main, 15%);
 
 		& when (@color-main = @black) {
-			background-color: lighten(@black, 25%);
+			background: lighten(@black, 25%);
 		}
 		&:hover,
 		&:focus{
-			color: @color-sec;
-			background-color: darken(@color-main, 10%);
+			color     : @color-sec;
+			background: darken(@color-main, 10%);
 		}
 		&:active,
 		&.active{
-			top       : @deepSize;
 			box-shadow: 0px 0px 0px 0px darken(@color-main, 15%);
 		}
 	}

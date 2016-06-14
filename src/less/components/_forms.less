@@ -73,28 +73,28 @@
 		display: none;
 
 		& + label{
-			position        : relative;
-			display         : block;
-			width           : @width;
-			height          : @height;
-			background-color: @colorState_disable;
-			cursor          : pointer;
+			position  : relative;
+			display   : block;
+			width     : @width;
+			height    : @height;
+			background: @colorState_disable;
+			cursor    : pointer;
 			.rounded(@height);
 			.transition(@property: background-color; @time: @transition-time);
 			&:after{
-				position        : absolute;
-				content         : '';
-				left            : (@height - @ball-height) / 2;
-				top             : (@height - @ball-height) / 2;
-				height          : @ball-height;
-				width           : @ball-height;
-				background-color: @themeColor_1;
+				position  : absolute;
+				content   : '';
+				left      : (@height - @ball-height) / 2;
+				top       : (@height - @ball-height) / 2;
+				height    : @ball-height;
+				width     : @ball-height;
+				background: @themeColor_1;
 				.rounded(50%);
 				.transition(@transition-time);
 			}
 		}
 		&:checked + label{
-			background-color: @themeColor_2;
+			background: @themeColor_2;
 			&:after{
 				left: @width - @ball-height - ((@height - @ball-height) / 2);
 			}
@@ -128,15 +128,15 @@
 ```
 <ul class="form-selectSingle">
 	<li>
-		<input type="radio" id="option_01" name="selector" checked>
+		<input type="radio" id="option_01" name="selectSingle" checked>
     	<label for="option_01">All types</label>
 	</li>
 	<li>
-		<input type="radio" id="option_02" name="selector">
+		<input type="radio" id="option_02" name="selectSingle">
     	<label for="option_02">Second-hand</label>
 	</li>
 	<li>
-		<input type="radio" id="option_03" name="selector">
+		<input type="radio" id="option_03" name="selectSingle">
     	<label for="option_03">New</label>
 	</li>
 </ul>
@@ -170,21 +170,21 @@
 	input{
 		display: none;
 		& + label{
-			display         : block;
-			padding         : 9px 12px;
-			margin          : 0 0 6px;
-			background-color: darken(@themeColor_2, 10%);
-			cursor: pointer;
+			display   : block;
+			padding   : 9px 12px;
+			margin    : 0 0 6px;
+			background: darken(@themeColor_2, 10%);
+			cursor    : pointer;
 			.transition();
 			.rounded(@BRadious);
 			.font();
 			&:hover{
-				background-color: darken(@themeColor_1, 25%);
+				background: darken(@themeColor_1, 25%);
 			}
 		}
 		&:checked + label{
-			background-color: @themeColor_1;
-			color           : @fontColor_white;
+			background: @themeColor_1;
+			color     : @fontColor_white;
 			//.font-bold();
 		}
 	}

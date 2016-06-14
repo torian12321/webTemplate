@@ -35,3 +35,12 @@ Cache
 In case of an static page, when finish, cache the pages to create html pages.
 
 Uncoment the php functions cache_open() on pages/_header.php cache_close() on pages/_footer.php, then, visith each page on the browser.
+
+
+Technologies
+---------------
+
+- jquery
+- waypoint
+- LESS
+- KaleyStyleguide
