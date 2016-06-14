@@ -39,17 +39,19 @@ table{
 	.rounded(@BRadious);
 }
 
-@table_color: @themeColor_2;
+@color_main: @themeColor_2;
+@color_sec : @white;
+
 thead,
 tfoot,
 th{
-	position        : relative;
-	background-color: @table_color;
-	color           : @white;
+	position  : relative;
+	background: @color_main;
+	.smart-text-color(@color_main);
 	&.shortable{
 		cursor: pointer;
 		&:hover{
-			background-color: darken(@table_color, 5%)
+			background-color: darken(@color_main, 5%)
 		}
 	}
 	i{
@@ -59,12 +61,13 @@ th{
 	}
 }
 tr{
-	background-color: @white;
+	background: @color_sec;
+	.smart-text-color(@color_sec, @fontColor_white, @fontColor_grey);
 	&:nth-child(odd){
-		background-color: fadeout(@table_color, 80%);
+		background: fadeout(@color_main, 80%);
 	}
 	&:hover{
-		background-color: fadeout(@table_color, 50%);
+		background: fadeout(@color_main, 50%);
 	}
 }
 th,
