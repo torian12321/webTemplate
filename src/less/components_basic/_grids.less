@@ -41,7 +41,7 @@ Use row-spacing instead of just row to add padding to the columns
 ```
 */
 
-& when (@firstLoad = true) {
+.if(@firstLoad, { .-then(){
 	.container,
 	.container-fluid {
 		margin-right : auto;
@@ -184,4 +184,4 @@ Use row-spacing instead of just row to add padding to the columns
 		.loop-grid-columns(@grid-columns, @class, push);
 		.loop-grid-columns(@grid-columns, @class, offset);
 	}
-}
+}});

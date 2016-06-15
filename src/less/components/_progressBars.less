@@ -79,61 +79,87 @@
 
 </div>
 ```
+
+# Progress Bar - Underlined
+```
+<div style="background-color: #EEE; padding: 25px;">
+	<div class="progressBar underline" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 72%;">
+			72%
+			<label>€55k</label>
+		</div>
+	</div>
+	<div class="progressBar underline green" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 30%;">
+			€30k
+			<label>€55k</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-left underline red">
+		<div class="bar" style="width: 45%;">
+			€45k
+			<label>€55k</label>
+		</div>
+	</div>
+	<div class="progressBar pb-right underline warning">
+		<div class="bar" style="width: 45%;">
+			€45k
+			<label>€55k</label>
+		</div>
+	</div>
+</div>
+```
 */
+
 .progressBar{
 	@height    : 32px;
-	@color_main: @themeColor_1;
-	@color_sec : @themeColor_2;
 
 	position   : relative;
 	width      : 100%;
 	height     : @height;
-	background : @color_sec;
 	overflow   : hidden;
 	font-size  : @height / 2;
 	line-height: @height;
 	.font-bold();
 	.rounded(@height);
 	&.bordered{
-		border     : solid 2px @color_main;
+		border     : solid 2px;
 		line-height: @height - 2px;
 	}
+	label{
+		position  : absolute;
+		top       : 0;
+		left      : 0;
+		height    : 100%;
+		width     : 100%;
+		padding   : 0 20px;
+		text-align: right;
+	}
 	.bar{
-		color      : @color_sec;
 		height     : 100%;
 		padding    : 0 20px;
-		background : @color_main;
 		text-align : left;
-		.transition();
-	}
-	label{
-		position: absolute;
-		height  : 100%;
-		padding : 0 20px;
-		top     : 0;
-		right   : 0;
-		color   : @color_main;
-	}
-	&:before{
-		// Fix the problem with the "dirty shadow" on the left border
-		position  : absolute;
-		content   : '';
-		top       : 0;
-		bottom    : 0;
-		left      : 0;
-		width     : 20px;
-		background: @color_main;
+		.transition(width background);
 	}
 
-
-	// No BG
+	&.underline{
+		overflow  : initial;
+		background: transparent !important;
+		.rounded(0);
+		.bar{
+			height    : @height;
+			background: transparent !important;
+			.rounded(0);
+		}
+	}
 	&.pb-right,
 	&.pb-left{
-		background: transparent;
+		border-bottom: 0 !important;
 		.rounded(0);
 		.bar{
 			position: relative;
-			.gradient(darken(@color_main, 10%), @color_main, 90deg);
+			height  : 100%;
 		}
 		label{
 			color: @white;
@@ -152,8 +178,59 @@
 		text-align: right;
 		.rounded(@height, 0, 0, @height);
 		label{
-			left : 0;
-			right: initial;
+			text-align: left;
+		}
+	}
+
+	//Colors
+	.progressBar_palette();
+	&.green,
+	&.success{
+		.progressBar_palette(@colorState_success);
+	}
+	&.red,
+	&.danger{
+		.progressBar_palette(@colorState_danger);
+	}
+	&.orange,
+	&.warning{
+		.progressBar_palette(@colorState_warning);
+	}
+}
+
+
+.progressBar_palette(
+	@color_main: @themeColor_1;
+	@color_sec : @themeColor_2;
+	){
+
+	background: @color_sec;
+	&.bordered{
+		border-color: @color_main;
+	}
+	label{
+		color: @color_main;
+	}
+	.bar{
+		color      : @color_sec;
+		background : @color_main;
+	}
+	&.pb-right,
+	&.pb-left{
+		background: transparent;
+		.bar{
+			.gradient(darken(@color_main, 20%), @color_main, 90deg);
+		}
+	}
+	&.underline{
+		@line_height: 5px;
+
+		border-bottom: @line_height @color_sec solid;
+		.rounded(0);
+		.bar{
+			border-bottom: @line_height solid @color_main;
+			.smart-text-color(@themeColor_BG; @fontColor_white; @fontColor_grey);
+			.rounded(0);
 		}
 	}
 }

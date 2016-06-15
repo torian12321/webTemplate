@@ -1,17 +1,18 @@
 //------------------
 //------ Basic -----
 //------------------
-.basic();
-.basic(){
+.ini();
+.ini(){
 	// Call by a function to not show this on the styleguide menu
 	@import "_vars.less";
-	& when (@firstLoad = true) {
-		@import "basic/_reset.less";
-		@import "basic/_mixins.less";
-		@import "basic/_animations.less";
-	}
+	@import "basic/func/_if.less";
 }
-
+.basic();
+.basic(){
+	@import "basic/_reset.less";
+	@import "basic/_mixins.less";
+	@import "basic/_animations.less";
+}
 
 /* ### Basic Components ### */
 @import "components_basic/_fonts.less";
@@ -39,7 +40,6 @@
 //------------------
 .viewports();
 .viewports(){
-	// Call by a function to not show this on the styleguide menu
 	@import "_default.less";
 	@media (max-width: @bp_xs){
 		@import "viewports/_screen_xs.less";

@@ -312,22 +312,27 @@
 			.rounded(0, @BR, @BR, 0);
 		}
 	}
-	&.arrowed{
-		input:checked + label{
+	&.arrowed input{
+		& + label{
 			position: relative;
 			&:after{
-				@size: 12px;
-
 				content         : '';
 				position        : absolute;
 				left            : 50%;
 				top             : 100%;
-				margin-left     : -@size;
+				margin-left     : 0;
 				height          : 0;
 				width           : 0;
-				border          : solid transparent @size;
-				border-top-color: @themeColor_1;
+				border          : solid transparent 0;
+				.transition(border margin-left);
 			}
+		}
+		&:checked + label:after{
+			@size: 12px;
+
+			margin-left     : -@size;
+			border          : solid transparent @size;
+			border-top-color: @themeColor_1;
 		}
 	}
 }
