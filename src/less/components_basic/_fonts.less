@@ -94,7 +94,26 @@ strong{
 blockquote{
 
 }
+ol li{
+	@ballSize: 6px;
 
+	position   : relative;
+	margin-left: @ballSize + 10;
+	&:before{
+		content   : '';
+		position  : absolute;
+		left      : -1 * (@ballSize + 10);
+		top       : 6px;
+		height    : @ballSize;
+		width     : @ballSize;
+		background: @themeColor_2;
+		.rounded(50%);
+	}
+}
+
+.smart-color{
+	.smart-text-color(@themeColor_BG);
+}
 
 // Alignment
 .txt-j	{ text-align: justify;}
@@ -119,21 +138,4 @@ blockquote{
 	background : fadeout(@themeColor_1, 40%);
 	color      : @fontColor_white;
 	text-shadow: none;
-}
-
-ol li{
-	@ballSize: 6px;
-
-	position   : relative;
-	margin-left: @ballSize + 10;
-	&:before{
-		content   : '';
-		position  : absolute;
-		left      : -1 * (@ballSize + 10);
-		top       : 6px;
-		height    : @ballSize;
-		width     : @ballSize;
-		background: @themeColor_2;
-		.rounded(50%);
-	}
 }
