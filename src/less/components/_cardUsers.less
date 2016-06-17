@@ -1,11 +1,74 @@
 /*
 ## Card - Users
 ```
-<div class="card-user" style="width: 250px;">
-	<div class="img"></div>
-	<div class="text">
-		<h3>Name</h3>
-		<span>Title</span>
+<div>
+	<div class="card-user" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+
+	<div class="card-user" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+
+	<div class="card-user" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+
+	<div class="card-user" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+</div>
+```
+
+## Card - Users (polaroid)
+```
+<div>
+	<div class="card-user polaroid" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+
+	<div class="card-user polaroid" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+
+	<div class="card-user polaroid" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
+	</div>
+
+	<div class="card-user polaroid" style="width: 250px;">
+		<div class="img" style="background-image: url(http://placehold.it/200x200);"></div>
+		<div class="text">
+			<h3>Name</h3>
+			<span>Title</span>
+		</div>
 	</div>
 </div>
 ```
@@ -13,8 +76,9 @@
 
 
 .card-user{
-	@color_main: @themeColor_2; 
+	@color_main: @themeColor_2;
 
+	display: inline-block;
 	.img{
 		position  : relative;
 		height    : 250px;
@@ -50,12 +114,34 @@
 			.BW(0);
 		}
 		.text{
-			overflow   : visible;
 			padding-top: 5px;
 			background : fadeout(@color_main, 80%);
 			&:after{
 				left : 0;
 				right: 0;
+			}
+		}
+	}
+
+	//Style
+	&.polaroid{
+		@color: #f3f3f3;
+
+		padding         : 5px;
+		background-color: @color;
+		border          : 1px solid darken(@color, 20%);
+
+		@shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+		.shadow(@shadow);
+		.transition();
+		&:hover{
+			.shadow(none);
+			.text{
+				padding   : 10px 15px;
+				background: none;
+				&:after{
+					content: none;
+				}
 			}
 		}
 	}
