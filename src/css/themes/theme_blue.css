@@ -1,0 +1,2256 @@
+.theme_green {
+  @import url(https://fonts.googleapis.com/css?family=Lato:100,300,700,300italic,900);
+  @import url(https://fonts.googleapis.com/css?family=Lobster);
+  @import url(https://fonts.googleapis.com/css?family=Playball);
+  /* ### Basic Components ### */
+  /*
+## Headings
+```
+	<h1>Heading 1</h1>
+	<h2>Heading 2</h2>
+	<h3>Heading 3</h3>
+	<h4>Heading 4</h4>
+	<h5>Heading 5</h5>
+	<h6>Heading 6</h6>
+```
+
+## Headings - Secundary
+```
+	<h1 class="sec">Heading 1</h1>
+	<h2 class="sec">Heading 2</h2>
+	<h3 class="sec">Heading 3</h3>
+	<h4 class="sec">Heading 4</h4>
+	<h5 class="sec">Heading 5</h5>
+	<h6 class="sec">Heading 6</h6>
+```
+
+## Lists - ul
+```
+<ul>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ul>
+```
+
+## Lists - ol
+```
+<ol>
+	<li>List Item 1</li>
+	<li>List Item 2</li>
+	<li>List Item 3</li>
+	<li>List Item 4</li>
+	<li>List Item 5</li>
+</ol>
+```
+
+## Paragraps
+Different align examples
+```
+	<p class="fixie txt-l"><p>
+	<p class="fixie txt-c"><p>
+	<p class="fixie txt-r"><p>
+	<p class="fixie txt-j"><p>
+```
+*/
+  /*
+## Links
+```
+	<a href="#" class="fixie link"></a><br>
+	<a href="#" class="fixie link faded"></a><br>
+	<a href="#" class="fixie link arrowed"></a>
+```
+*/
+  /*
+## Tables
+```
+<table>
+	<thead>
+		<tr>
+		    <th>Firstname</th>
+		    <th>Lastname</th>
+		    <th>Savings</th>
+	 	</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>Peter</td>
+			<td>Griffin</td>
+			<td>$100</td>
+		</tr>
+		<tr>
+			<td>Lois</td>
+			<td>Griffin</td>
+			<td>$150</td>
+		</tr>
+		<tr>
+			<td>Joe</td>
+			<td>Swanson</td>
+			<td>$300</td>
+		</tr>
+		<tr>
+			<td>Cleveland</td>
+			<td>Brown</td>
+			<td>$250</td>
+		</tr>
+	</tbody>
+</table>
+```
+*/
+  /*
+## Buttons
+```
+	<button class="btn">Button</button>
+	<a href="#" class="btn">Link</a>
+```
+
+## Buttons - Colors
+```
+	<button class="btn btn-green">Green</button>
+	<button class="btn btn-red">Red</button>
+	<button class="btn btn-blue">Blue</button>
+	<button class="btn btn-white">White</button>
+	<button class="btn btn-grey">Grey</button>
+	<button class="btn btn-black">Black</button>
+```
+
+## Buttons - Status
+```
+	<button class="btn btn-default">Default</button>
+	<button class="btn btn-sec">Sec</button>
+	<button class="btn btn-success">Success</button>
+	<button class="btn btn-danger">Danger</button>
+	<button class="btn btn-warning">Warning</button>
+	<button class="btn btn-large">Large</button>
+	<button class="btn" disabled="Disabled">Disabled</button>
+```
+
+## Buttons 3D
+```
+	<button class="btn btn-3D">Default</button>
+	<button class="btn btn-3D btn-sec">Secundary</button>
+	<button class="btn btn-3D btn-warning">Warning</button>
+	<button class="btn btn-3D btn-large">Large</button>
+	<button class="btn btn-3D" disabled="Disabled">Disabled</button>
+```
+*/
+  /*
+## Inputs
+```
+	<input type="text" placeholder="Name">
+	<input type="password" placeholder="Password">
+	<input type="text" class="success" placeholder="Right value">
+	<input type="text" class="error" placeholder="Wrong value">
+	<input type="text" disabled placeholder="Disabled">
+```
+
+## Text area
+```
+	<textarea>Text Area</textarea>
+```
+*/
+  /*
+## Select
+```
+<select name="slct">
+	<option>Choose an option</option>
+	<option value="1">Option A</option>
+	<option value="2">Option B</option>
+	<option value="3">Option C</option>
+	<option value="4">Option D</option>
+</select>
+```
+*/
+  /*
+## Grids - Estandar
+```
+<div class="container">
+	<div class="row">
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+	</div>
+</div>
+```
+
+## Grids - Spacing
+Use row-spacing instead of just row to add padding to the columns
+```
+<div class="container">
+	<div class="row-spacing">
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #ddd;">xs-1 sm-2 md-3 lg-4</div>
+		<div class="xs-1 sm-2 md-3 lg-4" style="background-color: #999;">xs-1 sm-2 md-3 lg-4</div>
+	</div>
+</div>
+```
+*/
+  /* ### Components ### */
+  /*
+## Card - Users
+```
+<div class="card-user" style="width: 250px;">
+	<div class="img"></div>
+	<div class="text">
+		<h3>Name</h3>
+		<span>Title</span>
+	</div>
+</div>
+```
+*/
+  /*
+## Form elements
+# Inputs
+```
+<div class="form-input">
+	<input id="check-1" type="text">
+	<label for="check-1">test</label>
+</div>
+
+<div class="form-input">
+	<input id="check-2" type="password">
+	<label for="check-2">password</label>
+</div>
+
+<div class="form-input">
+	<textarea id="check-3"></textarea>
+	<label for="check-3">Description</label>
+</div>
+```
+*/
+  /*
+# Check
+```
+<div class="form-check">
+	<input id="check-4" type="checkbox">
+	<label for="check-4"></label>
+</div>
+
+<div class="form-check">
+	<input id="check-5" type="checkbox" checked>
+	<label for="check-5"></label>
+</div>
+```
+
+# Check (texted)
+```
+<div class="form-check texted">
+	<input id="check-6" type="checkbox">
+	<label for="check-6"></label>
+</div>
+
+<div class="form-check texted">
+	<input id="check-7" type="checkbox" checked>
+	<label for="check-7"></label>
+</div>
+```
+*/
+  /*
+# Select - Single
+```
+<div>
+	<ul class="form-selectSingle">
+		<li>
+			<input type="radio" id="option_01" name="ss" checked>
+	    	<label for="option_01">All types</label>
+		</li>
+		<li>
+			<input type="radio" id="option_02" name="ss">
+	    	<label for="option_02">Second-hand</label>
+		</li>
+		<li>
+			<input type="radio" id="option_03" name="ss">
+	    	<label for="option_03">New</label>
+		</li>
+	</ul>
+</div>
+```
+
+# Select - Multiple
+```
+<div>
+	<ul class="form-selectMultiple">
+		<li>
+			<input type="checkbox" id="option_04" name="selector" checked>
+	    	<label for="option_04">All types</label>
+		</li>
+		<li>
+			<input type="checkbox" id="option_05" name="selector">
+	    	<label for="option_05">Second-hand</label>
+		</li>
+		<li>
+			<input type="checkbox" id="option_06" name="selector">
+	    	<label for="option_06">New</label>
+		</li>
+	</ul>
+</div>
+```
+
+# Select - Multiple (hollow)
+```
+<div>
+	<ul class="form-selectMultiple hollow">
+		<li>
+			<input type="checkbox" id="smh-1" name="smh" checked>
+	    	<label for="smh-1">All types</label>
+		</li>
+		<li>
+			<input type="checkbox" id="smh-2" name="smh">
+	    	<label for="smh-2">Second-hand</label>
+		</li>
+		<li>
+			<input type="checkbox" id="smh-3" name="smh">
+	    	<label for="smh-3">New</label>
+		</li>
+	</ul>
+</div>
+```
+*/
+  /*
+# Select - Single (single line)
+```
+<div>
+	<ul class="form-selectSingle singleLine">
+		<li>
+			<input type="radio" id="option_01-1" name="selector" checked>
+	    	<label for="option_01-1">All types</label>
+		</li>
+		<li>
+			<input type="radio" id="option_01-2" name="selector">
+	    	<label for="option_01-2">Second-hand</label>
+		</li>
+		<li>
+			<input type="radio" id="option_01-3" name="selector">
+	    	<label for="option_01-3">New</label>
+		</li>
+	</ul>
+</div>
+```
+
+
+# Select - Multiple (single line)
+```
+<div>
+	<ul class="form-selectMultiple singleLine">
+		<li>
+			<input type="checkbox" id="option_02-1" name="selector" checked>
+	    	<label for="option_02-1">All types</label>
+		</li>
+		<li>
+			<input type="checkbox" id="option_02-2" name="selector">
+	    	<label for="option_02-2">Second-hand</label>
+		</li>
+		<li>
+			<input type="checkbox" id="option_02-3" name="selector">
+	    	<label for="option_02-3">New</label>
+		</li>
+	</ul>
+</div>
+```
+
+# Select - Single (single line + hollow + arrow)
+```
+<div>
+	<ul class="form-selectSingle singleLine hollow arrowed">
+		<li>
+			<input type="radio" id="sslha-1" name="sslha" checked>
+	    	<label for="sslha-1">All types</label>
+		</li>
+		<li>
+			<input type="radio" id="sslha-2" name="sslha">
+	    	<label for="sslha-2">Second-hand</label>
+		</li>
+		<li>
+			<input type="radio" id="sslha-3" name="sslha">
+	    	<label for="sslha-3">New</label>
+		</li>
+	</ul>
+</div>
+```
+*/
+  /*
+# Select List
+```
+<div class="form-selectList">
+	<select name="slct" id="slct">
+		<option>Choose an option</option>
+		<option value="1">Option A</option>
+		<option value="2">Option B</option>
+		<option value="3">Option C</option>
+		<option value="4">Option D</option>
+	</select>
+</div>
+```
+*/
+  /*
+# Progress Bar
+```
+<div style="background-color: #EEE; padding: 25px;">
+	<div class="progressBar" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 72%;">
+			72%
+		</div>
+	</div>
+	<div class="progressBar" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 30%;">
+			€30k
+			<label>€70k</label>
+		</div>
+	</div>
+	<div class="progressBar bordered">
+		<div class="bar" style="width: 45%;">
+			€45k
+			<label>€55k</label>
+		</div>
+	</div>
+</div>
+```
+
+
+# Progress Bar - Right
+```
+<div style="background-color: #EEE; padding: 25px;">
+
+	<div class="progressBar pb-right" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 42%;">
+			Dublin
+			<label>€450.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-right" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 80%;">
+			Cork
+			<label>€800.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-right" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 50%;">
+			Limerick
+			<label>€500.00</label>
+		</div>
+	</div>
+
+</div>
+```
+
+
+# Progress Bar - Left
+```
+<div style="background-color: #EEE; padding: 25px;">
+
+	<div class="progressBar pb-left" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 42%;">
+			Dublin
+			<label>€450.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-left" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 80%;">
+			Cork
+			<label>€800.00</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-left" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 50%;">
+			Limerick
+			<label>€500.000</label>
+		</div>
+	</div>
+
+</div>
+```
+
+# Progress Bar - Underlined
+```
+<div style="background-color: #EEE; padding: 25px;">
+	<div class="progressBar underline" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 72%;">
+			72%
+			<label>€55k</label>
+		</div>
+	</div>
+	<div class="progressBar underline green" style="margin-bottom: 25px;">
+		<div class="bar" style="width: 30%;">
+			€30k
+			<label>€55k</label>
+		</div>
+	</div>
+
+	<div class="progressBar pb-left underline red">
+		<div class="bar" style="width: 45%;">
+			€45k
+			<label>€55k</label>
+		</div>
+	</div>
+	<div class="progressBar pb-right underline warning">
+		<div class="bar" style="width: 45%;">
+			€45k
+			<label>€55k</label>
+		</div>
+	</div>
+</div>
+```
+*/
+  /*
+# Progress Bar
+```
+<div class="quote" style="background-color:#DDD;">
+	<i class="fa fa-quote-left"></i>
+		In ancient times cats were worshipped as gods. They have not forgotten this
+	<i class="fa fa-quote-right"></i>
+	<span class="author">
+		Terry Pratchett
+	</span>
+</div>
+```
+*/
+  /*
+## Cookies
+```
+<div class="cookies-advice">
+	We use third party cookies. If you continue browsing, we consider you accept its use on our website.
+	<a href="#">Read</a>
+</div>
+```
+*/
+}
+.theme_green body {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #4c4c4c;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+.theme_green h1,
+.theme_green h2,
+.theme_green h3,
+.theme_green h4,
+.theme_green h5,
+.theme_green h6 {
+  color: #3e86d4;
+}
+.theme_green h1.sec,
+.theme_green h2.sec,
+.theme_green h3.sec,
+.theme_green h4.sec,
+.theme_green h5.sec,
+.theme_green h6.sec {
+  color: #4c4c4c;
+}
+.theme_green h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.theme_green h2 {
+  font-size: 1.8em;
+}
+.theme_green h3 {
+  font-size: 1.5em;
+}
+.theme_green p {
+  text-align: justify;
+}
+.theme_green p .hightline {
+  background: #cccccc;
+}
+.theme_green strong {
+  color: #4c4c4c;
+  font-weight: 700;
+}
+.theme_green ol li {
+  position: relative;
+  margin-left: 16px;
+}
+.theme_green ol li:before {
+  content: '';
+  position: absolute;
+  left: -16px;
+  top: 6px;
+  height: 6px;
+  width: 6px;
+  background: #4c4c4c;
+  border-radius: 50% 5px 5px 5px;
+  -moz-border-radius: 50% 5px 5px 5px;
+  -webkit-border-radius: 50% 5px 5px 5px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+.theme_green .smart-color {
+  color: #4c4c4c;
+}
+.theme_green .txt-j {
+  text-align: justify;
+}
+.theme_green .txt-c {
+  text-align: center;
+}
+.theme_green .txt-r {
+  text-align: right;
+}
+.theme_green .txt-l {
+  text-align: left;
+}
+.theme_green .txt-nowrap {
+  white-space: nowrap;
+}
+.theme_green .txt-lowercase {
+  text-transform: lowercase;
+}
+.theme_green .txt-uppercase {
+  text-transform: uppercase;
+}
+.theme_green .txt-capitalize {
+  text-transform: capitalize;
+}
+.theme_green *::selection {
+  background: rgba(62, 134, 212, 0.6);
+  color: #ffffff;
+  text-shadow: none;
+}
+.theme_green ::-moz-selection {
+  background: rgba(62, 134, 212, 0.6);
+  color: #ffffff;
+  text-shadow: none;
+}
+.theme_green .link {
+  color: #3e86d4;
+  cursor: pointer;
+}
+.theme_green .link:hover {
+  color: #4c4c4c;
+}
+.theme_green .link:visited {
+  color: #5b87b7;
+}
+.theme_green .link.faded {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+.theme_green .link.faded:hover {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.theme_green .link.arrowed {
+  position: relative;
+}
+.theme_green .link.arrowed:after {
+  content: '>';
+  position: absolute;
+  right: -16px;
+  top: -2px;
+  font-size: 20px;
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .link.arrowed:hover:after {
+  right: -20px;
+}
+.theme_green table {
+  overflow: hidden;
+  border-radius: 6px 5px 5px 5px;
+  -moz-border-radius: 6px 5px 5px 5px;
+  -webkit-border-radius: 6px 5px 5px 5px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.theme_green thead,
+.theme_green tfoot,
+.theme_green th {
+  background: #3e86d4;
+  color: #4c4c4c;
+}
+.theme_green thead.shortable,
+.theme_green tfoot.shortable,
+.theme_green th.shortable {
+  cursor: pointer;
+}
+.theme_green thead.shortable:hover,
+.theme_green tfoot.shortable:hover,
+.theme_green th.shortable:hover {
+  background: #2d79cb;
+}
+.theme_green tr {
+  background: #ffffff;
+  color: #797d86;
+}
+.theme_green tr:nth-child(odd) {
+  background: rgba(62, 134, 212, 0.2);
+}
+.theme_green tr:hover {
+  background: rgba(62, 134, 212, 0.5);
+}
+.theme_green th,
+.theme_green td {
+  position: relative;
+  padding: 10px 40px 10px 16px;
+}
+.theme_green th i,
+.theme_green td i {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.theme_green button.btn-default,
+.theme_green input[type="button"].btn-default,
+.theme_green input[type="submit"].btn-default,
+.theme_green .btn.btn-default,
+.theme_green button.btn-main,
+.theme_green input[type="button"].btn-main,
+.theme_green input[type="submit"].btn-main,
+.theme_green .btn.btn-main {
+  color: #ffffff;
+  background: #3e86d4;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-default:hover,
+.theme_green input[type="button"].btn-default:hover,
+.theme_green input[type="submit"].btn-default:hover,
+.theme_green .btn.btn-default:hover,
+.theme_green button.btn-main:hover,
+.theme_green input[type="button"].btn-main:hover,
+.theme_green input[type="submit"].btn-main:hover,
+.theme_green .btn.btn-main:hover,
+.theme_green button.btn-default:focus,
+.theme_green input[type="button"].btn-default:focus,
+.theme_green input[type="submit"].btn-default:focus,
+.theme_green .btn.btn-default:focus,
+.theme_green button.btn-main:focus,
+.theme_green input[type="button"].btn-main:focus,
+.theme_green input[type="submit"].btn-main:focus,
+.theme_green .btn.btn-main:focus {
+  background: #ffffff;
+  border-color: #3e86d4;
+  color: #3e86d4;
+}
+.theme_green button.btn-default.btn-3D,
+.theme_green input[type="button"].btn-default.btn-3D,
+.theme_green input[type="submit"].btn-default.btn-3D,
+.theme_green .btn.btn-default.btn-3D,
+.theme_green button.btn-main.btn-3D,
+.theme_green input[type="button"].btn-main.btn-3D,
+.theme_green input[type="submit"].btn-main.btn-3D,
+.theme_green .btn.btn-main.btn-3D {
+  box-shadow: 0px 4px 0px 0px #2460a2;
+}
+.theme_green button.btn-default.btn-3D:hover,
+.theme_green input[type="button"].btn-default.btn-3D:hover,
+.theme_green input[type="submit"].btn-default.btn-3D:hover,
+.theme_green .btn.btn-default.btn-3D:hover,
+.theme_green button.btn-main.btn-3D:hover,
+.theme_green input[type="button"].btn-main.btn-3D:hover,
+.theme_green input[type="submit"].btn-main.btn-3D:hover,
+.theme_green .btn.btn-main.btn-3D:hover,
+.theme_green button.btn-default.btn-3D:focus,
+.theme_green input[type="button"].btn-default.btn-3D:focus,
+.theme_green input[type="submit"].btn-default.btn-3D:focus,
+.theme_green .btn.btn-default.btn-3D:focus,
+.theme_green button.btn-main.btn-3D:focus,
+.theme_green input[type="button"].btn-main.btn-3D:focus,
+.theme_green input[type="submit"].btn-main.btn-3D:focus,
+.theme_green .btn.btn-main.btn-3D:focus {
+  color: #ffffff;
+  background: #296db6;
+}
+.theme_green button.btn-default.btn-3D:active,
+.theme_green input[type="button"].btn-default.btn-3D:active,
+.theme_green input[type="submit"].btn-default.btn-3D:active,
+.theme_green .btn.btn-default.btn-3D:active,
+.theme_green button.btn-main.btn-3D:active,
+.theme_green input[type="button"].btn-main.btn-3D:active,
+.theme_green input[type="submit"].btn-main.btn-3D:active,
+.theme_green .btn.btn-main.btn-3D:active,
+.theme_green button.btn-default.btn-3D.active,
+.theme_green input[type="button"].btn-default.btn-3D.active,
+.theme_green input[type="submit"].btn-default.btn-3D.active,
+.theme_green .btn.btn-default.btn-3D.active,
+.theme_green button.btn-main.btn-3D.active,
+.theme_green input[type="button"].btn-main.btn-3D.active,
+.theme_green input[type="submit"].btn-main.btn-3D.active,
+.theme_green .btn.btn-main.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #2460a2;
+}
+.theme_green button.btn-sec,
+.theme_green input[type="button"].btn-sec,
+.theme_green input[type="submit"].btn-sec,
+.theme_green .btn.btn-sec {
+  color: #ffffff;
+  background: #4c4c4c;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-sec:hover,
+.theme_green input[type="button"].btn-sec:hover,
+.theme_green input[type="submit"].btn-sec:hover,
+.theme_green .btn.btn-sec:hover,
+.theme_green button.btn-sec:focus,
+.theme_green input[type="button"].btn-sec:focus,
+.theme_green input[type="submit"].btn-sec:focus,
+.theme_green .btn.btn-sec:focus {
+  background: #ffffff;
+  border-color: #4c4c4c;
+  color: #4c4c4c;
+}
+.theme_green button.btn-sec.btn-3D,
+.theme_green input[type="button"].btn-sec.btn-3D,
+.theme_green input[type="submit"].btn-sec.btn-3D,
+.theme_green .btn.btn-sec.btn-3D {
+  box-shadow: 0px 4px 0px 0px #262626;
+}
+.theme_green button.btn-sec.btn-3D:hover,
+.theme_green input[type="button"].btn-sec.btn-3D:hover,
+.theme_green input[type="submit"].btn-sec.btn-3D:hover,
+.theme_green .btn.btn-sec.btn-3D:hover,
+.theme_green button.btn-sec.btn-3D:focus,
+.theme_green input[type="button"].btn-sec.btn-3D:focus,
+.theme_green input[type="submit"].btn-sec.btn-3D:focus,
+.theme_green .btn.btn-sec.btn-3D:focus {
+  color: #ffffff;
+  background: #333333;
+}
+.theme_green button.btn-sec.btn-3D:active,
+.theme_green input[type="button"].btn-sec.btn-3D:active,
+.theme_green input[type="submit"].btn-sec.btn-3D:active,
+.theme_green .btn.btn-sec.btn-3D:active,
+.theme_green button.btn-sec.btn-3D.active,
+.theme_green input[type="button"].btn-sec.btn-3D.active,
+.theme_green input[type="submit"].btn-sec.btn-3D.active,
+.theme_green .btn.btn-sec.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #262626;
+}
+.theme_green button.btn-green,
+.theme_green input[type="button"].btn-green,
+.theme_green input[type="submit"].btn-green,
+.theme_green .btn.btn-green,
+.theme_green button.btn-accept,
+.theme_green input[type="button"].btn-accept,
+.theme_green input[type="submit"].btn-accept,
+.theme_green .btn.btn-accept,
+.theme_green button.btn-success,
+.theme_green input[type="button"].btn-success,
+.theme_green input[type="submit"].btn-success,
+.theme_green .btn.btn-success {
+  color: #ffffff;
+  background: #b2e672;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-green:hover,
+.theme_green input[type="button"].btn-green:hover,
+.theme_green input[type="submit"].btn-green:hover,
+.theme_green .btn.btn-green:hover,
+.theme_green button.btn-accept:hover,
+.theme_green input[type="button"].btn-accept:hover,
+.theme_green input[type="submit"].btn-accept:hover,
+.theme_green .btn.btn-accept:hover,
+.theme_green button.btn-success:hover,
+.theme_green input[type="button"].btn-success:hover,
+.theme_green input[type="submit"].btn-success:hover,
+.theme_green .btn.btn-success:hover,
+.theme_green button.btn-green:focus,
+.theme_green input[type="button"].btn-green:focus,
+.theme_green input[type="submit"].btn-green:focus,
+.theme_green .btn.btn-green:focus,
+.theme_green button.btn-accept:focus,
+.theme_green input[type="button"].btn-accept:focus,
+.theme_green input[type="submit"].btn-accept:focus,
+.theme_green .btn.btn-accept:focus,
+.theme_green button.btn-success:focus,
+.theme_green input[type="button"].btn-success:focus,
+.theme_green input[type="submit"].btn-success:focus,
+.theme_green .btn.btn-success:focus {
+  background: #ffffff;
+  border-color: #b2e672;
+  color: #b2e672;
+}
+.theme_green button.btn-green.btn-3D,
+.theme_green input[type="button"].btn-green.btn-3D,
+.theme_green input[type="submit"].btn-green.btn-3D,
+.theme_green .btn.btn-green.btn-3D,
+.theme_green button.btn-accept.btn-3D,
+.theme_green input[type="button"].btn-accept.btn-3D,
+.theme_green input[type="submit"].btn-accept.btn-3D,
+.theme_green .btn.btn-accept.btn-3D,
+.theme_green button.btn-success.btn-3D,
+.theme_green input[type="button"].btn-success.btn-3D,
+.theme_green input[type="submit"].btn-success.btn-3D,
+.theme_green .btn.btn-success.btn-3D {
+  box-shadow: 0px 4px 0px 0px #8fda31;
+}
+.theme_green button.btn-green.btn-3D:hover,
+.theme_green input[type="button"].btn-green.btn-3D:hover,
+.theme_green input[type="submit"].btn-green.btn-3D:hover,
+.theme_green .btn.btn-green.btn-3D:hover,
+.theme_green button.btn-accept.btn-3D:hover,
+.theme_green input[type="button"].btn-accept.btn-3D:hover,
+.theme_green input[type="submit"].btn-accept.btn-3D:hover,
+.theme_green .btn.btn-accept.btn-3D:hover,
+.theme_green button.btn-success.btn-3D:hover,
+.theme_green input[type="button"].btn-success.btn-3D:hover,
+.theme_green input[type="submit"].btn-success.btn-3D:hover,
+.theme_green .btn.btn-success.btn-3D:hover,
+.theme_green button.btn-green.btn-3D:focus,
+.theme_green input[type="button"].btn-green.btn-3D:focus,
+.theme_green input[type="submit"].btn-green.btn-3D:focus,
+.theme_green .btn.btn-green.btn-3D:focus,
+.theme_green button.btn-accept.btn-3D:focus,
+.theme_green input[type="button"].btn-accept.btn-3D:focus,
+.theme_green input[type="submit"].btn-accept.btn-3D:focus,
+.theme_green .btn.btn-accept.btn-3D:focus,
+.theme_green button.btn-success.btn-3D:focus,
+.theme_green input[type="button"].btn-success.btn-3D:focus,
+.theme_green input[type="submit"].btn-success.btn-3D:focus,
+.theme_green .btn.btn-success.btn-3D:focus {
+  color: #ffffff;
+  background: #9ade47;
+}
+.theme_green button.btn-green.btn-3D:active,
+.theme_green input[type="button"].btn-green.btn-3D:active,
+.theme_green input[type="submit"].btn-green.btn-3D:active,
+.theme_green .btn.btn-green.btn-3D:active,
+.theme_green button.btn-accept.btn-3D:active,
+.theme_green input[type="button"].btn-accept.btn-3D:active,
+.theme_green input[type="submit"].btn-accept.btn-3D:active,
+.theme_green .btn.btn-accept.btn-3D:active,
+.theme_green button.btn-success.btn-3D:active,
+.theme_green input[type="button"].btn-success.btn-3D:active,
+.theme_green input[type="submit"].btn-success.btn-3D:active,
+.theme_green .btn.btn-success.btn-3D:active,
+.theme_green button.btn-green.btn-3D.active,
+.theme_green input[type="button"].btn-green.btn-3D.active,
+.theme_green input[type="submit"].btn-green.btn-3D.active,
+.theme_green .btn.btn-green.btn-3D.active,
+.theme_green button.btn-accept.btn-3D.active,
+.theme_green input[type="button"].btn-accept.btn-3D.active,
+.theme_green input[type="submit"].btn-accept.btn-3D.active,
+.theme_green .btn.btn-accept.btn-3D.active,
+.theme_green button.btn-success.btn-3D.active,
+.theme_green input[type="button"].btn-success.btn-3D.active,
+.theme_green input[type="submit"].btn-success.btn-3D.active,
+.theme_green .btn.btn-success.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #8fda31;
+}
+.theme_green button.btn-red,
+.theme_green input[type="button"].btn-red,
+.theme_green input[type="submit"].btn-red,
+.theme_green .btn.btn-red,
+.theme_green button.btn-cancel,
+.theme_green input[type="button"].btn-cancel,
+.theme_green input[type="submit"].btn-cancel,
+.theme_green .btn.btn-cancel,
+.theme_green button.btn-danger,
+.theme_green input[type="button"].btn-danger,
+.theme_green input[type="submit"].btn-danger,
+.theme_green .btn.btn-danger {
+  color: #ffffff;
+  background: #ff0000;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-red:hover,
+.theme_green input[type="button"].btn-red:hover,
+.theme_green input[type="submit"].btn-red:hover,
+.theme_green .btn.btn-red:hover,
+.theme_green button.btn-cancel:hover,
+.theme_green input[type="button"].btn-cancel:hover,
+.theme_green input[type="submit"].btn-cancel:hover,
+.theme_green .btn.btn-cancel:hover,
+.theme_green button.btn-danger:hover,
+.theme_green input[type="button"].btn-danger:hover,
+.theme_green input[type="submit"].btn-danger:hover,
+.theme_green .btn.btn-danger:hover,
+.theme_green button.btn-red:focus,
+.theme_green input[type="button"].btn-red:focus,
+.theme_green input[type="submit"].btn-red:focus,
+.theme_green .btn.btn-red:focus,
+.theme_green button.btn-cancel:focus,
+.theme_green input[type="button"].btn-cancel:focus,
+.theme_green input[type="submit"].btn-cancel:focus,
+.theme_green .btn.btn-cancel:focus,
+.theme_green button.btn-danger:focus,
+.theme_green input[type="button"].btn-danger:focus,
+.theme_green input[type="submit"].btn-danger:focus,
+.theme_green .btn.btn-danger:focus {
+  background: #ffffff;
+  border-color: #ff0000;
+  color: #ff0000;
+}
+.theme_green button.btn-red.btn-3D,
+.theme_green input[type="button"].btn-red.btn-3D,
+.theme_green input[type="submit"].btn-red.btn-3D,
+.theme_green .btn.btn-red.btn-3D,
+.theme_green button.btn-cancel.btn-3D,
+.theme_green input[type="button"].btn-cancel.btn-3D,
+.theme_green input[type="submit"].btn-cancel.btn-3D,
+.theme_green .btn.btn-cancel.btn-3D,
+.theme_green button.btn-danger.btn-3D,
+.theme_green input[type="button"].btn-danger.btn-3D,
+.theme_green input[type="submit"].btn-danger.btn-3D,
+.theme_green .btn.btn-danger.btn-3D {
+  box-shadow: 0px 4px 0px 0px #b30000;
+}
+.theme_green button.btn-red.btn-3D:hover,
+.theme_green input[type="button"].btn-red.btn-3D:hover,
+.theme_green input[type="submit"].btn-red.btn-3D:hover,
+.theme_green .btn.btn-red.btn-3D:hover,
+.theme_green button.btn-cancel.btn-3D:hover,
+.theme_green input[type="button"].btn-cancel.btn-3D:hover,
+.theme_green input[type="submit"].btn-cancel.btn-3D:hover,
+.theme_green .btn.btn-cancel.btn-3D:hover,
+.theme_green button.btn-danger.btn-3D:hover,
+.theme_green input[type="button"].btn-danger.btn-3D:hover,
+.theme_green input[type="submit"].btn-danger.btn-3D:hover,
+.theme_green .btn.btn-danger.btn-3D:hover,
+.theme_green button.btn-red.btn-3D:focus,
+.theme_green input[type="button"].btn-red.btn-3D:focus,
+.theme_green input[type="submit"].btn-red.btn-3D:focus,
+.theme_green .btn.btn-red.btn-3D:focus,
+.theme_green button.btn-cancel.btn-3D:focus,
+.theme_green input[type="button"].btn-cancel.btn-3D:focus,
+.theme_green input[type="submit"].btn-cancel.btn-3D:focus,
+.theme_green .btn.btn-cancel.btn-3D:focus,
+.theme_green button.btn-danger.btn-3D:focus,
+.theme_green input[type="button"].btn-danger.btn-3D:focus,
+.theme_green input[type="submit"].btn-danger.btn-3D:focus,
+.theme_green .btn.btn-danger.btn-3D:focus {
+  color: #ffffff;
+  background: #cc0000;
+}
+.theme_green button.btn-red.btn-3D:active,
+.theme_green input[type="button"].btn-red.btn-3D:active,
+.theme_green input[type="submit"].btn-red.btn-3D:active,
+.theme_green .btn.btn-red.btn-3D:active,
+.theme_green button.btn-cancel.btn-3D:active,
+.theme_green input[type="button"].btn-cancel.btn-3D:active,
+.theme_green input[type="submit"].btn-cancel.btn-3D:active,
+.theme_green .btn.btn-cancel.btn-3D:active,
+.theme_green button.btn-danger.btn-3D:active,
+.theme_green input[type="button"].btn-danger.btn-3D:active,
+.theme_green input[type="submit"].btn-danger.btn-3D:active,
+.theme_green .btn.btn-danger.btn-3D:active,
+.theme_green button.btn-red.btn-3D.active,
+.theme_green input[type="button"].btn-red.btn-3D.active,
+.theme_green input[type="submit"].btn-red.btn-3D.active,
+.theme_green .btn.btn-red.btn-3D.active,
+.theme_green button.btn-cancel.btn-3D.active,
+.theme_green input[type="button"].btn-cancel.btn-3D.active,
+.theme_green input[type="submit"].btn-cancel.btn-3D.active,
+.theme_green .btn.btn-cancel.btn-3D.active,
+.theme_green button.btn-danger.btn-3D.active,
+.theme_green input[type="button"].btn-danger.btn-3D.active,
+.theme_green input[type="submit"].btn-danger.btn-3D.active,
+.theme_green .btn.btn-danger.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #b30000;
+}
+.theme_green button.btn-orange,
+.theme_green input[type="button"].btn-orange,
+.theme_green input[type="submit"].btn-orange,
+.theme_green .btn.btn-orange,
+.theme_green button.btn-warning,
+.theme_green input[type="button"].btn-warning,
+.theme_green input[type="submit"].btn-warning,
+.theme_green .btn.btn-warning {
+  color: #ffffff;
+  background: #fba444;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-orange:hover,
+.theme_green input[type="button"].btn-orange:hover,
+.theme_green input[type="submit"].btn-orange:hover,
+.theme_green .btn.btn-orange:hover,
+.theme_green button.btn-warning:hover,
+.theme_green input[type="button"].btn-warning:hover,
+.theme_green input[type="submit"].btn-warning:hover,
+.theme_green .btn.btn-warning:hover,
+.theme_green button.btn-orange:focus,
+.theme_green input[type="button"].btn-orange:focus,
+.theme_green input[type="submit"].btn-orange:focus,
+.theme_green .btn.btn-orange:focus,
+.theme_green button.btn-warning:focus,
+.theme_green input[type="button"].btn-warning:focus,
+.theme_green input[type="submit"].btn-warning:focus,
+.theme_green .btn.btn-warning:focus {
+  background: #ffffff;
+  border-color: #fba444;
+  color: #fba444;
+}
+.theme_green button.btn-orange.btn-3D,
+.theme_green input[type="button"].btn-orange.btn-3D,
+.theme_green input[type="submit"].btn-orange.btn-3D,
+.theme_green .btn.btn-orange.btn-3D,
+.theme_green button.btn-warning.btn-3D,
+.theme_green input[type="button"].btn-warning.btn-3D,
+.theme_green input[type="submit"].btn-warning.btn-3D,
+.theme_green .btn.btn-warning.btn-3D {
+  box-shadow: 0px 4px 0px 0px #ed7f05;
+}
+.theme_green button.btn-orange.btn-3D:hover,
+.theme_green input[type="button"].btn-orange.btn-3D:hover,
+.theme_green input[type="submit"].btn-orange.btn-3D:hover,
+.theme_green .btn.btn-orange.btn-3D:hover,
+.theme_green button.btn-warning.btn-3D:hover,
+.theme_green input[type="button"].btn-warning.btn-3D:hover,
+.theme_green input[type="submit"].btn-warning.btn-3D:hover,
+.theme_green .btn.btn-warning.btn-3D:hover,
+.theme_green button.btn-orange.btn-3D:focus,
+.theme_green input[type="button"].btn-orange.btn-3D:focus,
+.theme_green input[type="submit"].btn-orange.btn-3D:focus,
+.theme_green .btn.btn-orange.btn-3D:focus,
+.theme_green button.btn-warning.btn-3D:focus,
+.theme_green input[type="button"].btn-warning.btn-3D:focus,
+.theme_green input[type="submit"].btn-warning.btn-3D:focus,
+.theme_green .btn.btn-warning.btn-3D:focus {
+  color: #ffffff;
+  background: #fa8c12;
+}
+.theme_green button.btn-orange.btn-3D:active,
+.theme_green input[type="button"].btn-orange.btn-3D:active,
+.theme_green input[type="submit"].btn-orange.btn-3D:active,
+.theme_green .btn.btn-orange.btn-3D:active,
+.theme_green button.btn-warning.btn-3D:active,
+.theme_green input[type="button"].btn-warning.btn-3D:active,
+.theme_green input[type="submit"].btn-warning.btn-3D:active,
+.theme_green .btn.btn-warning.btn-3D:active,
+.theme_green button.btn-orange.btn-3D.active,
+.theme_green input[type="button"].btn-orange.btn-3D.active,
+.theme_green input[type="submit"].btn-orange.btn-3D.active,
+.theme_green .btn.btn-orange.btn-3D.active,
+.theme_green button.btn-warning.btn-3D.active,
+.theme_green input[type="button"].btn-warning.btn-3D.active,
+.theme_green input[type="submit"].btn-warning.btn-3D.active,
+.theme_green .btn.btn-warning.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #ed7f05;
+}
+.theme_green button.btn-white,
+.theme_green input[type="button"].btn-white,
+.theme_green input[type="submit"].btn-white,
+.theme_green .btn.btn-white {
+  color: #3e86d4;
+  background: #ffffff;
+  border: 1px #3e86d4 solid;
+}
+.theme_green button.btn-white:hover,
+.theme_green input[type="button"].btn-white:hover,
+.theme_green input[type="submit"].btn-white:hover,
+.theme_green .btn.btn-white:hover,
+.theme_green button.btn-white:focus,
+.theme_green input[type="button"].btn-white:focus,
+.theme_green input[type="submit"].btn-white:focus,
+.theme_green .btn.btn-white:focus {
+  color: #ffffff;
+  background: #3e86d4;
+  border-color: #ffffff;
+}
+.theme_green button.btn-white.btn-3D,
+.theme_green input[type="button"].btn-white.btn-3D,
+.theme_green input[type="submit"].btn-white.btn-3D,
+.theme_green .btn.btn-white.btn-3D {
+  box-shadow: 0px 4px 0px 0px #d9d9d9;
+}
+.theme_green button.btn-white.btn-3D:hover,
+.theme_green input[type="button"].btn-white.btn-3D:hover,
+.theme_green input[type="submit"].btn-white.btn-3D:hover,
+.theme_green .btn.btn-white.btn-3D:hover,
+.theme_green button.btn-white.btn-3D:focus,
+.theme_green input[type="button"].btn-white.btn-3D:focus,
+.theme_green input[type="submit"].btn-white.btn-3D:focus,
+.theme_green .btn.btn-white.btn-3D:focus {
+  color: #3e86d4;
+  background: #e6e6e6;
+}
+.theme_green button.btn-white.btn-3D:active,
+.theme_green input[type="button"].btn-white.btn-3D:active,
+.theme_green input[type="submit"].btn-white.btn-3D:active,
+.theme_green .btn.btn-white.btn-3D:active,
+.theme_green button.btn-white.btn-3D.active,
+.theme_green input[type="button"].btn-white.btn-3D.active,
+.theme_green input[type="submit"].btn-white.btn-3D.active,
+.theme_green .btn.btn-white.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #d9d9d9;
+}
+.theme_green button.btn-grey,
+.theme_green input[type="button"].btn-grey,
+.theme_green input[type="submit"].btn-grey,
+.theme_green .btn.btn-grey {
+  color: #ffffff;
+  background: #797d86;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-grey:hover,
+.theme_green input[type="button"].btn-grey:hover,
+.theme_green input[type="submit"].btn-grey:hover,
+.theme_green .btn.btn-grey:hover,
+.theme_green button.btn-grey:focus,
+.theme_green input[type="button"].btn-grey:focus,
+.theme_green input[type="submit"].btn-grey:focus,
+.theme_green .btn.btn-grey:focus {
+  background: #ffffff;
+  border-color: #797d86;
+  color: #797d86;
+}
+.theme_green button.btn-grey.btn-3D,
+.theme_green input[type="button"].btn-grey.btn-3D,
+.theme_green input[type="submit"].btn-grey.btn-3D,
+.theme_green .btn.btn-grey.btn-3D {
+  box-shadow: 0px 4px 0px 0px #55575e;
+}
+.theme_green button.btn-grey.btn-3D:hover,
+.theme_green input[type="button"].btn-grey.btn-3D:hover,
+.theme_green input[type="submit"].btn-grey.btn-3D:hover,
+.theme_green .btn.btn-grey.btn-3D:hover,
+.theme_green button.btn-grey.btn-3D:focus,
+.theme_green input[type="button"].btn-grey.btn-3D:focus,
+.theme_green input[type="submit"].btn-grey.btn-3D:focus,
+.theme_green .btn.btn-grey.btn-3D:focus {
+  color: #ffffff;
+  background: #61646b;
+}
+.theme_green button.btn-grey.btn-3D:active,
+.theme_green input[type="button"].btn-grey.btn-3D:active,
+.theme_green input[type="submit"].btn-grey.btn-3D:active,
+.theme_green .btn.btn-grey.btn-3D:active,
+.theme_green button.btn-grey.btn-3D.active,
+.theme_green input[type="button"].btn-grey.btn-3D.active,
+.theme_green input[type="submit"].btn-grey.btn-3D.active,
+.theme_green .btn.btn-grey.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #55575e;
+}
+.theme_green button.btn-black,
+.theme_green input[type="button"].btn-black,
+.theme_green input[type="submit"].btn-black,
+.theme_green .btn.btn-black {
+  color: #ffffff;
+  background: #000000;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-black:hover,
+.theme_green input[type="button"].btn-black:hover,
+.theme_green input[type="submit"].btn-black:hover,
+.theme_green .btn.btn-black:hover,
+.theme_green button.btn-black:focus,
+.theme_green input[type="button"].btn-black:focus,
+.theme_green input[type="submit"].btn-black:focus,
+.theme_green .btn.btn-black:focus {
+  background: #ffffff;
+  border-color: #000000;
+  color: #000000;
+}
+.theme_green button.btn-black.btn-3D,
+.theme_green input[type="button"].btn-black.btn-3D,
+.theme_green input[type="submit"].btn-black.btn-3D,
+.theme_green .btn.btn-black.btn-3D {
+  box-shadow: 0px 4px 0px 0px #000000;
+  background: #404040;
+}
+.theme_green button.btn-black.btn-3D:hover,
+.theme_green input[type="button"].btn-black.btn-3D:hover,
+.theme_green input[type="submit"].btn-black.btn-3D:hover,
+.theme_green .btn.btn-black.btn-3D:hover,
+.theme_green button.btn-black.btn-3D:focus,
+.theme_green input[type="button"].btn-black.btn-3D:focus,
+.theme_green input[type="submit"].btn-black.btn-3D:focus,
+.theme_green .btn.btn-black.btn-3D:focus {
+  color: #ffffff;
+  background: #000000;
+}
+.theme_green button.btn-black.btn-3D:active,
+.theme_green input[type="button"].btn-black.btn-3D:active,
+.theme_green input[type="submit"].btn-black.btn-3D:active,
+.theme_green .btn.btn-black.btn-3D:active,
+.theme_green button.btn-black.btn-3D.active,
+.theme_green input[type="button"].btn-black.btn-3D.active,
+.theme_green input[type="submit"].btn-black.btn-3D.active,
+.theme_green .btn.btn-black.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #000000;
+}
+.theme_green button.btn-blue,
+.theme_green input[type="button"].btn-blue,
+.theme_green input[type="submit"].btn-blue,
+.theme_green .btn.btn-blue {
+  color: #ffffff;
+  background: #3e86d4;
+  border: 1px #ffffff solid;
+}
+.theme_green button.btn-blue:hover,
+.theme_green input[type="button"].btn-blue:hover,
+.theme_green input[type="submit"].btn-blue:hover,
+.theme_green .btn.btn-blue:hover,
+.theme_green button.btn-blue:focus,
+.theme_green input[type="button"].btn-blue:focus,
+.theme_green input[type="submit"].btn-blue:focus,
+.theme_green .btn.btn-blue:focus {
+  background: #ffffff;
+  border-color: #3e86d4;
+  color: #3e86d4;
+}
+.theme_green button.btn-blue.btn-3D,
+.theme_green input[type="button"].btn-blue.btn-3D,
+.theme_green input[type="submit"].btn-blue.btn-3D,
+.theme_green .btn.btn-blue.btn-3D {
+  box-shadow: 0px 4px 0px 0px #2460a2;
+}
+.theme_green button.btn-blue.btn-3D:hover,
+.theme_green input[type="button"].btn-blue.btn-3D:hover,
+.theme_green input[type="submit"].btn-blue.btn-3D:hover,
+.theme_green .btn.btn-blue.btn-3D:hover,
+.theme_green button.btn-blue.btn-3D:focus,
+.theme_green input[type="button"].btn-blue.btn-3D:focus,
+.theme_green input[type="submit"].btn-blue.btn-3D:focus,
+.theme_green .btn.btn-blue.btn-3D:focus {
+  color: #ffffff;
+  background: #296db6;
+}
+.theme_green button.btn-blue.btn-3D:active,
+.theme_green input[type="button"].btn-blue.btn-3D:active,
+.theme_green input[type="submit"].btn-blue.btn-3D:active,
+.theme_green .btn.btn-blue.btn-3D:active,
+.theme_green button.btn-blue.btn-3D.active,
+.theme_green input[type="button"].btn-blue.btn-3D.active,
+.theme_green input[type="submit"].btn-blue.btn-3D.active,
+.theme_green .btn.btn-blue.btn-3D.active {
+  box-shadow: 0px 0px 0px 0px #2460a2;
+}
+.theme_green input {
+  height: 32px;
+}
+.theme_green textarea {
+  resize: none;
+  height: 200px;
+}
+.theme_green input,
+.theme_green textarea {
+  min-width: 200px;
+  padding: 5px;
+  border: #3e86d4 2px solid;
+  color: #3e86d4;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 6px 5px 5px 5px;
+  -moz-border-radius: 6px 5px 5px 5px;
+  -webkit-border-radius: 6px 5px 5px 5px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -webkit-transition: 0.2s;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green input:hover,
+.theme_green textarea:hover,
+.theme_green input:focus,
+.theme_green textarea:focus {
+  background: rgba(255, 255, 255, 0.5);
+}
+.theme_green input:focus,
+.theme_green textarea:focus {
+  -webkit-box-shadow: 0px 0px 30px -2px #3e86d4, inset 0 0 0.25em #3e86d4;
+  -moz-box-shadow: 0px 0px 30px -2px #3e86d4, inset 0 0 0.25em #3e86d4;
+  box-shadow: 0px 0px 30px -2px #3e86d4, inset 0 0 0.25em #3e86d4;
+}
+.theme_green input.error,
+.theme_green textarea.error {
+  color: rgba(255, 0, 0, 0.5);
+  border-color: rgba(255, 0, 0, 0.5);
+  -webkit-box-shadow: 0px 0px 30px -2px #ff0000;
+  -moz-box-shadow: 0px 0px 30px -2px #ff0000;
+  box-shadow: 0px 0px 30px -2px #ff0000;
+}
+.theme_green input.success,
+.theme_green textarea.success {
+  color: #b2e672;
+  border-color: #b2e672;
+}
+.theme_green input.success:focus,
+.theme_green textarea.success:focus {
+  -webkit-box-shadow: 0px 0px 30px -2px #b2e672, inset 0 0 0.25em #b2e672;
+  -moz-box-shadow: 0px 0px 30px -2px #b2e672, inset 0 0 0.25em #b2e672;
+  box-shadow: 0px 0px 30px -2px #b2e672, inset 0 0 0.25em #b2e672;
+}
+.theme_green input:disabled,
+.theme_green textarea:disabled {
+  background: #dddddd;
+  color: #aaaaaa;
+  border-color: #aaaaaa;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.theme_green ::-webkit-input-placeholder {
+  color: #3e86d4;
+  text-shadow: 0 0 .125em transparent;
+  -webkit-transition: 0.2;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.2;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+input:focus.theme_green ::-webkit-input-placeholder {
+  opacity: .5;
+}
+input.error.theme_green ::-webkit-input-placeholder {
+  color: #ff0000;
+}
+input.success.theme_green ::-webkit-input-placeholder {
+  color: #b2e672;
+}
+input:disabled.theme_green ::-webkit-input-placeholder {
+  color: #aaaaaa;
+}
+.theme_green ::-moz-placeholder {
+  color: #3e86d4;
+  text-shadow: 0 0 .125em transparent;
+  -webkit-transition: 0.2;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.2;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+input:focus.theme_green ::-moz-placeholder {
+  opacity: .5;
+}
+input.error.theme_green ::-moz-placeholder {
+  color: #ff0000;
+}
+input.success.theme_green ::-moz-placeholder {
+  color: #b2e672;
+}
+input:disabled.theme_green ::-moz-placeholder {
+  color: #aaaaaa;
+}
+.theme_green :-ms-input-placeholder {
+  color: #3e86d4;
+  text-shadow: 0 0 .125em transparent;
+  -webkit-transition: 0.2;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.2;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+input:focus.theme_green :-ms-input-placeholder {
+  opacity: .5;
+}
+input.error.theme_green :-ms-input-placeholder {
+  color: #ff0000;
+}
+input.success.theme_green :-ms-input-placeholder {
+  color: #b2e672;
+}
+input:disabled.theme_green :-ms-input-placeholder {
+  color: #aaaaaa;
+}
+.theme_green select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 1;
+  background: #3e86d4;
+  cursor: pointer;
+  text-transform: uppercase;
+  border-radius: 6px 5px 5px 5px;
+  -moz-border-radius: 6px 5px 5px 5px;
+  -webkit-border-radius: 6px 5px 5px 5px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green select:hover,
+.theme_green select:focus {
+  background-color: #296db6;
+}
+.theme_green select::-ms-expand {
+  display: none;
+}
+.theme_green .card-user .img {
+  position: relative;
+  height: 250px;
+  background: #4c4c4c;
+  -webkit-filter: grayscale(50%);
+  -moz-filter: grayscale(50%);
+  -o-filter: grayscale(50%);
+  -ms-filter: grayscale(50%);
+  filter: grayscale(50%);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-image: url('../../img/default/user_avatar.jpg');
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .card-user .text {
+  position: relative;
+  height: 75px;
+  padding: 10px 15px;
+  font-size: 1em;
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.theme_green .card-user .text.pinned {
+  white-space: initial !important;
+}
+.theme_green .card-user .text h3 {
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+.theme_green .card-user .text:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  left: 50%;
+  height: 3px;
+  background: #4c4c4c;
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .card-user:hover .img {
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  -o-filter: grayscale(0);
+  -ms-filter: grayscale(0);
+  filter: grayscale(0);
+}
+.theme_green .card-user:hover .text {
+  overflow: visible;
+  padding-top: 5px;
+  background: rgba(76, 76, 76, 0.2);
+}
+.theme_green .card-user:hover .text:after {
+  left: 0;
+  right: 0;
+}
+.theme_green .form-input {
+  position: relative;
+  padding: 32px 0 10px;
+}
+.theme_green .form-input label {
+  position: absolute;
+  left: 10px;
+  top: 32px;
+  line-height: 32px;
+  color: #3e86d4;
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .form-input input:focus + label,
+.theme_green .form-input textarea:focus + label,
+.theme_green .form-input input.filled + label,
+.theme_green .form-input textarea.filled + label {
+  top: -5px;
+}
+.theme_green .form-check input[type="checkbox"] {
+  display: none;
+}
+.theme_green .form-check input[type="checkbox"] + label {
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 32px;
+  background: #dddddd;
+  cursor: pointer;
+  border-radius: 32px 5px 5px 5px;
+  -moz-border-radius: 32px 5px 5px 5px;
+  -webkit-border-radius: 32px 5px 5px 5px;
+  border-radius: 32px;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  -webkit-transition: background-color;
+  /* For Safari 3.1 to 6.0 */
+  transition: background-color;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.2s;
+  /* Safari */
+  transition-duration: 0.2s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .form-check input[type="checkbox"] + label:after {
+  position: absolute;
+  content: '';
+  left: 3.2px;
+  top: 3.2px;
+  height: 25.6px;
+  width: 25.6px;
+  background: #3e86d4;
+  border-radius: 50% 5px 5px 5px;
+  -moz-border-radius: 50% 5px 5px 5px;
+  -webkit-border-radius: 50% 5px 5px 5px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -webkit-transition: 0.2s;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .form-check input[type="checkbox"]:checked + label {
+  background: #4c4c4c;
+}
+.theme_green .form-check input[type="checkbox"]:checked + label:after {
+  left: 35.2px;
+}
+.theme_green .form-check.texted input[type="checkbox"] + label:before {
+  position: absolute;
+  content: 'Off';
+  right: 12.5%;
+  font-size: 16px;
+  line-height: 32px;
+  color: #ffffff;
+  -webkit-transition: 0.2s;
+  /* For Safari 3.1 to 6.0 */
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .form-check.texted input[type="checkbox"]:checked + label:before {
+  content: 'On';
+  right: 55%;
+}
+.theme_green .form-selectSingle,
+.theme_green .form-selectMultiple {
+  text-transform: uppercase;
+  color: #797d86;
+}
+.theme_green .form-selectSingle input,
+.theme_green .form-selectMultiple input {
+  display: none;
+}
+.theme_green .form-selectSingle input + label,
+.theme_green .form-selectMultiple input + label {
+  display: block;
+  padding: 9px 12px;
+  margin: 0 0 6px;
+  background: #333333;
+  cursor: pointer;
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+  border-radius: 6px 5px 5px 5px;
+  -moz-border-radius: 6px 5px 5px 5px;
+  -webkit-border-radius: 6px 5px 5px 5px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  font-family: 'Lato', sans-serif;
+}
+.theme_green .form-selectSingle input + label:hover,
+.theme_green .form-selectMultiple input + label:hover {
+  background: #1b4778;
+}
+.theme_green .form-selectSingle input:checked + label,
+.theme_green .form-selectMultiple input:checked + label {
+  background: #3e86d4;
+  color: #ffffff;
+}
+.theme_green .form-selectSingle.hollow input + label,
+.theme_green .form-selectMultiple.hollow input + label {
+  background: transparent;
+  color: #3e86d4;
+  border: #3e86d4 1px solid !important;
+}
+.theme_green .form-selectSingle.hollow input:checked + label,
+.theme_green .form-selectMultiple.hollow input:checked + label {
+  background: #3e86d4;
+  color: #ffffff;
+}
+.theme_green .form-selectSingle.singleLine li,
+.theme_green .form-selectMultiple.singleLine li {
+  display: inline-block;
+  margin: 0 -2px;
+}
+.theme_green .form-selectSingle.singleLine li label,
+.theme_green .form-selectMultiple.singleLine li label {
+  border-right: 2px solid #3e86d4;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .form-selectSingle.singleLine li:first-child label,
+.theme_green .form-selectMultiple.singleLine li:first-child label {
+  border-radius: 6px 0 0 6px;
+  -moz-border-radius: 6px 0 0 6px;
+  -webkit-border-radius: 6px 0 0 6px;
+}
+.theme_green .form-selectSingle.singleLine li:last-child label,
+.theme_green .form-selectMultiple.singleLine li:last-child label {
+  border-right: 0;
+  border-radius: 0 6px 6px 0;
+  -moz-border-radius: 0 6px 6px 0;
+  -webkit-border-radius: 0 6px 6px 0;
+}
+.theme_green .form-selectSingle.singleLine.arrowed input + label,
+.theme_green .form-selectMultiple.singleLine.arrowed input + label {
+  position: relative;
+}
+.theme_green .form-selectSingle.singleLine.arrowed input + label:after,
+.theme_green .form-selectMultiple.singleLine.arrowed input + label:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  margin-left: 0;
+  height: 0;
+  width: 0;
+  border: solid transparent 0;
+  -webkit-transition: border margin-left;
+  /* For Safari 3.1 to 6.0 */
+  transition: border margin-left;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .form-selectSingle.singleLine.arrowed input:checked + label:after,
+.theme_green .form-selectMultiple.singleLine.arrowed input:checked + label:after {
+  margin-left: -12px;
+  border: solid transparent 12px;
+  border-top-color: #3e86d4;
+}
+.theme_green .form-selectList {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 32px;
+  line-height: 32px;
+  overflow: hidden;
+  border-radius: 6px 5px 5px 5px;
+  -moz-border-radius: 6px 5px 5px 5px;
+  -webkit-border-radius: 6px 5px 5px 5px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+}
+.theme_green .form-selectList::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  color: #ffffff;
+  pointer-events: none;
+}
+.theme_green .progressBar {
+  position: relative;
+  width: 100%;
+  height: 32px;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 32px;
+  font-weight: 700;
+  border-radius: 32px 5px 5px 5px;
+  -moz-border-radius: 32px 5px 5px 5px;
+  -webkit-border-radius: 32px 5px 5px 5px;
+  border-radius: 32px;
+  -moz-border-radius: 32px;
+  -webkit-border-radius: 32px;
+  background: #4c4c4c;
+}
+.theme_green .progressBar.bordered {
+  border: solid 2px;
+  line-height: 30px;
+}
+.theme_green .progressBar label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  text-align: right;
+}
+.theme_green .progressBar .bar {
+  height: 100%;
+  padding: 0 20px;
+  text-align: left;
+  -webkit-transition: width background;
+  /* For Safari 3.1 to 6.0 */
+  transition: width background;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .progressBar.underline {
+  overflow: initial;
+  background: transparent !important;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.underline .bar {
+  height: 32px;
+  background: transparent !important;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.pb-right,
+.theme_green .progressBar.pb-left {
+  border-bottom: 0 !important;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.pb-right .bar,
+.theme_green .progressBar.pb-left .bar {
+  position: relative;
+  height: 100%;
+}
+.theme_green .progressBar.pb-right label,
+.theme_green .progressBar.pb-left label {
+  color: #ffffff;
+  font-weight: 100;
+}
+.theme_green .progressBar.pb-right:before,
+.theme_green .progressBar.pb-left:before {
+  content: none;
+}
+.theme_green .progressBar.pb-left .bar {
+  border-radius: 0 32px 32px 0;
+  -moz-border-radius: 0 32px 32px 0;
+  -webkit-border-radius: 0 32px 32px 0;
+}
+.theme_green .progressBar.pb-right .bar {
+  float: right;
+  text-align: right;
+  border-radius: 32px 0 0 32px;
+  -moz-border-radius: 32px 0 0 32px;
+  -webkit-border-radius: 32px 0 0 32px;
+}
+.theme_green .progressBar.pb-right .bar label {
+  text-align: left;
+}
+.theme_green .progressBar.bordered {
+  border-color: #3e86d4;
+}
+.theme_green .progressBar label {
+  color: #3e86d4;
+}
+.theme_green .progressBar .bar {
+  color: #4c4c4c;
+  background: #3e86d4;
+}
+.theme_green .progressBar.pb-right,
+.theme_green .progressBar.pb-left {
+  background: transparent;
+}
+.theme_green .progressBar.pb-right .bar,
+.theme_green .progressBar.pb-left .bar {
+  background: -webkit-linear-gradient(90deg, #1f548d, #3e86d4);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, #1f548d, #3e86d4);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, #1f548d, #3e86d4);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg, #1f548d, #3e86d4);
+  /* Standard syntax (must be last) */
+}
+.theme_green .progressBar.underline {
+  border-bottom: 5px #4c4c4c solid;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.underline .bar {
+  border-bottom: 5px solid #3e86d4;
+  color: #797d86;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.green,
+.theme_green .progressBar.success {
+  background: #4c4c4c;
+}
+.theme_green .progressBar.green.bordered,
+.theme_green .progressBar.success.bordered {
+  border-color: #b2e672;
+}
+.theme_green .progressBar.green label,
+.theme_green .progressBar.success label {
+  color: #b2e672;
+}
+.theme_green .progressBar.green .bar,
+.theme_green .progressBar.success .bar {
+  color: #4c4c4c;
+  background: #b2e672;
+}
+.theme_green .progressBar.green.pb-right,
+.theme_green .progressBar.success.pb-right,
+.theme_green .progressBar.green.pb-left,
+.theme_green .progressBar.success.pb-left {
+  background: transparent;
+}
+.theme_green .progressBar.green.pb-right .bar,
+.theme_green .progressBar.success.pb-right .bar,
+.theme_green .progressBar.green.pb-left .bar,
+.theme_green .progressBar.success.pb-left .bar {
+  background: -webkit-linear-gradient(90deg, #82ce24, #b2e672);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, #82ce24, #b2e672);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, #82ce24, #b2e672);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg, #82ce24, #b2e672);
+  /* Standard syntax (must be last) */
+}
+.theme_green .progressBar.green.underline,
+.theme_green .progressBar.success.underline {
+  border-bottom: 5px #4c4c4c solid;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.green.underline .bar,
+.theme_green .progressBar.success.underline .bar {
+  border-bottom: 5px solid #b2e672;
+  color: #797d86;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.red,
+.theme_green .progressBar.danger {
+  background: #4c4c4c;
+}
+.theme_green .progressBar.red.bordered,
+.theme_green .progressBar.danger.bordered {
+  border-color: #ff0000;
+}
+.theme_green .progressBar.red label,
+.theme_green .progressBar.danger label {
+  color: #ff0000;
+}
+.theme_green .progressBar.red .bar,
+.theme_green .progressBar.danger .bar {
+  color: #4c4c4c;
+  background: #ff0000;
+}
+.theme_green .progressBar.red.pb-right,
+.theme_green .progressBar.danger.pb-right,
+.theme_green .progressBar.red.pb-left,
+.theme_green .progressBar.danger.pb-left {
+  background: transparent;
+}
+.theme_green .progressBar.red.pb-right .bar,
+.theme_green .progressBar.danger.pb-right .bar,
+.theme_green .progressBar.red.pb-left .bar,
+.theme_green .progressBar.danger.pb-left .bar {
+  background: -webkit-linear-gradient(90deg, #990000, #ff0000);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, #990000, #ff0000);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, #990000, #ff0000);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg, #990000, #ff0000);
+  /* Standard syntax (must be last) */
+}
+.theme_green .progressBar.red.underline,
+.theme_green .progressBar.danger.underline {
+  border-bottom: 5px #4c4c4c solid;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.red.underline .bar,
+.theme_green .progressBar.danger.underline .bar {
+  border-bottom: 5px solid #ff0000;
+  color: #797d86;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.orange,
+.theme_green .progressBar.warning {
+  background: #4c4c4c;
+}
+.theme_green .progressBar.orange.bordered,
+.theme_green .progressBar.warning.bordered {
+  border-color: #fba444;
+}
+.theme_green .progressBar.orange label,
+.theme_green .progressBar.warning label {
+  color: #fba444;
+}
+.theme_green .progressBar.orange .bar,
+.theme_green .progressBar.warning .bar {
+  color: #4c4c4c;
+  background: #fba444;
+}
+.theme_green .progressBar.orange.pb-right,
+.theme_green .progressBar.warning.pb-right,
+.theme_green .progressBar.orange.pb-left,
+.theme_green .progressBar.warning.pb-left {
+  background: transparent;
+}
+.theme_green .progressBar.orange.pb-right .bar,
+.theme_green .progressBar.warning.pb-right .bar,
+.theme_green .progressBar.orange.pb-left .bar,
+.theme_green .progressBar.warning.pb-left .bar {
+  background: -webkit-linear-gradient(90deg, #d47205, #fba444);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg, #d47205, #fba444);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg, #d47205, #fba444);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg, #d47205, #fba444);
+  /* Standard syntax (must be last) */
+}
+.theme_green .progressBar.orange.underline,
+.theme_green .progressBar.warning.underline {
+  border-bottom: 5px #4c4c4c solid;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .progressBar.orange.underline .bar,
+.theme_green .progressBar.warning.underline .bar {
+  border-bottom: 5px solid #fba444;
+  color: #797d86;
+  border-radius: 0 5px 5px 5px;
+  -moz-border-radius: 0 5px 5px 5px;
+  -webkit-border-radius: 0 5px 5px 5px;
+  border-radius: 0;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+}
+.theme_green .quote {
+  max-width: 960px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #4c4c4c;
+  line-height: 1.75;
+  font-family: 'Playball', 'Lobster';
+}
+.theme_green .quote .author {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.8em;
+  text-align: right;
+  color: rgba(76, 76, 76, 0.6);
+}
+.theme_green .quote i {
+  margin: 0 10px;
+  font-family: 'FontAwesome';
+}
+.theme_green .cookies-advice {
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+  width: 250px;
+  padding: 10px 10px 40px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 2px 1px 3px 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 1px 3px 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 1px 3px 3px rgba(0, 0, 0, 0.25);
+}
+.theme_green .cookies-advice a {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  padding: 2px 11px;
+  color: #ffffff;
+  background-color: rgba(76, 76, 76, 0.8);
+  -webkit-transition: all;
+  /* For Safari 3.1 to 6.0 */
+  transition: all;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: 0.5s;
+  /* Safari */
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0;
+  /* Safari */
+  transition-delay: 0;
+}
+.theme_green .cookies-advice a:hover {
+  background-color: #4c4c4c;
+}
+.theme_green .right {
+  float: right;
+}
+.theme_green .left {
+  float: left;
+}
+.theme_green .center {
+  text-align: center;
+}
+.theme_green .clear {
+  clear: both;
+}
+.theme_green .fullHeight {
+  min-height: 100vh;
+}
+.theme_green .parallax {
+  background: top right no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-image: url('../../img/default/header.png');
+}
+.theme_green body {
+  background: #ffffff;
+}

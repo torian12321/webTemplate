@@ -13,7 +13,6 @@
 	};
 </script>
 
-
 <script type="text/javascript" src="src/js/func.min.js"></script>
 </html>
 
