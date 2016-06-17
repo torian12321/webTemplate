@@ -25,6 +25,8 @@ textarea{
 	resize: none;
 	height: 200px;
 }
+
+
 input,
 textarea{
 	min-width : 200px;
@@ -62,6 +64,10 @@ textarea{
 		color       : darken(@colorState_disable, 20%);
 		border-color: darken(@colorState_disable, 20%);
 		.shadow(none);
+	}
+	&:-webkit-autofill,
+	&:-webkit-autofill:focus{
+    	-webkit-box-shadow: 0 0 0px 1000px @color_sec inset;
 	}
 }
 

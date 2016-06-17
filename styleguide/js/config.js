@@ -22,7 +22,7 @@ define({
 
 	// Enter URLs of any external stylesheets you wish to include with this demo.
 	// These will not be parsed as part of the documentation and are simply loaded into the page header.
-	external_stylesheets: []
+	external_stylesheets: ['http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css']
 
 	//disqus_shortname: 'kaleistyleguide'
 });
