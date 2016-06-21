@@ -19,7 +19,7 @@ Change the path of the project on src/php/config.php
 Publication
 ---------------
 
-Whe publish the project: 
+Whe publish the project:
 - From src/css just publis style.min.css
 - From src/func just publis func.min.js
 - Do not publish src/less
@@ -40,7 +40,7 @@ Uncoment the php functions cache_open() on pages/_header.php cache_close() on pa
 Technologies
 ---------------
 
-- jquery
-- waypoint
-- LESS
-- KaleyStyleguide
+- [jquery](https://jquery.com/)
+- [waypoint](http://imakewebthings.com/waypoints/)
+- [LESS](http://lesscss.org/)
+- [KaleyStyleguide](https://github.com/thomasdavis/kaleistyleguide)
