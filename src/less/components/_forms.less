@@ -2,19 +2,35 @@
 ## Form elements
 # Inputs
 ```
-<div class="form-input">
-	<input id="check-1" type="text">
-	<label for="check-1">test</label>
-</div>
+<form autocomplete="off">
+	<div class="form-input">
+		<input id="input-1" type="text">
+		<label for="input-1">Name</label>
+	</div>
 
-<div class="form-input">
-	<input id="check-2" type="password">
-	<label for="check-2">password</label>
-</div>
+	<div class="form-input">
+		<input id="input-2" type="text">
+		<label for="input-2">Surname</label>
+	</div>
 
-<div class="form-input">
-	<textarea id="check-3"></textarea>
-	<label for="check-3">Description</label>
+	<div class="form-input">
+		<input id="input-3" type="text">
+		<label for="input-3">Nick</label>
+	</div>
+
+	<div class="form-input">
+		<input id="input-4" type="password">
+		<label for="input-4">password</label>
+	</div>
+</form>
+```
+# Text area
+```
+<div>
+	<div class="form-input">
+		<textarea id="textarea-1"></textarea>
+		<label for="textarea-1">Description</label>
+	</div>
 </div>
 ```
 */
@@ -40,33 +56,244 @@
 
 
 /*
-# Check
+# Radio
+```
+<div>
+
+    <div class="form-radio">
+		<input type="radio" name="radios" id="radio-1" checked>
+		<label for="radio-1">Option 1</label>
+	</div>
+
+	 <div class="form-radio">
+		<input type="radio" name="radios" id="radio-2">
+		<label for="radio-2">Option 2</label>
+	</div>
+
+	 <div class="form-radio">
+		<input type="radio" name="radios" id="radio-3">
+		<label for="radio-3">Option 3</label>
+	</div>
+
+</div>
+```
+*/
+.form-radio{
+	@size  : @inputHeight;
+	@border: @size * 0.15;
+	@bullet: @size * 0.55;
+
+	label:before{border-color: @colorState_disable}
+	label:after {background  : @themeColor_1}
+
+	& when (@firstLoad = true){
+		label{
+			position: relative;
+			display : block;
+			//width   : @size;
+			height  : @size;
+			cursor  : pointer;
+			padding-left: @size + 5px;
+			line-height: @size;
+			&:after,
+			&:before{
+				content : '';
+				position: absolute;
+				top     : 0;
+				left    : 0;
+				display : block;
+				.rounded(50%);
+			}
+			&:before{
+				height      : @size;
+				width       : @size;
+				border-width: @border;
+				border-style: solid;
+				box-sizing  : border-box;
+			}
+			&:after{
+				width : 0;
+				height: 0;
+				margin: @size / 2;
+				.transition(@time: 0.25s);
+			}
+		}
+		input{
+			display: none;
+			&:checked + label:after{
+				margin: (@size - @bullet) / 2;
+				width : @bullet;
+				height: @bullet;
+			}
+		}
+	}
+}
+
+/*
+# CheckBox
 ```
 <div class="form-check">
-	<input id="check-4" type="checkbox">
-	<label for="check-4"></label>
+	<input id="CB-1" type="checkbox" checked>
+	<label for="CB-1"></label>
 </div>
 
 <div class="form-check">
-	<input id="check-5" type="checkbox" checked>
-	<label for="check-5"></label>
+	<input id="CB-2" type="checkbox">
+	<label for="CB-2"></label>
+</div>
+
+<div class="form-check">
+	<input id="CB-3" type="checkbox">
+	<label for="CB-3"></label>
+</div>
+```
+*/
+.form-check{
+	@size      : @inputHeight;
+	@border    : @size * 0.15;
+	@bullet_ini: @size * 0;
+	@bullet_end: @size * 0.7;
+
+	label:before{border-color: @colorState_disable}
+	label:after {background  : @themeColor_1}
+
+	& when (@firstLoad = true){
+		label{
+			position: relative;
+			display : block;
+			width   : @size;
+			height  : @size;
+			cursor  : pointer;
+			&:after,
+			&:before{
+				content : '';
+				position: absolute;
+				display : block;
+				.rounded(50%);
+			}
+			&:before{
+				top         : 0;
+				left        : 0;
+				height      : @size;
+				width       : @size;
+				border-width: @border;
+				border-style: solid;
+				box-sizing  : border-box;
+			}
+			&:after{
+				top   : 50%;
+				left  : 50%;
+				margin: (-@bullet_ini / 2);
+				width : @bullet_ini;
+				height: @bullet_ini;
+				.transition(@time: 0.2s);
+			}
+		}
+		input{
+			display: none;
+			&:checked + label:after{
+				margin: (-@bullet_end / 2);
+				width : @bullet_end;
+				height: @bullet_end;
+			}
+		}
+	}
+}
+
+/*
+# CheckBox - Icon
+```
+<div class="form-check-icon">
+	<input id="CBI-1" type="checkbox" checked>
+	<label for="CBI-1"></label>
+</div>
+
+<div class="form-check-icon">
+	<input id="CBI-2" type="checkbox">
+	<label for="CBI-2"></label>
+</div>
+
+<div class="form-check-icon">
+	<input id="CBI-3" type="checkbox">
+	<label for="CBI-3"></label>
+</div>
+```
+*/
+.form-check-icon{
+	@size : @inputHeight;
+
+	& when (@fontAwesome = true) {
+		label:before{color: @colorState_disable}
+		label:after {color: @themeColor_1}
+
+		& when (@firstLoad = true){
+			label{
+				position       : relative;
+				display        : block;
+				width          : @size;
+				height         : @size;
+				cursor         : pointer;
+				transform-style: preserve-3d;
+				.transition(@property: transform;);
+				&:after,
+				&:before{
+					position           : absolute;
+					top                : 0;
+					left               : 0;
+					bottom             : 0;
+					right              : 0;
+					text-align         : center;
+					display            : block;
+					font-size          : @size;
+					backface-visibility: hidden;
+					.font_icons();
+				}
+				&:before{
+					content: "\f057";
+				}
+				&:after{
+					content  : "\f058";
+					transform: translate3d(0, 0, 0) rotateY(180deg);
+				}
+			}
+			input{
+				display: none;
+				&:checked + label{
+					transform: translate3d(0, 0, 0) rotateY(180deg);
+				}
+			}
+		}
+	}
+}
+
+/*
+# Switch
+```
+<div class="form-switch">
+	<input id="switch-4" type="checkbox">
+	<label for="switch-4"></label>
+</div>
+
+<div class="form-switch">
+	<input id="switch-5" type="checkbox" checked>
+	<label for="switch-5"></label>
 </div>
 ```
 
 # Check (texted)
 ```
-<div class="form-check texted">
-	<input id="check-6" type="checkbox">
-	<label for="check-6"></label>
+<div class="form-switch texted">
+	<input id="switch-6" type="checkbox">
+	<label for="switch-6"></label>
 </div>
 
-<div class="form-check texted">
-	<input id="check-7" type="checkbox" checked>
-	<label for="check-7"></label>
+<div class="form-switch texted">
+	<input id="switch-7" type="checkbox" checked>
+	<label for="switch-7"></label>
 </div>
 ```
 */
-.form-check{
+.form-switch{
 	@height         : @inputHeight;
 	@width          : @height * 2;
 	@ball-height    : @height * 0.8;
@@ -103,7 +330,6 @@
 			}
 		}
 	}
-
 
 	&.texted input[type="checkbox"]{
 		& + label{
