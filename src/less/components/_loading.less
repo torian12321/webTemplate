@@ -1,0 +1,98 @@
+/*
+## Loading
+```
+<div class="loading"></div>
+```
+
+## Watch
+```
+<div class="loading watch"></div>
+```
+
+## Hydrogen
+```
+<div class="loading hydrogen"></div>
+```
+
+## Ball
+```
+<div class="loading ball"></div>
+```
+*/
+.loading{
+	@color_main: @themeColor_2;
+	@color_sec : @themeColor_1;
+
+	font-size: 20px;
+
+	position : relative;
+	width    : 10em;
+	height   : 10em;
+	overflow : hidden;
+	&:after,
+	&:before{
+		content   : '';
+		display   : block;
+		position  : absolute;
+		background: @color_main;
+	}
+
+	&.ball{
+		border: 0.5em solid @color_main;
+
+		.rounded(50%);
+		&:after{
+			top        : 50%;
+			left       : 50%;
+			margin-left: -0.5em;
+			height     : 1em;
+			width      : 1em;
+			.rounded(50%);
+		}
+	}
+	&.hydrogen,
+	&.orbit{
+		overflow: visible;
+		border: 0.25em solid @color_main;
+		.rounded(50%);
+		.animation_rotate(2s);
+		&:after{
+			@size: 1.5em;
+
+			top        : -@size / 2;
+			left       : 50%;
+			margin-left: -@size / 2;
+			height     : @size;
+			width      : @size;
+			.rounded(50%);
+		}
+	}
+	&.watch{
+		overflow: hidden;
+		border: 0.25em solid @color_main;
+		.rounded(50%);
+
+		&:after,
+		&:before{
+			@size: 0.5em;
+
+			top        : 50%;
+			left       : 50%;
+			margin-left: -@size / 2;
+			width      : @size;
+			.rounded(0 0 1em 1em);
+			.axis_origin(@x-axis: @size / 2, @y-axis:0);
+		}
+		&:before{
+			height: 45%;
+			.animation_rotate(1s);
+		}
+		&:after{
+			height: 20%;
+			.animation_rotate(12s);
+		}
+	}
+}
+
+
+
