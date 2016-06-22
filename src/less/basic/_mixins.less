@@ -45,11 +45,14 @@
 }
 .rotate(@angle: 90deg, @x-axis: 0, @y-axis:0){
 	-ms-transform           : rotate(@angle);       /* IE 9 */
-	-ms-transform-origin    : @x-axis @y-axis;      /* IE 9 */
-
 	-webkit-transform       : rotate(@angle);       /* Chrome, Safari, Opera */
-	-webkit-transform-origin: @x-axis @y-axis; 		/* Chrome, Safari, Opera */
 	transform               : rotate(@angle);
+
+	.axis_origin(@x-axis, @y-axis)	;
+}
+.axis_origin(@x-axis: 0, @y-axis:0){
+	-ms-transform-origin    : @x-axis @y-axis;      /* IE 9 */
+	-webkit-transform-origin: @x-axis @y-axis; 		/* Chrome, Safari, Opera */
 	transform-origin        : @x-axis @y-axis;
 }
 .rotate(@angle: 90deg){

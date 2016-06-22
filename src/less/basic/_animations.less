@@ -1,0 +1,9 @@
+
+.animation_rotate(@time: 5s, @times: infinite){
+	-webkit-animation:spin @time linear @times;
+	-moz-animation   :spin @time linear @times;
+	animation        :spin @time linear @times;
+}
+@-moz-keyframes spin 	{ 100% { -moz-transform   : rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin 		{ 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
