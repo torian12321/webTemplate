@@ -34,9 +34,10 @@
 </div>
 ```
 */
-.form-input{
+.form-input,
+.form-search.labeled{
 	position: relative;
-	padding :  @inputHeight 0 10px;
+	padding :  @inputHeight 0 0px;
 
 	label{
 		position   : absolute;
@@ -50,7 +51,38 @@
 	textarea:focus + label,
 	input.filled + label,
 	textarea.filled + label{
-		top: -5px;
+		top: 0;
+	}
+}
+
+/*
+## Search field
+```
+<div class="form-search" style="width: 200px;">
+	<input name="search-2" type="text">
+</div>
+
+<div class="form-search labeled" style="width: 200px;">
+	<input name="search-2" type="text">
+	<label for="search-2">Search</label>
+</div>
+
+```
+*/
+.form-search{
+	position: relative;
+	input{
+		width        : 100%;
+		padding-right: 30px;
+	}
+	&:after{
+		position   : absolute;
+		content    : '\f002';
+		font-family: FontAwesome;
+		right      : 10px;
+		bottom     : 10px;
+		color      : @themeColor_1;
+		.transition(color);
 	}
 }
 
@@ -573,6 +605,7 @@
 		<option value="3">Option C</option>
 		<option value="4">Option D</option>
 	</select>
+	<div class="arrow"></div>
 </div>
 ```
 */
@@ -585,15 +618,24 @@
 	line-height: @inputHeight;
 	overflow   : hidden;
 	.rounded(@BRadious);
+	select{
+		padding: 0 20px 0 10px;
+	}
 	// Arrow
-	&::after {
-		content       : '\25BC';
-		position      : absolute;
-		top           : 0;
-		right         : 0;
-		bottom        : 0;
-		padding       : 0 1em;
-		color         : @fontColor_white;
-		pointer-events: none;
+	& when (@fontAwesome = true){
+		.arrow:after{
+			content       : '\f107';
+			position      : absolute;
+			top           : 0;
+			right         : 10px;
+			bottom        : 0;
+			font-size     : 20px;
+			color         : @fontColor_white;
+			pointer-events: none;
+			.font_icons()
+		}
+		select:hover:focus + .arrow:after{
+			content: '\f106';
+		}
 	}
 }
