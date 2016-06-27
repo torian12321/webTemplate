@@ -31,24 +31,30 @@ Put your mouse hover the text
 		}
 	}
 	&.arrowed{
-		@arrow_size: 20px;
+		@arrow_size: 1em;
 
 		position: relative;
 		&:after{
-			@size: 20px;
-
-			content  : '>';
-			position : absolute;
-			right    : -16px;
-			top      : -2px;
-			font-size: @arrow_size;
+			position   : absolute;
+			right      : -@arrow_size * 0.75;
+			line-height: @arrow_size;
+			font-size  : @arrow_size;
 			.transition();
+
+			& when (@fontAwesome = true) {
+				content: '\f105';
+				top    : 1px;
+				.font_icons();
+			}
+			& when (@fontAwesome = false) {
+				content: '>';
+				top    : 3px;
+			}
 		}
 		&:hover:after{
-			right: -@arrow_size;
+			right: -@arrow_size * 1.5;
 		}
 	}
-
 
 	&.preview{
 		position: relative;

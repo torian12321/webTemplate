@@ -1,0 +1,78 @@
+ /*
+## Acordion
+```
+<div class="accordions">
+	<div class="accordion active">
+		<div class="acc-header fixie"></div>
+		<div class="acc-body fixie"></div>
+	</div>
+	<div class="accordion">
+		<div class="acc-header fixie"></div>
+		<div class="acc-body fixie"></div>
+	</div>	
+	<div class="accordion">
+		<div class="acc-header fixie"></div>
+		<div class="acc-body fixie"></div>
+	</div>	
+	<div class="accordion">
+		<div class="acc-header fixie"></div>
+		<div class="acc-body fixie"></div>
+	</div>			
+</div>
+```
+*/
+
+
+
+
+.accordion{
+	background: @white;
+	overflow  : hidden;
+	.acc-header{
+		position  : relative;
+		width     : 100%;
+		padding   : 10px 16px;
+		background: @themeColor_2;
+		cursor    : pointer;
+		.smart-text-color(@themeColor_2);
+		&:before,
+		&:after{
+			@size: 16px;
+
+			content   : '';
+			position  : absolute;
+			width     : @size;
+			height    : @size * 0.2;
+			background: @white;
+			right     : 20px;
+			top       : 18px;
+			.rounded(@size);
+			.transition(transform);
+		}
+		&:after{
+			.rotate(90deg);
+		}
+	}
+	.acc-body{
+		position  : relative;
+		background: lighten(@themeColor_2, 20%);
+		height    : 0px;
+		.transition();
+		& > div{
+			padding: 20px 10px;
+		}
+
+	}
+
+	&.active{
+		.acc-header{
+			&:before,
+			&:after{
+				.rotate(180deg);
+			}
+		}
+		.acc-body{
+			height: auto;
+		}
+	}
+}

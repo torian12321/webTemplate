@@ -4,95 +4,103 @@
 <div class="loading"></div>
 ```
 
-## Watch
+## Ring
 ```
-<div class="loading watch"></div>
-```
-
-## Hydrogen
-```
-<div class="loading hydrogen"></div>
+<div class="loading o"></div>
 ```
 
-## Ball
+## Empty
 ```
-<div class="loading ball"></div>
+<div class="loading empty"></div>
+```
+
+## Ring + Empty
+```
+<div class="loading o empty"></div>
+```
+
+## Orbits
+```
+<div class="loading orbits"></div>
+```
+
+## Orbits + empty
+```
+<div class="loading orbits empty"></div>
+```
+
+## Ruby
+So fancy!!
+```
+<div class="loading ruby"></div>
 ```
 */
+
+
 .loading{
 	@color_main: @themeColor_2;
 	@color_sec : @themeColor_1;
+	@size      : 7em;
 
-	font-size: 20px;
-
-	position : relative;
-	width    : 10em;
-	height   : 10em;
-	overflow : hidden;
-	&:after,
-	&:before{
-		content   : '';
-		display   : block;
-		position  : absolute;
-		background: @color_main;
+	position  : relative;
+	width     : 0;
+	height    : 0;
+	background: transparent;
+	font-size : 10px;
+	.rounded(50%);
+	.animation_rotate(1.5s);
+	&,
+	&:before,
+	&:after{
+		border             : @color_main (@size * 0.25) solid;
+		border-top-color   : @color_sec;
+		border-bottom-color: @color_sec; 
 	}
 
-	&.ball{
-		border: 0.5em solid @color_main;
-
-		.rounded(50%);
+	&.o,
+	&.orbits{
+		width : @size;
+		height: @size;
+	}
+	&.empty{
+		&,
+		&:before,
 		&:after{
-			top        : 50%;
-			left       : 50%;
-			margin-left: -0.5em;
-			height     : 1em;
-			width      : 1em;
-			.rounded(50%);
+			border-top-color   : transparent;
+			border-bottom-color: transparent; 
 		}
 	}
-	&.hydrogen,
-	&.orbit{
-		overflow: visible;
-		border: 0.25em solid @color_main;
-		.rounded(50%);
-		.animation_rotate(2s);
-		&:after{
-			@size: 1.5em;
 
-			top        : -@size / 2;
-			left       : 50%;
-			margin-left: -@size / 2;
-			height     : @size;
-			width      : @size;
-			.rounded(50%);
-		}
+	&.ruby{
+		border-top-color   : darken(@red, 10%);
+		border-right-color : @red;
+		border-left-color  : darken(@red, 30%);
+		border-bottom-color: lighten(@red, 20%); 
+		.rounded(0);
 	}
-	&.watch{
-		overflow: hidden;
-		border: 0.25em solid @color_main;
-		.rounded(50%);
+	&.orbits{
+		@ring_width: @size * 0.2;
 
 		&:after,
 		&:before{
-			@size: 0.5em;
+			content : '';
+			position: absolute;
+			top     : 50%;
+			left    : 50%;
+			height  : 0;
+			width   : 0;
+			margin  : -@ring_width;
 
-			top        : 50%;
-			left       : 50%;
-			margin-left: -@size / 2;
-			width      : @size;
-			.rounded(0 0 1em 1em);
-			.axis_origin(@x-axis: @size / 2, @y-axis:0);
-		}
-		&:before{
-			height: 45%;
-			.animation_rotate(1s);
+			border-width: @ring_width; 
+			.rounded(50%);
+			.animation_rotate(10s);
 		}
 		&:after{
-			height: 20%;
-			.animation_rotate(12s);
+			@distance : @size * 1.2;
+
+			width : @distance;
+			height: @distance;
+			margin: -(@distance - (2*@ring_width));
 		}
 	}
 }
-
-
-
