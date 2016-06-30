@@ -1,36 +1,18 @@
-// Import libraries with koala
-// @koala-append "lib/jquery.js"
-// @koala-append "lib/parallax.js"
-// @koala-append "lib/waypoint.js"
-
-
-
 var
 _doc = document,
 _win = window;
 
-checkJquery();
 
-
-function checkJquery (method) {
-    if (_win.jQuery){
-    	ini();
-    }else{
-        setTimeout(function() { checkJquery(method) }, 50);
-    }
-}
-
+ini();
 var ini = function(){
 	$(_doc).ready(function(){
 		smoothScrolling();
 		sayHello();
-		// @koala-append "_forms.js"
 	});
 	$(_win).resize(function(){
 
 	});
 }
-
 
 function sayHello(){
 	//http://codepen.io/SamEureka/pen/GZVJvE?editors=0010
