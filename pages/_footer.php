@@ -13,7 +13,13 @@
 	};
 </script>
 
-<script type="text/javascript" src="src/js/func.min.js"></script>
+
+<script
+	src      ="<?php echo $GLOBALS['jsDir']; ?>lib/require-2.2.0.js"
+	data-main="<?php echo $GLOBALS['jsDir']; ?>require-config.js">
+</script>
+
+
 </html>
 
 

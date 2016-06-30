@@ -38,10 +38,18 @@
 }
 
 .transform(@transformation){
+	-moz-transform   : @transformation;
 	-ms-transform    : @transformation; /* IE 9 */
 	-webkit-transform: @transformation; /* Chrome, Safari, Opera */
 	-o-transform     : @transformation;
 	transform        : @transformation;
+}
+.transform-origin(@origin: center center){
+	-webkit-transform-origin: @origin;
+	-moz-transform-origin   : @origin;
+	-ms-transform-origin    : @origin;
+	-o-transform-origin     : @origin;
+	transform-origin        : @origin;
 }
 .rotate(@angle: 90deg, @x-axis: 50%, @y-axis: 50%){
 	-ms-transform           : rotate(@angle);       /* IE 9 */

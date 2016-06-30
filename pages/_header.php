@@ -22,8 +22,8 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $GLOBALS['themeColor']; ?>">
 
 	<title><?php echo $GLOBALS['projectName']; ?></title>
-	<link rel="icon" type="image/png" href="<?php echo $GLOBALS['projectPath']; ?>favicon.png">
-	<link rel="stylesheet" href="src/css/style.min.css" type="text/css">
+	<link rel="icon" type="image/png" href="<?php echo $GLOBALS['iconsDir']; ?>favicon.png">
+	<link rel="stylesheet" href="<?php echo $GLOBALS['cssDir']; ?>style.css" type="text/css">
 
 </head>
 

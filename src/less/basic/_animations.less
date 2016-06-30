@@ -1,9 +1,20 @@
-
-.animation_rotate(@time: 5s, @times: infinite){
-	-webkit-animation:spin @time linear @times;
-	-moz-animation   :spin @time linear @times;
-	animation        :spin @time linear @times;
+//Spin
+.animation_rotate(@time: 5s; @times: infinite; @speedCurve: linear){
+	-webkit-animation: spin @time @speedCurve @times;
+	-moz-animation   : spin @time @speedCurve @times;
+	animation        : spin @time @speedCurve @times;
 }
-@-moz-keyframes spin 	{ 100% { -moz-transform   : rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin 		{ 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@-moz-keyframes    	spin { 100% { -moz-transform   : rotate(360deg); } }
+@-webkit-keyframes 	spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes 			spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+//Blink
+.animation_blink(@time: 1s; @times: infinite; @speedCurve: ease-in 0s){
+	-webkit-animation: blink @time @speedCurve @times;
+	-moz-animation   : blink @time @speedCurve @times;
+	animation        : blink @time @speedCurve @times;
+}
+@-moz-keyframes    	blink { 0% { .opacity(0); } 100% { .opacity(1); } }
+@-webkit-keyframes 	blink { 0% { .opacity(0); } 100% { .opacity(1); } }
+@keyframes 			blink { 0% { .opacity(0); } 100% { .opacity(1); } }

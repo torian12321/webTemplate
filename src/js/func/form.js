@@ -19,7 +19,7 @@ function field_validate(field){
 	var isValid = true;
 
 	if(field.hasClass('mandatory')){
-		if(field.val() == ''){
+		if(field.val().trim() == ''){
 			isValid = false;
 		}else if(field.hasClass('mandatory-email')){
 			//email validation

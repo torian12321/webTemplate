@@ -40,7 +40,8 @@ Uncoment the php functions cache_open() on pages/_header.php cache_close() on pa
 Technologies
 ---------------
 
-- [jquery](https://jquery.com/)
-- [waypoint](http://imakewebthings.com/waypoints/)
+- [RequireJS](https://http://requirejs.org/)
+- [jQuery](https://jquery.com/)
+- [Waypoint](http://imakewebthings.com/waypoints/)
 - [LESS](http://lesscss.org/)
 - [KaleyStyleguide](https://github.com/thomasdavis/kaleistyleguide)
