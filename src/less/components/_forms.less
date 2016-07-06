@@ -4,22 +4,22 @@
 ```
 <form autocomplete="off">
 	<div class="form-input">
-		<input id="input-1" type="text">
+		<input id="input-1" type="text" required>
 		<label for="input-1">Name</label>
 	</div>
 
 	<div class="form-input">
-		<input id="input-2" type="text">
+		<input id="input-2" type="text" required>
 		<label for="input-2">Surname</label>
 	</div>
 
 	<div class="form-input">
-		<input id="input-3" type="text">
+		<input id="input-3" type="text" required>
 		<label for="input-3">Nick</label>
 	</div>
 
 	<div class="form-input">
-		<input id="input-4" type="password">
+		<input id="input-4" type="password" required>
 		<label for="input-4">password</label>
 	</div>
 </form>
@@ -28,14 +28,14 @@
 ```
 <div>
 	<div class="form-input">
-		<textarea id="textarea-1"></textarea>
+		<textarea id="textarea-1" required></textarea>
 		<label for="textarea-1">Description</label>
 	</div>
 </div>
 ```
 */
 .form-input,
-.form-search.labeled{
+.form-search{
 	position: relative;
 	padding :  @inputHeight 0 0px;
 
@@ -47,11 +47,13 @@
 		color      : @themeColor_1;
 		.transition();
 	}
-	input:focus + label,
-	textarea:focus + label,
-	input.filled + label,
-	textarea.filled + label{
-		top: 0;
+	input,
+	textarea{
+		&.filled + label,
+		&:focus + label,
+		&:valid + label{
+			top: 0;
+		}
 	}
 }
 
@@ -62,8 +64,8 @@
 	<input name="search-2" type="text">
 </div>
 
-<div class="form-search labeled" style="width: 200px;">
-	<input name="search-2" type="text">
+<div class="form-search" style="width: 200px;">
+	<input name="search-2" type="text" required>
 	<label for="search-2">Search</label>
 </div>
 
@@ -91,20 +93,29 @@
 # Radio
 ```
 <div>
-
     <div class="form-radio">
 		<input type="radio" name="radios" id="radio-1" checked>
 		<label for="radio-1">Option 1</label>
 	</div>
 
-	 <div class="form-radio">
+	<div class="form-radio">
 		<input type="radio" name="radios" id="radio-2">
 		<label for="radio-2">Option 2</label>
 	</div>
 
-	 <div class="form-radio">
+	<div class="form-radio">
 		<input type="radio" name="radios" id="radio-3">
 		<label for="radio-3">Option 3</label>
+	</div>
+
+	<div class="form-radio">
+		<input type="radio" name="radios" id="radio-4">
+		<label for="radio-4">Option 4</label>
+	</div>
+
+	<div class="form-radio">
+		<input type="radio" name="radios" id="radio-5">
+		<label for="radio-5">Option 5</label>
 	</div>
 
 </div>
@@ -116,17 +127,18 @@
 	@bullet: @size * 0.55;
 
 	label:before{border-color: @colorState_disable}
-	label:after {background  : @themeColor_1}
+	input         + label:hover:after{background: @colorState_disable;}
+	input:checked + label:after      {background: @themeColor_1; }
+
 
 	& when (@firstLoad = true){
 		label{
-			position: relative;
-			display : block;
-			//width   : @size;
-			height  : @size;
-			cursor  : pointer;
+			position    : relative;
+			display     : block;
+			height      : @size;
+			cursor      : pointer;
 			padding-left: @size + 5px;
-			line-height: @size;
+			line-height : @size;
 			&:after,
 			&:before{
 				content : '';
@@ -147,11 +159,12 @@
 				width : 0;
 				height: 0;
 				margin: @size / 2;
-				.transition(@time: 0.25s);
+				.transition(@time: 0.3s);
 			}
 		}
 		input{
 			display: none;
+					  + label:hover:after,
 			&:checked + label:after{
 				margin: (@size - @bullet) / 2;
 				width : @bullet;
@@ -639,3 +652,52 @@
 		}
 	}
 }
+
+
+/*
+## Range
+NOTE: not supported in Internet Explorer 9 and earlier versions.
+```
+	<input type="range" min="0" value="50" max="100" step="1">
+```
+*/
+
+@range_track_height: 5px;
+@range_thumb_size  : 20px;
+.form-range(){
+	border            : none;
+	-webkit-appearance: none;
+	width             : 100%;
+	display           : block;
+	cursor            : pointer;
+	.shadow(none);
+}
+
+.form-range-track(){
+	height       : @range_track_height;
+	background   : @themeColor_2;
+	.rounded(@range_track_height);
+}
+
+.form-range-thumb(){
+	-webkit-appearance: none;
+	margin-top        : (@range_track_height / 2) - (@range_thumb_size / 2);
+	height            : @range_thumb_size;
+	width             : @range_thumb_size;
+	background        : @themeColor_1;
+	//border            : @themeColor_2 @range_track_height solid ;
+	.rounded(50%);
+}
+
+input[type=range]{
+  .form-range();
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	.form-range-track();
+}
+
+input[type=range]::-webkit-slider-thumb {
+  .form-range-thumb();
+}
+

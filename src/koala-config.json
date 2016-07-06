@@ -24,7 +24,7 @@
 
 		// Outputs filename and line numbers, which will output the information within a fake media query which is compatible with the SASS format.
 		"debugInfo"  : false,
-		"strictMath" : true,
+		"strictMath" : false,
 		"strictUnits": true,
 
         // Create sourcemap files next to the generated CSS files
