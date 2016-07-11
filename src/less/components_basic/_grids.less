@@ -125,7 +125,7 @@ Use row-spacing instead of just row to add padding to the columns
 		}
 		.col(@index, @list) when (@index =< @grid-columns) { // general
 			@item: ~".@{class}-@{index}";
-			.col((@index + 1), ~"@{list}, .row-spacing @{item}");
+			.col((@index + 1), ~"@{list}, .row-spacing > @{item}");
 		}
 		.col(@index, @list) when (@index > @grid-columns) { // terminal
 			@{list} {
