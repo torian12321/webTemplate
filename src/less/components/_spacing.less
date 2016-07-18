@@ -9,8 +9,8 @@
   margin-right: auto;
 }
 
-.generate-margins(10, 10);
-.generate-paddings(10, 10);
+.generate-margins(10, 10)  !important;
+.generate-paddings(10, 10) !important;
 
 
 
@@ -27,10 +27,10 @@
 .generate-paddings(@n, @step, @i: 0) when (@i =< @n) {
 	@value: @i * @step;
 
-	.p-@{value} 	{margin       : (@value * 1px); }
-	.p-t-@{value} 	{margin-top   : (@value * 1px); }
-	.p-r-@{value} 	{margin-right : (@value * 1px); }
-	.p-b-@{value} 	{margin-bottom: (@value * 1px); }
-	.p-l-@{value} 	{margin-left  : (@value * 1px); }
+	.p-@{value} 	{padding       : (@value * 1px); }
+	.p-t-@{value} 	{padding-top   : (@value * 1px); }
+	.p-r-@{value} 	{padding-right : (@value * 1px); }
+	.p-b-@{value} 	{padding-bottom: (@value * 1px); }
+	.p-l-@{value} 	{padding-left  : (@value * 1px); }
 	.generate-paddings(@n, @step, (@i + 1));
 }

@@ -12,19 +12,18 @@
 	@import "basic/_reset.less";
 	@import "basic/_mixins.less";
 	@import "basic/_animations.less";
-	@import "basic/_font-awesome.less";
 }
 
 /* ### Basic Components ### */
-@import "components_basic/_fonts.less";
-@import "components_basic/_links.less";
-@import "components_basic/_tables.less";
-@import "components_basic/_buttons.less";
-@import "components_basic/_inputs.less";
-@import "components_basic/_selects.less";
-@import "components_basic/_tabs.less";
-@import "components_basic/_grids.less";
-@import "components_basic/_spacing.less";
+@import "components/_fonts.less";
+@import "components/_links.less";
+@import "components/_tables.less";
+@import "components/_buttons.less";
+@import "components/_inputs.less";
+@import "components/_selects.less";
+@import "components/_tabs.less";
+@import "components/_grids.less";
+@import "components/_spacing.less";
 
 /* ### Components ### */
 @import "components/_forms.less";
@@ -39,9 +38,9 @@
 
 
 /* ### Advance Components ### */
-@import "components_advance/_cardNews.less";
-@import "components_advance/_cardUsers.less";
-@import "components_advance/_cardProducts.less";
+@import "components/_cardNews.less";
+@import "components/_cardUsers.less";
+@import "components/_cardProducts.less";
 
 
 //------------------
@@ -62,4 +61,12 @@
 	@media (min-width: @bp_lg) {
 		@import "viewports/_screen_lg.less";
 	}
+}
+//------------------
+//---- Libraries ---
+//------------------
+.libraries();
+.libraries(){
+	@import "libs/_font-awesome.less";
+	@import "libs/_waves.less";
 }
