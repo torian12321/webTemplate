@@ -1,12 +1,30 @@
 define(function (require) {
-    // Load any app-specific modules
-    // with a relative require call,
-    // like:
-    var messages = require('./messages');
+	var $ = require('jquery');
 
-    // Load library/vendor modules using
-    // full IDs, like:
-    var print = require('print');
+    function element_selector(element, data_selector){
+		switch(element.data(data_selector)) {
+	    case 'this':
+	        return element;
+	        break;
+	    case 'parent':
+	       	return element.parent();
+	        break;
+	    default:
+	    	return $(element.data(data_selector));
+		}
+	};
 
-    print(messages.getHello());
+	$('[data-activate]').click(function(){
+		element_selector($(this), 'activate').toggleClass('active');
+	});
+
+	$('[data-show-hide]').click(function(){
+		element_selector($(this), 'show-hide').toggleClass('hidde');
+	});
+	$('[data-hidde]').click(function(){
+		element_selector($(this), 'hidde').addClass('hidde');
+	});
+	$('[data-show]').click(function(){
+		element_selector($(this), 'show').addClass('show');
+	});
 });
