@@ -1,8 +1,6 @@
 <?php
 	require_once __dir__ . '/../src/php/init.php';
-
-	//if open/close, do the samen at _footer.php
-	//cache_open();
+	if($GLOBALS['cache']){ cache_open(); }
 ?>
 
 
@@ -24,7 +22,6 @@
 	<title><?php echo $GLOBALS['projectName']; ?></title>
 	<link rel="icon" type="image/png" href="<?php echo $GLOBALS['iconsDir']; ?>favicon.png">
 	<link rel="stylesheet" href="<?php echo $GLOBALS['cssDir']; ?>style.css" type="text/css">
-
 </head>
 
 

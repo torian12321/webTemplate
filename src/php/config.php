@@ -30,4 +30,7 @@ $GLOBALS['themeColor']  = '#163b63';
 //$GLOBALS['contact_twitter'] = '';
 //$GLOBALS['contact_mail']    = '';
 
+
+//http://www.catswhocode.com/blog/how-to-create-a-simple-and-efficient-php-cache
+$GLOBALS['cache']  = false;
 ?>

@@ -1,7 +1,7 @@
 <?php
 	$requireConfig = isset($requireConfig) ?
 		$requireConfig :
-		$GLOBALS['jsDir'] . 'require-config.js';
+		$GLOBALS['jsDir'] . 'common.js';
 ?>
 
 	<script
@@ -13,7 +13,4 @@
 </html>
 
 
-<?php
-	//if open/close, do the samen at _header.php
-	//cache_close();
-?>
+<?php if($GLOBALS['cache']){ cache_close(); } ?>
