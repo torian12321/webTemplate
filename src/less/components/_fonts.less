@@ -41,13 +41,37 @@
 </ol>
 ```
 
-## Paragraps
+## Aligns
 Different align examples
 ```
 	<p class="fixie txt-l"><p>
 	<p class="fixie txt-c"><p>
 	<p class="fixie txt-r"><p>
 	<p class="fixie txt-j"><p>
+```
+
+## Font Styles
+Font styles
+```
+	<p class="fixie txt-light"><p>
+	<p class="fixie txt-regular"><p>
+	<p class="fixie txt-bold"><p>
+	<p class="fixie txt-black"><p>
+	<p class="fixie txt-italic"><p>
+```
+
+## Colors
+Main and secondary colors
+```
+	<p class="fixie txt-main"><p>
+	<p class="fixie txt-sec"><p>
+```
+
+## Case styles
+```
+	<p class="fixie txt-upp">Upercase<p>
+	<p class="fixie txt-low">Lowercase<p>
+	<p class="fixie txt-cap">Capitalize<p>
 ```
 */
 
@@ -115,17 +139,28 @@ ol li{
 	.smart-text-color(@themeColor_BG);
 }
 
+// Color
+.txt-main{ color: @themeColor_1;}
+.txt-sec { color: @themeColor_2;}
+
 // Alignment
-.txt-j	{ text-align: justify;}
-.txt-c	{ text-align: center; }
-.txt-r	{ text-align: right; }
-.txt-l 	{ text-align: left; }
+.txt-j { text-align: justify;}
+.txt-c { text-align: center; }
+.txt-r { text-align: right; }
+.txt-l { text-align: left; }
 .txt-nowrap { white-space: nowrap; }
 
+// Font Style
+.txt-light  {.font-light();}
+.txt-regular{.font-regular();}
+.txt-bold   {.font-bold();}
+.txt-black  {.font-black();}
+.txt-italic {.font-italic();}
+
 // Transformation
-.txt-lowercase	{ text-transform: lowercase; }
-.txt-uppercase	{ text-transform: uppercase; }
-.txt-capitalize	{ text-transform: capitalize; }
+.txt-low { text-transform: lowercase; }
+.txt-upp { text-transform: uppercase; }
+.txt-cap { text-transform: capitalize; }
 
 // Test selected
 *::selection{
