@@ -1,7 +1,7 @@
 <?php
 	$requireConfig = isset($requireConfig) ?
 		$requireConfig :
-		$GLOBALS['jsDir'] . 'common.js';
+		$GLOBALS['jsDir'] . 'require-config.js';
 ?>
 
 	<script
