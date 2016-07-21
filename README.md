@@ -5,7 +5,7 @@ Basic web template to start a new page
 
 Use a php server to run the project
 
-To compile less and js files, use [Koala](koala http://koala-app.com/), drag the folder 'src' on it
+To compile less and js files, use [Koala](http://koala-app.com/), drag the folder 'src' on it
 
 
 Setup
