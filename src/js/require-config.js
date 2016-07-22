@@ -4,7 +4,7 @@
 // except for 'app' ones, which are in a sibling
 // directory.
 requirejs.config({
-	baseUrl: '/js/lib',
+	baseUrl: '../../webTemplate/src/js/lib',
 	paths  : {
 		angular : [
 			'https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min',
@@ -17,7 +17,7 @@ requirejs.config({
 		parallax: 'parallax',
 		waypoint: 'waypoint-v2.0.3',
 		htm5    : 'html5-v3.7.3',
-		app     : '../../webTemplate/src/js/app'
+		app     : '../app'
 	},
     shim: {
         parallax: {
