@@ -1,1 +1,1 @@
-<?php require_once __dir__ . '/pages/home.php'; ?>
+<?php require_once __dir__ . '/views/home.php'; ?>

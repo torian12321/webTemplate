@@ -1,7 +1,9 @@
 define(function (require) {
-	var $ = require('jquery');
+	var 
+	$       = require('jquery'),
+	cookies = {};
 
-	function setCookie(cname, cvalue, exdays) {
+	cookies.setCookie = function(cname, cvalue, exdays) {
 		//    var d = new Date();
 		//    d.setTime(d.getTime() + (exdays*24*60*60*1000));
 		//    var expires = "expires="+d.toUTCString();
@@ -9,7 +11,7 @@ define(function (require) {
 	}
 
 
-	function getCookie(cname) {
+	cookies.getCookie = function(cname){
 	    var name = cname + "=";
 	    var ca = document.cookie.split(';');
 	    for(var i=0; i<ca.length; i++) {
@@ -21,7 +23,7 @@ define(function (require) {
 	}
 
 
-	function resetCookies(){
+	cookies.resetCookies = function(){
 		$('input[type="text"], input[type="tel"], select').each(function(){
 			$(this).val("");
 			setCookie(this.id, "" );
@@ -33,5 +35,7 @@ define(function (require) {
 			setCookie($(this).attr('id'), "");
 		});
 	}
+
+	return cookies;
 
 });
