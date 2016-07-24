@@ -67,6 +67,8 @@
 //------------------
 .libraries();
 .libraries(){
-	@import "libs/_font-awesome.less";
-	@import "libs/_waves.less";
+	& when (@firstLoad = true){
+		@import "libs/_font-awesome.less";
+		@import "libs/_waves.less";
+	}
 }
