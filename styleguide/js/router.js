@@ -22,6 +22,9 @@ define([
 			require(['views/style/page'], function (StylePage) {
 				var stylePage = Vm.create(appView, 'StylePage', StylePage, {style: style});
 				stylePage.render();
+
+        // Custom function from our main project.
+        require(['project_dir/app/main']);
 			});
 		});
 		router.on('route:defaultAction', function (actions) {
