@@ -50,3 +50,8 @@ Technologies
 - [Waypoint](http://imakewebthings.com/waypoints/)
 - [LESS](http://lesscss.org/)
 - [KaleyStyleguide](https://github.com/thomasdavis/kaleistyleguide)
+
+
+Autor
+---------------
+[Aitor](http://aitorpalomares.esy.es/)
