@@ -3,21 +3,25 @@ WebTemplate
 
 Basic web template to start a new page
 
+The templates uses [Progressive Web App](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android) principles
+
+SetingUp
+---------------
+
 Use a php server to run the project
+
+Change the path of the project on manifest.json
+
+```"start_path" : './'```
+
+
+Development phase
+---------------
 
 To compile less and js files, use [Koala](http://koala-app.com/), drag the folder 'src' on it
 
-The templates uses [Progressive Web App](https://developers.google.com/web/updates/2014/11/Support-for-installable-web-apps-with-webapp-manifest-in-chrome-38-for-Android) principles
 
-Setup
----------------
-
-Change the path of the project on src/php/config.php
-
-```$GLOBALS['projectPath'] = 'http://mywebsite.es';```
-
-
-Publication
+Implementation phase (publish)
 ---------------
 
 Whe publish the project:
@@ -27,15 +31,15 @@ Whe publish the project:
 
 **Styleguide:**
 
-If including styleguide folder, also add src/less/style.less
+If including styleguide folder, also add the less files 'src/less/*.less'
 
 
-Cache
----------------
+**Cache:**
 
-In case of an static page, when finish, cache the pages to create html pages.
+If we want to create static HTML files, when finish, cache the pages to dont use the PHP files.
 
-Uncoment the php functions cache_open() on pages/_header.php cache_close() on pages/_footer.php, then, visith each page on the browser.
+On 'src/php/config.php', set to true the cache property. Then, visith each page on the browser to 'render' the views
+```$GLOBALS['cache']  = true;```
 
 
 Technologies
