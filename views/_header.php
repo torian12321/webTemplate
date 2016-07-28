@@ -1,7 +1,4 @@
-<?php
-	require_once __dir__ . '/../src/php/init.php';
-	if($GLOBALS['cache']){ cache_open(); }
-?>
+<?php require_once __dir__ . '/../src/php/init.php'; ?>
 
 
 <!DOCTYPE html>
@@ -31,7 +28,7 @@
 
 	<link rel="manifest"   href="/manifest.json">
 	<link rel="icon"       type="image/png" href="<?php echo $GLOBALS['iconsDir']; ?>favicon.png">
-	<link rel="stylesheet" type="text/css" 	href="<?php echo $GLOBALS['cssDir']; ?>style.min.css">
+	<link rel="stylesheet" type="text/css" 	href="<?php echo $GLOBALS['cssDir']; ?>style.css">
 </head>
 
 

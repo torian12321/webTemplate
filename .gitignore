@@ -1,2 +1,4 @@
-/src/css/*
-/src/js/func.min.js
+node_modules/
+src/css/*
+src/js/app.js
+src/js/libs.js

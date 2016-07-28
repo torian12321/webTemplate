@@ -28,7 +28,4 @@ $GLOBALS['themeColor']  = $manifest_data['theme_color'];
 //$GLOBALS['contact_phone']   = '';
 //$GLOBALS['contact_twitter'] = '';
 //$GLOBALS['contact_mail']    = '';
-
-//http://www.catswhocode.com/blog/how-to-create-a-simple-and-efficient-php-cache
-$GLOBALS['cache']  = false;
 ?>

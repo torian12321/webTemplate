@@ -34,17 +34,10 @@ Whe publish the project:
 If including styleguide folder, also add the less files 'src/less/*.less'
 
 
-**Cache:**
-
-If we want to create static HTML files, when finish, cache the pages to dont use the PHP files.
-
-On 'src/php/config.php', set to true the cache property. Then, visith each page on the browser to 'render' the views
-```$GLOBALS['cache']  = true;```
-
-
 Technologies
 ---------------
 
+- [Gulp](http://gulpjs.com/)
 - [RequireJS](https://http://requirejs.org/)
 - [jQuery](https://jquery.com/)
 - [Waypoint](http://imakewebthings.com/waypoints/)
