@@ -28,7 +28,7 @@ function errorLog(error){
 // Javascript Tasks
 gulp.task('scripts', ['js_libs', 'js_app'], function () {
 	gulp.src(paths.js + '*.js')
-		.pipe(uglify())
+		.pipe(uglify({mangle: false}))
 		.on('error', errorLog)
 		.pipe(gulp.dest(paths.js));
 });
