@@ -18,20 +18,37 @@ Change the path of the project on manifest.json
 Development phase
 ---------------
 
-To compile less and js files, use [Koala](http://koala-app.com/), drag the folder 'src' on it
+All the web content than should be modified is located on **app** folder.
+
+Any page (HTML or PHP) should be located on **app** root folder, thel **views** folder is used for templates or components used for php, angular, etc.
 
 
-Implementation phase (publish)
+**Scripts and Style**
+
+To compile less and js 
+
+```gulp build```
+
+
+Additionaly, run wath to compile a new .js or .css file each time there is a change on the affected filed.
+
+```gulp watch```
+
+For more information on tasks, open **gulpfile.js**
+
+
+Distribution phase (publish)
 ---------------
 
-Whe publish the project:
-- From src/css just publis style.min.css
-- From src/func just publis func.min.js
-- Do not publish src/less
+To compile the distribution version of the site, on the root folder run in console:
 
-**Styleguide:**
+```gulp build-all```
 
-If including styleguide folder, also add the less files 'src/less/*.less'
+After this, all the content on 'dist' folder should be ready to directly copy into the server. In that version, php is compiled into .html, and *.js *.css and *.html are minified
+
+**NOTE**
+
+Some times it will be necessary to change manifest.json settings before run the code.
 
 
 Technologies

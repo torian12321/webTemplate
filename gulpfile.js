@@ -40,7 +40,7 @@ gulp.task('watch', function(){
 
 
 /*****************************************************/
-/*****************************************************/
+/*--------------------TASKS--------------------------*/
 /*****************************************************/
 function errorLog(error){
 	console.log('ERROR');
@@ -116,7 +116,6 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 	});
 	gulp.task('build_dist-scripts', ['scripts'], function(){
 		return gulp.src(paths.app + paths.js + '*.js')
-			//.pipe(uglify({mangle: false}))
 			.pipe(gulp.dest(paths.dist + paths.js));
 	});
 	gulp.task('build_dist-php2html', function(){
