@@ -25,17 +25,18 @@ var paths = {
 	views  : './views/'
 };
 
+
+// Main tasks
+gulp.task('build'    , ['scripts', 'styles']);
+gulp.task('build-all', ['build-dist']);
+
+
 // Watch tasks
 gulp.task('watch', function(){
 	gulp.watch(paths.app + paths.less  + '*.less', ['less_main']);
 	gulp.watch(paths.app + paths.less  + 'themes/*.less', ['less_themes']);
 	gulp.watch(paths.app + paths.jsApp + '*.js', ['js_app']);
 });
-
-// Main tasks
-gulp.task('build'    , ['scripts', 'styles']);
-gulp.task('build_all', ['build_dist']);
-
 
 
 /*****************************************************/
@@ -62,11 +63,15 @@ gulp.task('scripts', ['js_libs', 'js_app']);
 	gulp.task('js_app', function () {
 		return gulp.src(paths.app + paths.jsApp + '*.js')
 			.pipe(concat('app.js'))
+			.pipe(uglify({mangle: false}))
 			.pipe(gulp.dest(paths.app + paths.js));
 	});
 
 // Styles Tasks
-gulp.task('styles', ['less_main', 'less_themes']);
+gulp.task('styles', function () {
+	gulp.start('less_main');
+	gulp.start('less_themes');
+	});
 	gulp.task('less_main', function(){
 		return gulp.src(paths.app + paths.less + 'style.less')
 			.pipe(less())
@@ -82,56 +87,66 @@ gulp.task('styles', ['less_main', 'less_themes']);
 			.pipe(cleanCSS({compatibility: 'ie8'}))
 			.pipe(gulp.dest(paths.app + paths.css  + 'themes/'));
 	});
+	gulp.task('styles-remove', function(){
+		return gulp.src(paths.app + paths.css, {read: false})
+		    .pipe(clean({force: true}));
+		    console.log('Revmoved previous CSS files');
+	});
+
+
+
 
 
 // Build the distribution version
-gulp.task('build_dist', ['build', 'build_dist_clean'], function(){
-	gulp.src(paths.app + paths.css + '**/*.css')
-		.pipe(gulp.dest(paths.dist + paths.css));
-		console.log('Copied and minified: Style files');
-
-	gulp.src(paths.app + paths.js + '*.js')
-		.pipe(uglify({mangle: false}))
-		.on('error', errorLog)
-		.pipe(gulp.dest(paths.dist + paths.js));
-		console.log('Copied and minified: Script files');
-
-	gulp.src(paths.app + '*.php')
-	    .pipe(php2html())
-	    .pipe(htmlmin({collapseWhitespace: true}))
-	    .pipe(gulp.dest(paths.dist ))
-	    console.log('Copied and minified: PHP to HTML');
-
-	gulp.src(paths.app + paths.fonts + '*.*')
-		.pipe(gulp.dest(paths.dist + paths.fonts));
-		console.log('Copied and minified: Fonts');
-
-	gulp.src(paths.app + paths.views + '*.html')
-		.pipe(gulp.dest(paths.dist + paths.views));
-		console.log('Copied and minified: Views (HTML)');
-
-	gulp.src([
-			paths.app + '.htaccess',
-			paths.app + 'manifest.json',
-			paths.app + 'robots.txt'
-		])
-		.pipe(gulp.dest(paths.dist));
-		console.log('Copied and minified: Additional files');
-
- 	gulp.src([
-			paths.app + paths.img + '**/*.svg',
-			paths.app + paths.img + '**/*.jpg',
-			paths.app + paths.img + '**/*.png',
-			paths.app + paths.img + '**/*.ico'
- 		])
-		.pipe(imagemin())
-		.on('error', errorLog)
-		.pipe(gulp.dest(paths.dist + paths.img));
-		console.log('Images compressed; be sure than the compression did not compromise the quality');
-	});
-
+gulp.task('build-dist', ['build_dist-remove'], function(){
+	gulp.start('build_dist-styles');
+	gulp.start('build_dist-scripts')
+	gulp.start('build_dist-php2html');
+	gulp.start('build_dist-images');
+	gulp.start('build_dist-extraFiles');
+});
 	// Distributions tasks
-	gulp.task('build_dist_clean', function(){
-		return gulp.src(paths.dist, {read: false})
+	gulp.task('build_dist-remove', function(){
+	    return gulp.src(paths.dist, {read: false})
 		    .pipe(clean({force: true}));
+	});
+	gulp.task('build_dist-styles', ['styles'], function(){
+		return gulp.src(paths.app + paths.css + '**/*.css')
+			.pipe(gulp.dest(paths.dist + paths.css));
+	});
+	gulp.task('build_dist-scripts', ['scripts'], function(){
+		return gulp.src(paths.app + paths.js + '*.js')
+			//.pipe(uglify({mangle: false}))
+			.pipe(gulp.dest(paths.dist + paths.js));
+	});
+	gulp.task('build_dist-php2html', function(){
+		return gulp.src(paths.app + '*.php')
+		    .pipe(php2html())
+		    .pipe(htmlmin({collapseWhitespace: true}))
+		    .pipe(gulp.dest(paths.dist ))
+	});
+	gulp.task('build_dist-images', function(){
+		return gulp.src([
+				paths.app + paths.img + '**/*.svg',
+				paths.app + paths.img + '**/*.jpg',
+				paths.app + paths.img + '**/*.png',
+				paths.app + paths.img + '**/*.ico'
+	 		])
+			.pipe(imagemin())
+			.on('error', errorLog)
+			.pipe(gulp.dest(paths.dist + paths.img));			
+	});
+	gulp.task('build_dist-extraFiles', function(){
+		gulp.src(paths.app + paths.fonts + '**/*.*')
+			.pipe(gulp.dest(paths.dist + paths.fonts));
+		
+		gulp.src(paths.app + paths.views + '**/*.html')
+			.pipe(gulp.dest(paths.dist + paths.views));
+		
+		gulp.src([
+				paths.app + '.htaccess',
+				paths.app + 'manifest.json',
+				paths.app + 'robots.txt'
+			])
+			.pipe(gulp.dest(paths.dist));
 	});
