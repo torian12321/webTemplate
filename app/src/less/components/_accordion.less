@@ -1,23 +1,41 @@
  /*
 ## Acordion
+
+If coming from a different page, refresh the page to make the accordion effect works
 ```
 <div class="accordions">
+	<div class="accordion">
+		<div class="acc-header" data-activate="parent">
+			Accordion 1
+		</div>
+		<div class="acc-body">
+			<div class="acc-body-content fixie"></div>
+		</div>
+	</div>
 	<div class="accordion active">
-		<div class="acc-header fixie" data-activate="parent"></div>
-		<div class="acc-body fixie"></div>
+		<div class="acc-header" data-activate="parent">
+			Accordion 2
+		</div>
+		<div class="acc-body">
+			<div class="acc-body-content fixie"></div>
+		</div>
 	</div>
 	<div class="accordion">
-		<div class="acc-header fixie" data-activate="parent"></div>
-		<div class="acc-body fixie"></div>
+		<div class="acc-header" data-activate="parent">
+			Accordion 3
+		</div>
+		<div class="acc-body">
+			<div class="acc-body-content fixie"></div>
+		</div>
 	</div>
 	<div class="accordion">
-		<div class="acc-header fixie" data-activate="parent"></div>
-		<div class="acc-body fixie"></div>
+		<div class="acc-header" data-activate="parent">
+			Accordion 4
+		</div>
+		<div class="acc-body">
+			<div class="acc-body-content fixie"></div>
+		</div>
 	</div>
-	<div class="accordion">
-		<div class="acc-header fixie" data-activate="parent"></div>
-		<div class="acc-body fixie"></div>
-	</div>			
 </div>
 ```
 */
@@ -26,53 +44,67 @@
 
 
 .accordion{
-	background: @white;
-	overflow  : hidden;
-	.acc-header{
-		position  : relative;
-		width     : 100%;
-		padding   : 10px 16px;
-		background: @themeColor_2;
-		cursor    : pointer;
-		.smart-text-color(@themeColor_2);
-		&:before,
-		&:after{
-			@size: 16px;
+	@color_main: @themeColor_2;
+	@color_sec : @themeColor_1;
 
-			content   : '';
+
+	margin    : 10px 0;
+	width     : 100%;
+	overflow  : hidden;
+	background: @color_main;
+	.rounded(@BRadious);
+	.transition(background);
+	.smart-text-color(@color_main);
+	.acc-header{
+		@icon_size: 20px;
+		@gutter_x : 10px;
+		@gutter_y : 10px;
+
+		position     : relative;
+		width        : 100%;
+		padding      : @gutter_y @gutter_x @gutter_y (@gutter_x + @icon_size);
+		cursor       : pointer;
+		background   : darken(@color_main, 10%);
+		border-bottom: darken(@color_main, 10%) 2px solid;
+		.transition(background border-color);
+		.smart-text-color(darken(@color_main, 10%));
+		&:before{
 			position  : absolute;
-			width     : @size;
-			height    : @size * 0.2;
-			background: @white;
-			right     : 20px;
-			top       : 18px;
-			.rounded(@size);
-			.transition(transform);
-		}
-		&:after{
-			.rotate(90deg);
+			content   : '\f107';
+			top       : @gutter_y;
+			left      : @gutter_x / 2;
+			width     : @icon_size;
+			height    : @icon_size;
+			font-size : @icon_size;
+			text-align: center;
+			.transition(transform color);
+			.font_icons();
 		}
 	}
 	.acc-body{
 		position  : relative;
-		background: lighten(@themeColor_2, 20%);
-		height    : 0px;
-		.transition();
-		& > div{
+		max-height: 0;
+		.transition(max-height);
+		& > .acc-body-content{
 			padding: 20px 10px;
 		}
-
 	}
 
+	&:hover{
+		.shadow(@shadow);
+	}
 	&.active{
+		background: lighten(@color_sec, 5%);
+		.smart-text-color(lighten(@color_sec, 5%));
 		.acc-header{
-			&:before,
-			&:after{
-				.rotate(180deg);
+			background  : @color_sec;
+			border-color: darken(@color_sec, 5%);
+			&:before{
+				.rotate(-90deg);
 			}
 		}
 		.acc-body{
-			height: auto;
+			max-height: 500px;
 		}
 	}
 }
