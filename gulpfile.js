@@ -33,9 +33,9 @@ gulp.task('build-all', ['build-dist']);
 
 // Watch tasks
 gulp.task('watch', function(){
-	gulp.watch(paths.app + paths.less  + '*.less', ['less_main']);
 	gulp.watch(paths.app + paths.less  + 'themes/*.less', ['less_themes']);
-	gulp.watch(paths.app + paths.jsApp + '*.js', ['js_app']);
+	gulp.watch(paths.app + paths.less  + '**/*.less'    , ['less_main']);
+	gulp.watch(paths.app + paths.jsApp + '**/*.js'      , ['js_app']);
 });
 
 
@@ -47,6 +47,7 @@ function errorLog(error){
 	console.error.bind(error);
 	this.emit('end');
 }
+
 
 // Javascript Tasks
 gulp.task('scripts', ['js_libs', 'js_app']);
@@ -95,8 +96,6 @@ gulp.task('styles', function () {
 
 
 
-
-
 // Build the distribution version
 gulp.task('build-dist', ['build_dist-remove'], function(){
 	gulp.start('build_dist-styles');
@@ -133,15 +132,15 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 	 		])
 			.pipe(imagemin())
 			.on('error', errorLog)
-			.pipe(gulp.dest(paths.dist + paths.img));			
+			.pipe(gulp.dest(paths.dist + paths.img));
 	});
 	gulp.task('build_dist-extraFiles', function(){
 		gulp.src(paths.app + paths.fonts + '**/*.*')
 			.pipe(gulp.dest(paths.dist + paths.fonts));
-		
+
 		gulp.src(paths.app + paths.views + '**/*.html')
 			.pipe(gulp.dest(paths.dist + paths.views));
-		
+
 		gulp.src([
 				paths.app + '.htaccess',
 				paths.app + 'manifest.json',

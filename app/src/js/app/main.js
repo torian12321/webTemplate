@@ -1,3 +1,7 @@
+// The element:
+// <button data-activate=".main-menu"></button>
+// will toggle 'active' class to the element main-menu on be clicked
+
 function element_selector(element, data_selector){
 	switch(element.data(data_selector)) {
     case 'this':
