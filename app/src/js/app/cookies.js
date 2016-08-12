@@ -1,4 +1,4 @@
-setCookie = function(cname, cvalue, exdays) {
+var setCookie = function(cname, cvalue, exdays) {
 	//    var d = new Date();
 	//    d.setTime(d.getTime() + (exdays*24*60*60*1000));
 	//    var expires = "expires="+d.toUTCString();
@@ -6,9 +6,11 @@ setCookie = function(cname, cvalue, exdays) {
 }
 
 
-getCookie = function(cname){
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
+var getCookie = function(cname) {
+    var
+    name = cname + "=",
+    ca   = document.cookie.split(';');
+
     for(var i=0; i<ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0)==' ') c = c.substring(1);
@@ -18,15 +20,17 @@ getCookie = function(cname){
 }
 
 
-resetCookies = function(){
-	$('input[type="text"], input[type="tel"], select').each(function(){
-		$(this).val("");
-		setCookie(this.id, "" );
-	});
+var resetCookie = function(cname){
+	document.cookie = cname + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+}
+var resetCookie_all = function(){
+	var cookies = document.cookie.split(";");
 
-	$('input:checkbox').each(function(){
-		$(this).removeAttr( "checked" )
-		$(this).parent().find('i').css( "display", "none" );
-		setCookie($(this).attr('id'), "");
-	});
+    for (var i = 0; i < cookies.length; i++) {
+    	var
+		cookie = cookies[i],
+		eqPos  = cookie.indexOf("="),
+		cname  = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+    	resetCookie(cname);
+    }
 }
