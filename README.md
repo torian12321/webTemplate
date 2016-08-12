@@ -15,6 +15,13 @@ Change the path of the project on manifest.json
 ```"start_path" : './'```
 
 
+Install [Nodejs](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) with it in the computer.
+
+On the project folder, install the node modules running:
+
+```npm install```
+
+
 Development phase
 ---------------
 
@@ -25,14 +32,13 @@ Any page (HTML or PHP) should be located on **app** root folder, thel **views** 
 
 **Scripts and Style**
 
-To compile less and js 
+To compile less and js files **once**, open the console in the project and run:
 
 ```gulp build```
 
+To compile less and js files **each time we save a less file**, open the console in the project and run:
 
-Additionaly, run wath to compile a new .js or .css file each time there is a change on the affected filed.
-
-```gulp watch```
+```gulp watch ```
 
 For more information on tasks, open **gulpfile.js**
 
@@ -51,15 +57,24 @@ After this, all the content on 'dist' folder should be ready to directly copy in
 Some times it will be necessary to change manifest.json settings before run the code.
 
 
+Styleguide
+---------------
+
+To access the styleguide, open the proyect on the browser and add '/styleguide' to the url
+
+The Styleguide has been configurated to work with the less files from the proyect
+
+If including styleguide folder, also add the less files 'src/less/*.less'
+
+
 Technologies
 ---------------
 
-- [Gulp](http://gulpjs.com/)
-- [RequireJS](https://http://requirejs.org/)
 - [jQuery](https://jquery.com/)
-- [Waypoint](http://imakewebthings.com/waypoints/)
 - [LESS](http://lesscss.org/)
 - [KaleyStyleguide](https://github.com/thomasdavis/kaleistyleguide)
+- [Waypoint](http://imakewebthings.com/waypoints/)
+- [Gulp](http://gulpjs.com/)
 
 
 Autor
