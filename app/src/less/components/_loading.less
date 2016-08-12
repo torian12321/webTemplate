@@ -1,3 +1,4 @@
+
 /*
 ## Loading
 ```
@@ -29,6 +30,11 @@
 <div class="loading orbits empty"></div>
 ```
 
+## Pulse
+```
+<div class="loading pulse"></div>
+```
+
 ## Ruby
 So fancy!!
 ```
@@ -54,7 +60,7 @@ So fancy!!
 	&:after{
 		border             : @color_main (@size * 0.25) solid;
 		border-top-color   : @color_sec;
-		border-bottom-color: @color_sec; 
+		border-bottom-color: @color_sec;
 	}
 
 	&.o,
@@ -67,7 +73,7 @@ So fancy!!
 		&:before,
 		&:after{
 			border-top-color   : transparent;
-			border-bottom-color: transparent; 
+			border-bottom-color: transparent;
 		}
 	}
 
@@ -75,7 +81,7 @@ So fancy!!
 		border-top-color   : darken(@red, 10%);
 		border-right-color : @red;
 		border-left-color  : darken(@red, 30%);
-		border-bottom-color: lighten(@red, 20%); 
+		border-bottom-color: lighten(@red, 20%);
 		.rounded(0);
 	}
 	&.orbits{
@@ -91,7 +97,7 @@ So fancy!!
 			width   : 0;
 			margin  : -@ring_width;
 
-			border-width: @ring_width; 
+			border-width: @ring_width;
 			.rounded(50%);
 			.animation_rotate(10s);
 		}
@@ -102,5 +108,17 @@ So fancy!!
 			height: @distance;
 			margin: -(@distance - (2*@ring_width));
 		}
+	}
+	&.pulse{
+		@size : 1.5em;
+		@color: @themeColor_1;
+
+		width     : @size;
+		height    : @size;
+		background: fadeout(@color, 20%);
+		border    : none;
+		box-shadow: 0 0 0 fadeout(@color, 40%);
+		.rounded(50%);
+		.animation_pulse(@color: @color);
 	}
 }
