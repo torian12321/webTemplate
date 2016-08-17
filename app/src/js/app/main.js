@@ -28,3 +28,10 @@ $('[data-hidde]').click(function(){
 $('[data-show]').click(function(){
 	element_selector($(this), 'show').addClass('show');
 });
+
+
+
+var init = function(){
+    fancy_functions();
+}
+init();
