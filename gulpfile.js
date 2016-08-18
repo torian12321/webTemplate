@@ -54,8 +54,8 @@ gulp.task('scripts', ['js_libs', 'js_app']);
 	gulp.task('js_libs', function () {
 		return gulp.src([
 				paths.app + paths.jsLib + 'jquery-v3.0.0.js',
-				paths.app + paths.jsLib + 'angular-v1.5.6.js',
-				paths.app + paths.jsLib + 'angular-route-1.5.6.js'
+				//paths.app + paths.jsLib + 'angular-v1.5.6.js',
+				//paths.app + paths.jsLib + 'angular-route-1.5.6.js'
 			])
 			.pipe(concat('libs.js'))
 			.pipe(uglify())
@@ -64,7 +64,9 @@ gulp.task('scripts', ['js_libs', 'js_app']);
 	gulp.task('js_app', function () {
 		return gulp.src(paths.app + paths.jsApp + '*.js')
 			.pipe(concat('app.js'))
-			.pipe(uglify({mangle: false}))
+			// Use 'Mangle: false' just if using angular
+			//.pipe(uglify({mangle: false}))
+			.pipe(uglify())
 			.pipe(gulp.dest(paths.app + paths.js));
 	});
 
