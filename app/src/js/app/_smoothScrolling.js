@@ -1,5 +1,4 @@
 // Smooth Scrolling
-// TODO: check how to do it vanilla js
 function smoothScrolling() {
 	$('a[href*=#]:not([href=#])').click(function() {
 

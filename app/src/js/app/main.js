@@ -1,37 +1,18 @@
-// The element:
-// <button data-activate=".main-menu"></button>
-// will toggle 'active' class to the element main-menu on be clicked
-
-function element_selector(element, data_selector){
-	switch(element.data(data_selector)) {
-    case 'this':
-        return element;
-        break;
-    case 'parent':
-       	return element.parent();
-        break;
-    default:
-    	return $(element.data(data_selector));
-	}
+var
+_doc = document,
+_win = window,
+init = function(){
+    fancy_functions();
+    fitContentOnScreen();
+},
+resize = function(){
+    fitContentOnScreen();
 };
 
-$('[data-activate]').click(function(){
-	element_selector($(this), 'activate').toggleClass('active');
-});
 
-$('[data-show-hide]').click(function(){
-	element_selector($(this), 'show-hide').toggleClass('hidde');
+$(_doc).ready(function(){
+    init();
 });
-$('[data-hidde]').click(function(){
-	element_selector($(this), 'hidde').addClass('hidde');
+$(window).resize(function(){
+    resize();
 });
-$('[data-show]').click(function(){
-	element_selector($(this), 'show').addClass('show');
-});
-
-
-
-var init = function(){
-    fancy_functions();
-}
-init();
