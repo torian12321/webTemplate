@@ -27,3 +27,11 @@ $('[data-hidde]').click(function(){
 $('[data-show]').click(function(){
 	element_selector($(this), 'show').addClass('show');
 });
+
+
+// Tab openers
+$('.tabs-header label').click(function(){
+    console.log('hi');
+    $(this).addClass('active');
+    $(this).siblings().removeClass('active');
+});

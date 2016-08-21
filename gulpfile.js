@@ -59,6 +59,7 @@ gulp.task('scripts', ['js_libs', 'js_app']);
 			])
 			.pipe(concat('libs.js'))
 			.pipe(uglify())
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.app + paths.js));
 	});
 	gulp.task('js_app', function () {
@@ -67,6 +68,7 @@ gulp.task('scripts', ['js_libs', 'js_app']);
 			// Use 'Mangle: false' just if using angular
 			//.pipe(uglify({mangle: false}))
 			.pipe(uglify())
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.app + paths.js));
 	});
 
@@ -80,18 +82,20 @@ gulp.task('styles', function () {
 			.pipe(less())
 			.pipe(prefix('last 2 versions'))
 			.pipe(cleanCSS({compatibility: 'ie8'}))
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.app + paths.css));
 	});
 	gulp.task('less_themes', function(){
 		return gulp.src(paths.app + paths.less + 'themes/*.less')
 			.pipe(less())
-			.on('error', errorLog)
 			.pipe(prefix('last 2 versions'))
 			.pipe(cleanCSS({compatibility: 'ie8'}))
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.app + paths.css  + 'themes/'));
 	});
 	gulp.task('styles-remove', function(){
 		return gulp.src(paths.app + paths.css, {read: false})
+		    .on('error', errorLog)
 		    .pipe(clean({force: true}));
 		    console.log('Revmoved previous CSS files');
 	});
@@ -109,20 +113,24 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 	// Distributions tasks
 	gulp.task('build_dist-remove', function(){
 	    return gulp.src(paths.dist, {read: false})
+		    .on('error', errorLog)
 		    .pipe(clean({force: true}));
 	});
 	gulp.task('build_dist-styles', ['styles'], function(){
 		return gulp.src(paths.app + paths.css + '**/*.css')
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.dist + paths.css));
 	});
 	gulp.task('build_dist-scripts', ['scripts'], function(){
 		return gulp.src(paths.app + paths.js + '*.js')
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.dist + paths.js));
 	});
 	gulp.task('build_dist-php2html', function(){
 		return gulp.src(paths.app + '*.php')
 		    .pipe(php2html())
 		    .pipe(htmlmin({collapseWhitespace: true}))
+		    .on('error', errorLog)
 		    .pipe(gulp.dest(paths.dist ))
 	});
 	gulp.task('build_dist-images', function(){
@@ -138,9 +146,11 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 	});
 	gulp.task('build_dist-extraFiles', function(){
 		gulp.src(paths.app + paths.fonts + '**/*.*')
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.dist + paths.fonts));
 
 		gulp.src(paths.app + paths.views + '**/*.html')
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.dist + paths.views));
 
 		gulp.src([
@@ -148,5 +158,6 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 				paths.app + 'manifest.json',
 				paths.app + 'robots.txt'
 			])
+			.on('error', errorLog)
 			.pipe(gulp.dest(paths.dist));
 	});
