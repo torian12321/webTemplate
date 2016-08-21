@@ -138,6 +138,7 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 				paths.app + paths.img + '**/*.svg',
 				paths.app + paths.img + '**/*.jpg',
 				paths.app + paths.img + '**/*.png',
+				paths.app + paths.img + '**/*.gif',
 				paths.app + paths.img + '**/*.ico'
 	 		])
 			.pipe(imagemin())
