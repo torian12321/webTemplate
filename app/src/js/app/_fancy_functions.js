@@ -11,7 +11,7 @@ fancy_functions = function(){
         text    = appData.name + ' - ' + appData.description;
 
         sayHello(text, appData.theme_color);
-        animateTitle();
+        animateTitle_pet();
     });
 },
 
@@ -40,26 +40,45 @@ sayHello = function(console_text, color){
 	console.log('%c %s', css, '\ud83c\udf10 '+ console_text);
 },
 
+
 // Add animaitions to the website title (browser tab)
 animateTitle = function(){
 	var
-	intervaIteration = 0,
-	title            = document.title;
+	index     = 0,
+	title     = document.title,
+	animation = [
+		'o--',
+		'-o-',
+		'--o',
+		'-o-'
+	]
+
+	setInterval(function(){
+		document.title = animation[index % animation.length] + title + animation[index % animation.length];
+		index++;
+    }, 250);
+},
+animateTitle_pet = function(){
+	var
+	index = 0,
+	title = document.title,
+	pet   = [
+		"┏(^-^)┓",
+		"┗(^-^)┓",
+		"┏(^-^)┓",
+		"┏(^o^)┛",
+		"┗(^-^)┛",
+		"┗(^-^)┛",
+		"┗(^o^)┛",
+		"┏(^o^)┓",
+		"┗(^o^)┛",
+		"┏(^o^)┓"
+	];
     setInterval(function(){
-		switch (intervaIteration % 4) {
-		    case 0:
-		        document.title = 'o--' + title + '--o';
-		        break;
-		    case 1:
-		    case 3:
-		        document.title = '-o-' + title + '-o-';
-		        break;
-		    case 2:
-		        document.title = '--o' + title + 'o--';
-		        break;
-		    default:
-		    	break;
-		    }
-		intervaIteration++;
+		document.title =
+			pet[index % pet.length] +
+			'  '
+			+ title.substring(1, 4);;
+		index++;
     }, 250);
 };
