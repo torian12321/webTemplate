@@ -107,13 +107,13 @@
 .BW(@grayScale: 50%){
 	.filter(grayscale(@grayScale));
 }
-.background-img(@BG-url; @position: center center){
-	background-repeat      : no-repeat;
+.background-img(@BG-url; @position: center center; @size: cover; @repeat: no-repeat){
+	background-repeat      : @repeat;
 	background-position    : @position;
 
-	background-size        : cover;
-	-moz-background-size   : cover;
-	-webkit-background-size: cover;
+	background-size        : @size;
+	-moz-background-size   : @size;
+	-webkit-background-size: @size;
 
 	background-image       : url(@BG-url);
 }
