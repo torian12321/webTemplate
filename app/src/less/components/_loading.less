@@ -54,7 +54,7 @@ So fancy!!
 	background: transparent;
 	font-size : 10px;
 	.rounded(50%);
-	.animation_rotate(1.5s);
+	.animation(spin; 1.5s;);
 	&,
 	&:before,
 	&:after{
@@ -99,7 +99,7 @@ So fancy!!
 
 			border-width: @ring_width;
 			.rounded(50%);
-			.animation_rotate(10s);
+			.animation(spin; 10s);
 		}
 		&:after{
 			@distance : @size * 1.2;
@@ -119,6 +119,7 @@ So fancy!!
 		border    : none;
 		box-shadow: 0 0 0 fadeout(@color, 40%);
 		.rounded(50%);
-		.animation_pulse(@color: @color);
+		.pulse(@color);
+		.animation(pulse; 2s);
 	}
 }

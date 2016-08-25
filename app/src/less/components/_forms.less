@@ -574,13 +574,12 @@
 			.rounded(0);
 		}
 
-		@BR: @BRadious * 1;
 		&:first-child label{
-			.rounded(@BR , 0, 0, @BR);
+			.rounded(@BRadious  0 0 @BRadious);
 		}
 		&:last-child label{
 			border-right: 0;
-			.rounded(0, @BR, @BR, 0);
+			.rounded(0 @BRadious @BRadious 0);
 		}
 	}
 	&.arrowed input{
