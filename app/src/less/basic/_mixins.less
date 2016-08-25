@@ -108,24 +108,25 @@
 	.filter(grayscale(@grayScale));
 }
 .background-img(@BG-url; @position: center center; @size: cover; @repeat: no-repeat){
-	background-repeat      : @repeat;
-	background-position    : @position;
+	//background-repeat      : @repeat;
+	//background-position    : @position;
+	//background-image       : url(@BG-url);
+	background             : url(@BG-url) @repeat @position;
 
 	background-size        : @size;
 	-moz-background-size   : @size;
 	-webkit-background-size: @size;
-
-	background-image       : url(@BG-url);
 }
 .background-parallax(@BG-url){
-	background             : top right no-repeat;
-	background-attachment  : fixed;
+	//background-image       : url(@BG-url);
+	//background-repeat      : no-repeat;
+	//background-position    : top right;
+	//background-attachment  : fixed;
+	background             : url(@BG-url) top right no-repeat fixed;
 
 	background-size        : cover;
 	-moz-background-size   : cover;
 	-webkit-background-size: cover;
-
-	background-image       : url(@BG-url);
 }
 
 .animation (@animation) {
@@ -231,4 +232,20 @@
 	) when (lightness(@BG) < 50%) {
   // Its a dark color return a dark output
   color: @colorLight;
+}
+
+
+/* Mixin to generate random number;
+	int should be 0 or 1, 1 being to make it an integer
+	e.g:
+		.makeRandom(5, 10);
+		padding   : @randNum * 1px;
+*/
+.makeRandom(@min: 0, @max: @min+1, @int: 0) {
+  .checkInt() {
+    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
+  }
+  .checkInt();
+  @randNum: @base + @min;
 }
