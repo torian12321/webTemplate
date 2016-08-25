@@ -60,9 +60,13 @@ animateTitle = function(){
 },
 animateTitle_pet = function(){
 	var
-	index = 0,
-	title = document.title,
-	pet   = [
+	index        = 0,
+	title_window = 10,
+	title_void   = Array((title_window + 1)).join('-'),
+	title        = title_void + document.title + title_void,
+	title_length = title.length,
+	title_focus  = title_window, 
+	pet          = [
 		"┏(^-^)┓",
 		"┗(^-^)┓",
 		"┏(^-^)┓",
@@ -74,11 +78,14 @@ animateTitle_pet = function(){
 		"┗(^o^)┛",
 		"┏(^o^)┓"
 	];
+
     setInterval(function(){
+    	title_focus = (title_focus != title_length) ? title_focus + 1 : title_window;
+    	index++;
+
 		document.title =
 			pet[index % pet.length] +
 			'  '
-			+ title.substring(1, 4);;
-		index++;
-    }, 250);
+			+ title.substring((title_focus - title_window), title_focus);
+    }, 400);
 };

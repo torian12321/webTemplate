@@ -1,5 +1,6 @@
 // If possible, fit the content into the view
-function fitContentOnScreen(){
+var
+fitContentOnScreen = function(){
     var
     screen_h  = $(window).height(),
     footer_h  = $('footer').outerHeight(true),
@@ -7,4 +8,4 @@ function fitContentOnScreen(){
     body_h    = screen_h - (footer_h + header_h);
 
     $('.page-content').css( "min-height", body_h );
-}
+};

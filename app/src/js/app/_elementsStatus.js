@@ -1,7 +1,8 @@
 // The element:
 // <button data-activate=".main-menu"></button>
 // will toggle 'active' class to the element main-menu on be clicked
-function element_selector(element, data_selector){
+var
+element_selector = function(element, data_selector){
 	switch(element.data(data_selector)) {
     case 'this':
         return element;
@@ -31,7 +32,6 @@ $('[data-show]').click(function(){
 
 // Tab openers
 $('.tabs-header label').click(function(){
-    console.log('hi');
     $(this).addClass('active');
     $(this).siblings().removeClass('active');
 });

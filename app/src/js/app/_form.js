@@ -14,7 +14,8 @@ $('input, textarea').focusout(function(){
 });
 
 
-function field_validate(field){
+var
+field_validate = function(field){
 	var isValid = true;
 
 	if(field.hasClass('mandatory')){
@@ -36,10 +37,8 @@ function field_validate(field){
 	}
 
 	return(isValid);
-}
-
-
-function form_validate(formSelector){
+},
+form_validate = function(formSelector){
 	var isValid = true;
 
 	$(formSelector + ' .mandatory').each(function( index ){
@@ -49,4 +48,4 @@ function form_validate(formSelector){
 	});
 
 	return(isValid);
-}
+};

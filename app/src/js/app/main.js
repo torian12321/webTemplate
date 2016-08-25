@@ -2,7 +2,7 @@ var
 _doc = document,
 _win = window,
 init = function(){
-    fancy_functions();
+	fancy_functions();
     fitContentOnScreen();
 },
 resize = function(){
@@ -10,9 +10,5 @@ resize = function(){
 };
 
 
-$(_doc).ready(function(){
-    init();
-});
-$(window).resize(function(){
-    resize();
-});
+$(_doc).ready(init);
+$(_win).resize(resize);
