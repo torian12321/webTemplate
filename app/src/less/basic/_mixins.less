@@ -1,31 +1,38 @@
 //-------------------
 //-- Generic mixins -
 //-------------------
-.transition(@property: all; @time: 0.5s; @delay: 0; @timing: ease-out){
-	-webkit-transition        : @property; /* For Safari 3.1 to 6.0 */
-	transition                : @property;
-	transition-timing-function: @timing;
+.transition(
+	@property: all;
+	@time    : 0.5s;
+	@delay   : 0;
+	@timing  : ease-out
+	){
+	-webkit-transition-delay: @delay; /* Safari */
+	transition-delay        : @delay;
 
-	-webkit-transition-duration: @time; /* Safari */
-    transition-duration        : @time;
-
-    -webkit-transition-delay: @delay; /* Safari */
-    transition-delay        : @delay;
+	-webkit-transition      : @property @timing @time; /* For Safari 3.1 to 6.0 */
+	transition              : @property @timing @time;
 }
 
-.border(@width: 2px; @color: @white){
-	border: @width solid @color;
-}
-.border(@width: 2px){
-	.border(@width; @white);
+.border(
+	@width: @BWidth;
+	@color: @BColor;
+	@style: @BStyle
+	){
+	border: @width @style @color;
 }
 
-.rounded(@topLeft: 5px; @topRight: 5px; @bottomRight: 5px; @bottomLeft: 5px){
+.rounded(
+	@topLeft    : @BRadious;
+	@topRight   : @BRadious;
+	@bottomRight: @BRadious;
+	@bottomLeft : @BRadious
+	){
 	border-radius        : @topLeft @topRight @bottomRight @bottomLeft;
 	-moz-border-radius   : @topLeft @topRight @bottomRight @bottomLeft;
 	-webkit-border-radius: @topLeft @topRight @bottomRight @bottomLeft;
 }
-.rounded(@radius: 5px;){
+.rounded(@radius: @BRadious;){
 	border-radius        : @radius;
 	-moz-border-radius   : @radius;
 	-webkit-border-radius: @radius;
@@ -51,14 +58,21 @@
 	-o-transform-origin     : @origin;
 	transform-origin        : @origin;
 }
-.rotate(@angle: 90deg, @x-axis: 50%, @y-axis: 50%){
-	-ms-transform           : rotate(@angle);       /* IE 9 */
-	-webkit-transform       : rotate(@angle);       /* Chrome, Safari, Opera */
-	transform               : rotate(@angle);
+.rotate(
+	@angle : 90deg,
+	@x-axis: 50%,
+	@y-axis: 50%
+	){
+	-ms-transform    : rotate(@angle);       /* IE 9 */
+	-webkit-transform: rotate(@angle);       /* Chrome, Safari, Opera */
+	transform        : rotate(@angle);
 
 	.axis_origin(@x-axis, @y-axis)	;
 }
-.axis_origin(@x-axis: 0, @y-axis:0){
+.axis_origin(
+	@x-axis: 0,
+	@y-axis: 0
+	){
 	-ms-transform-origin    : @x-axis @y-axis;      /* IE 9 */
 	-webkit-transform-origin: @x-axis @y-axis; 		/* Chrome, Safari, Opera */
 	transform-origin        : @x-axis @y-axis;
@@ -67,14 +81,21 @@
 	.rotate(@angle, 50%, 50%)
 }
 
-.gradient(@iniColor, @endColor, @angle){
+.gradient(
+	@iniColor,
+	@endColor,
+	@angle
+	){
 	background: -webkit-linear-gradient(@angle, @iniColor, @endColor); /* For Safari 5.1 to 6.0 */
     background: -o-linear-gradient(@angle, @iniColor, @endColor);      /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(@angle, @iniColor, @endColor);    /* For Firefox 3.6 to 15 */
     background: linear-gradient(@angle, @iniColor, @endColor);         /* Standard syntax (must be last) */
 }
 
-.gradient(@iniColor, @endColor){
+.gradient(
+	@iniColor,
+	@endColor
+	){
 	.gradient(@iniColor, @endColor, 90deg);
 }
 
@@ -107,21 +128,19 @@
 .BW(@grayScale: 50%){
 	.filter(grayscale(@grayScale));
 }
-.background-img(@BG-url; @position: center center; @size: cover; @repeat: no-repeat){
-	//background-repeat      : @repeat;
-	//background-position    : @position;
-	//background-image       : url(@BG-url);
+.background-img(
+	@BG-url  : '@{defImgDir}/img.png';
+	@position: center center;
+	@size    : cover;
+	@repeat  : no-repeat
+	){
 	background             : url(@BG-url) @repeat @position;
 
 	background-size        : @size;
 	-moz-background-size   : @size;
 	-webkit-background-size: @size;
 }
-.background-parallax(@BG-url){
-	//background-image       : url(@BG-url);
-	//background-repeat      : no-repeat;
-	//background-position    : top right;
-	//background-attachment  : fixed;
+.background-parallax(@BG-url: '@{defImgDir}/img.png';){
 	background             : url(@BG-url) top right no-repeat fixed;
 
 	background-size        : cover;
@@ -147,7 +166,11 @@
 
 
 //triangles used for the pendants on the sections
-.triangle_left(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+.triangle_left(
+	@tirangleH: 2vw;
+	@tirangleW: 100vw;
+	@color    : @white
+	){
 	content     : "";
 	position    : absolute;
 	z-index     : 1;
@@ -163,7 +186,11 @@
 	border-bottom-color: transparent;
 	border-left-color  : transparent;
 }
-.triangle_right(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+.triangle_right(
+	@tirangleH: 2vw;
+	@tirangleW: 100vw;
+	@color    : @white
+	){
 	content     : "";
 	position    : absolute;
 	z-index     : 1;
@@ -181,7 +208,11 @@
 }
 
 
-.triangle_left_top(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+.triangle_left_top(
+	@tirangleH: 2vw;
+	@tirangleW: 100vw;
+	@color    : @white
+	){
 	content     : "";
 	color       : transparent;
 	position    : absolute;
@@ -198,7 +229,11 @@
 	border-bottom-color: @color;
 	border-left-color  : transparent;
 }
-.triangle_right_top(@tirangleH: 2vw; @tirangleW: 100vw; @color: @white){
+.triangle_right_top(
+	@tirangleH: 2vw;
+	@tirangleW: 100vw;
+	@color    : @white
+	){
 	content     : "";
 	color       : transparent;
 	position    : absolute;
@@ -241,7 +276,11 @@
 		.makeRandom(5, 10);
 		padding   : @randNum * 1px;
 */
-.makeRandom(@min: 0, @max: @min+1, @int: 0) {
+.makeRandom(
+	@min: 0,
+	@max: @min+1,
+	@int: 0
+	) {
   .checkInt() {
     @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
     @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
