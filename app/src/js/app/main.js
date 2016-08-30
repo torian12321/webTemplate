@@ -9,6 +9,7 @@ resize = function(){
     fitContentOnScreen();
 };
 
-
-$(_doc).ready(init);
-$(_win).resize(resize);
+//$(_doc).ready(init);
+//$(_win).resize(resize);
+_doc.addEventListener('DOMContentLoaded', init);
+_win.addEventListener('resize', resize);
