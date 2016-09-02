@@ -10,7 +10,6 @@ resize = function(){
     fitContentOnScreen();
 };
 
-
 // $(_doc).ready(init);
 // $(_win).resize(resize);
 // Vanilla js functions
