@@ -9,7 +9,8 @@ $manifest      = file_get_contents("manifest.json");
 $manifest_data = json_decode($manifest, true);
 
 $GLOBALS['projectPath'] = $manifest_data['start_path'];
-$GLOBALS['home']        = $GLOBALS['projectPath'] . $manifest_data['start_url'];
+$GLOBALS['startUrl']    = str_replace("html", "php", $manifest_data['start_url']);
+$GLOBALS['home']        = $GLOBALS['projectPath'] . $GLOBALS['startUrl'];
 
 $GLOBALS['projectName'] = $manifest_data['name'];
 $GLOBALS['projectDesc'] = $manifest_data['description'];

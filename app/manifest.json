@@ -4,12 +4,12 @@
   "description"     : "Description",
   "theme_color"     : "#163b63",
   "background_color": "#FFFFFF",
-  "start_url"       : "index.php",
+  "start_url"       : "index.html",
   "start_path"      : "./",
   "display"         : "standalone",
   "orientation"     : "landscape",
   "dir"             : "ltr",
-  "icons"           : 
+  "icons"           :
   [
     {
       "src"  : "src/img/icons/launcher/icon-128x128.png",
