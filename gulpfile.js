@@ -157,6 +157,7 @@ gulp.task('build-dist', ['build_dist-remove'], function(){
 		gulp.src([
 				paths.app + '.htaccess',
 				paths.app + 'manifest.json',
+                paths.app + 'service-worker.js',
 				paths.app + 'robots.txt'
 			])
 			.on('error', errorLog)

@@ -10,8 +10,12 @@ resize = function(){
     fitContentOnScreen();
 };
 
-// $(_doc).ready(init);
-// $(_win).resize(resize);
-// Vanilla js functions
+
 _doc.addEventListener('DOMContentLoaded', init);
 _win.addEventListener('resize', resize);
+
+
+// Service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js');
+}
