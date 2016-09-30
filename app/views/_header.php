@@ -2,7 +2,7 @@
 
 
 <!DOCTYPE html>
-<html>
+<html lang="">
 
 <head>
 	<meta charset="UTF-8">
@@ -10,20 +10,26 @@
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0' >
 
 	<title><?php echo $GLOBALS['projectName']; ?></title>
-    <meta name="description" content="<?php echo $GLOBALS['projectDesc']; ?>">
+    <meta name="description" 				content="<?php echo $GLOBALS['projectDesc']; ?>">
+	<meta name="application-name" 			content="<?php echo $GLOBALS['projectName']; ?>">
+	<meta name="apple-mobile-web-app-title" content="<?php echo $GLOBALS['projectName']; ?>">
+
+     <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
 
 	<?php /* Colors on browser header (mobile) */?>
 	<meta content="<?php echo $GLOBALS['themeColor']; ?>" name="theme-color">
 	<meta content="<?php echo $GLOBALS['themeColor']; ?>" name="msapplication-navbutton-color">
 	<meta content="<?php echo $GLOBALS['themeColor']; ?>" name="apple-mobile-web-app-status-bar-style">
 
+
 	<?php /* Add to home screen for Safari on iOS */?>
 	<meta name="apple-mobile-web-app-capable"          content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $GLOBALS['themeColor']; ?>">
 	<meta name="apple-mobile-web-app-title"            content="<?php echo $GLOBALS['projectName']; ?>">
 	<link rel="apple-touch-icon" href="src/img/icons/launcher//icon-152x152.png">
 
-	<?php /* Tile Icon for Windows */?>
+	<?php /* Tile Icon for Win8 */?>
 	<meta name="msapplication-TileImage" content="src/img/icons/launcher//icon-144x144.png">
 	<meta name="msapplication-TileColor" content="<?php echo $GLOBALS['themeColor']; ?>">
 
@@ -34,3 +40,5 @@
 
 
 <body>
+	<?php /* Google Analytics - Change the key inside the file */?>
+	<script src="<?php echo $GLOBALS['jsDir']; ?>ga.js"></script>
