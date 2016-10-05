@@ -1,0 +1,29 @@
+{
+  "version"    : "1.0.0",
+  "name"       : "My project name",
+  "description": "Description.",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/src/img/icons/launcher/icon-128x128.png",
+    "144": "/src/img/icons/launcher/icon-144x144.png",
+    "152": "/src/img/icons/launcher/icon-152x152.png",
+    "192": "/src/img/icons/launcher/icon-192x192.png",
+    "256": "/src/img/icons/launcher/icon-256x256.png"
+  },
+  "developer": {
+    "name": "Aitor",
+    "url" : "http://torian12321.github.io/my_web/"
+  },
+  "installs_allowed_from": [
+    "*"
+  ],
+  "default_locale": "en",
+  "permissions"   : {
+  },
+  "locales": {
+    "en": {
+      "name"       : "My project name",
+      "description": "Description."
+    }
+  }
+}
