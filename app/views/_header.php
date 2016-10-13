@@ -1,4 +1,4 @@
-<?php require_once __dir__ . '/../src/php/init.php'; ?>
+<?php require_once __dir__ . '/../inc/php/init.php'; ?>
 
 
 <!DOCTYPE html>
@@ -27,13 +27,13 @@
 	<meta name="apple-mobile-web-app-capable"          content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="<?php echo $GLOBALS['themeColor']; ?>">
 	<meta name="apple-mobile-web-app-title"            content="<?php echo $GLOBALS['projectName']; ?>">
-	<link rel="apple-touch-icon" href="src/img/icons/launcher//icon-152x152.png">
+	<link rel="apple-touch-icon" href="<?php echo $GLOBALS['iconsDir']; ?>launcher/icon-152x152.png">
 
 	<?php /* Tile Icon for Win8 */?>
-	<meta name="msapplication-TileImage" content="src/img/icons/launcher//icon-144x144.png">
+	<meta name="msapplication-TileImage" content="<?php echo $GLOBALS['iconsDir']; ?>launcher//icon-144x144.png">
 	<meta name="msapplication-TileColor" content="<?php echo $GLOBALS['themeColor']; ?>">
 
-	<link rel="manifest"   href="/manifest.json">
+	<link rel="manifest"   href="<?php echo $GLOBALS['projectPath']; ?>manifest.json">
 	<link rel="icon"       type="image/png" href="<?php echo $GLOBALS['iconsDir']; ?>favicon.png">
 	<link rel="stylesheet" type="text/css" 	href="<?php echo $GLOBALS['cssDir']; ?>style.css">
 </head>

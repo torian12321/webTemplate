@@ -3,11 +3,16 @@ var cacheName     = 'webPWA-final-1';
 var filesToCache  = [
   '/',
   './index.html',
-  './src/js/app.js',
-  './src/css/style.css',
-  './src/img/default/header.jpg',
-  './src/img/default/img.png',
-  './src/img/default/user_avatar.jpg'
+  './inc/js/app.js',
+  './inc/css/style.css',
+  './inc/img/default/header.jpg',
+  './inc/img/default/img.png',
+  './inc/img/default/user_avatar.jpg',
+  './inc/img/icons/launcher/icon-128x128.png',
+  './inc/img/icons/launcher/icon-144x144.png',
+  './inc/img/icons/launcher/icon-152x152.png',
+  './inc/img/icons/launcher/icon-192x192.png',
+  './inc/img/icons/launcher/icon-256x256.png'
 ];
 
 self.addEventListener('install', function(e) {

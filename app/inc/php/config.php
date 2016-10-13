@@ -15,10 +15,10 @@ $GLOBALS['home']        = $GLOBALS['projectPath'] . $GLOBALS['startUrl'];
 $GLOBALS['projectName'] = $manifest_data['name'];
 $GLOBALS['projectDesc'] = $manifest_data['description'];
 
-$GLOBALS['srcDir'] 		= $GLOBALS['projectPath'] . 'src/';
-$GLOBALS['cssDir']      = $GLOBALS['srcDir'] . 'css/';
-$GLOBALS['jsDir']       = $GLOBALS['srcDir'] . 'js/';
-$GLOBALS['imgDir']      = $GLOBALS['srcDir'] . 'img/';
+$GLOBALS['incDir'] 		= $GLOBALS['projectPath'] . 'inc/';
+$GLOBALS['cssDir']      = $GLOBALS['incDir'] . 'css/';
+$GLOBALS['jsDir']       = $GLOBALS['incDir'] . 'js/';
+$GLOBALS['imgDir']      = $GLOBALS['incDir'] . 'img/';
 $GLOBALS['imgDef']      = $GLOBALS['imgDir'] . 'default/';
 $GLOBALS['iconsDir']    = $GLOBALS['imgDir'] . 'icons/';
 

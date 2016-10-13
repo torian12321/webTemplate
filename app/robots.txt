@@ -20,6 +20,6 @@ User-agent: *
 Crawl-delay: 10
 # Directories
 Disallow: /styleguide/
-Disallow: /src/
+Disallow: /inc/
 # Files
 Disallow: /README.md

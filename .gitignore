@@ -1,5 +1,5 @@
 dist/
 node_modules/
-app/src/css/*
-app/src/js/app.js
-app/src/js/libs.js
+app/inc/css/*
+app/inc/js/app.js
+app/inc/js/libs.js

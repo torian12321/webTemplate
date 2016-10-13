@@ -64,7 +64,7 @@ To access the styleguide, open the proyect on the browser and add '/styleguide' 
 
 The Styleguide has been configurated to work with the less files from the proyect
 
-If including styleguide folder, also add the less files 'src/less/*.less'
+If including styleguide folder, also add the less files 'inc/less/*.less'
 
 
 Technologies

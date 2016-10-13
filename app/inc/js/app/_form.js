@@ -3,7 +3,7 @@ $('input, textarea').focusout(function(){
 	field = $(this),
 	value = field.val().replace(/\s/g, '');   //remove space
 
-	if( value != ''){
+	if( value !== ''){
 		field.addClass('filled');
 	}else{
 		field.removeClass('filled');

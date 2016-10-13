@@ -6,10 +6,8 @@ element_selector = function(element, data_selector){
 	switch(element.data(data_selector)) {
     case 'this':
         return element;
-        break;
     case 'parent':
        	return element.parent();
-        break;
     default:
     	return $(element.data(data_selector));
 	}
