@@ -2,6 +2,10 @@
 	"name"        : "webTemplate_package",
 	"author"      : "Aitor",
 	"version"     : "1.0.0",
+	"license"     : "ISC",
+	"scripts"	  : {
+    	"test": "echo \"Error: no test specified\" && exit 1"
+	},
     "dependencies": {
 		"gulp"             : "*",
 		"gulp-less"        : "*",

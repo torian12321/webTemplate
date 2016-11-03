@@ -107,10 +107,14 @@
 .font_elegant(){
 	font-family: 'Playball', 'Lobster';
 }
-.font_icons(){
-	font-family: 'FontAwesome';
-}
+.font_icons(@defIcon: false){
+    font-family: 'FontAwesome';
 
+    // If declared, use an icon
+    & when not (@defIcon = false){
+    	content: @defIcon;
+    }
+}
 
 //-------------------
 //------- More ------

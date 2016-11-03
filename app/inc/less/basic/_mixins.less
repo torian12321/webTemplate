@@ -30,9 +30,19 @@
 	@color: @BColor;
 	@style: @BStyle;
 	){
-	border: @width @style @color;
+	border: @arguments;
 }
 
+.rounded(
+	@topLeft    : @BRadious;
+	@topRight   : @BRadious;
+	@bottomRight: @BRadious;
+	@bottomLeft : @BRadious;
+	){
+	border-radius        : @arguments;
+	-moz-border-radius   : @arguments;
+	-webkit-border-radius: @arguments;
+}
 .rounded(@radius: @BRadious;){
 	// topLeft topRight bottomRight bottomLeft
 	border-radius        : @radius;
@@ -88,20 +98,21 @@
 	@x-axis: 0,
 	@y-axis: 0
 	){
-	-ms-transform-origin    : @x-axis @y-axis;      /* IE 9 */
-	-webkit-transform-origin: @x-axis @y-axis; 		/* Chrome, Safari, Opera */
-	transform-origin        : @x-axis @y-axis;
+	-ms-transform-origin    : @arguments; 	/* IE 9 */
+	-webkit-transform-origin: @arguments; 	/* Chrome, Safari, Opera */
+	transform-origin        : @arguments;
 }
 
 .gradient(
-	@iniColor;
+	@iniColor: @themeColor_1;
 	@endColor: lighten(@iniColor, 10%);
 	@angle   : 90deg;
 	){
-	  background: -webkit-linear-gradient(@angle, @iniColor, @endColor); /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(@angle, @iniColor, @endColor);      /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(@angle, @iniColor, @endColor);    /* For Firefox 3.6 to 15 */
-    background: linear-gradient(@angle, @iniColor, @endColor);         /* Standard syntax (must be last) */
+	background: @iniColor;												/* Old browsers */
+	background: -webkit-linear-gradient(@angle, @iniColor, @endColor); 	/* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(@angle, @iniColor, @endColor);      	/* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(@angle, @iniColor, @endColor);    	/* For Firefox 3.6 to 15 */
+    background: linear-gradient(@angle, @iniColor, @endColor);         	/* Standard syntax (must be last) */
 }
 
 .shadow(
@@ -135,18 +146,18 @@
 	@merge : true;
 	){
 	& when (@merge = true){
-		-webkit-filter  +_: @filter;
-	    -moz-filter   +_: @filter;
-	    -o-filter     +_: @filter;
-	    -ms-filter    +_: @filter;
-	    filter        +_: @filter;
+		-webkit-filter +_: @filter;
+	    -moz-filter    +_: @filter;
+	    -o-filter      +_: @filter;
+	    -ms-filter     +_: @filter;
+	    filter         +_: @filter;
 	}
 	& when (@merge = false){
 		-webkit-filter: @filter;
-	    -moz-filter : @filter;
-	    -o-filter   : @filter;
-	    -ms-filter  : @filter;
-	    filter      : @filter;
+	    -moz-filter   : @filter;
+	    -o-filter     : @filter;
+	    -ms-filter    : @filter;
+	    filter        : @filter;
 	}
 }
 .blur(
@@ -174,8 +185,11 @@
 	-moz-background-size   : @size;
 	-webkit-background-size: @size;
 }
-.background-parallax(@BG-url: '@{defImgDir}/img.png';){
-	background             : url(@BG-url) top right no-repeat fixed;
+.background-parallax(
+    @BG-url   : '@{defImgDir}/img.png';
+    @position : center center;
+    ){
+	background             : url(@BG-url) @position no-repeat fixed;
 
 	background-size        : cover;
 	-moz-background-size   : cover;
@@ -219,17 +233,17 @@
 }
 .animation_delay(@delay: 0s;){
 	-webkit-animation-delay: @delay;
-    animation-delay      : @delay;
+    animation-delay        : @delay;
 }
 .animation_direction(@dir: normal){
 	// normal|reverse|alternate|alternate-reverse|initial|inherit
 	-webkit-animation-direction: @dir;
-    animation-direction      : @dir;
+    animation-direction        : @dir;
 }
 .animation_state(@state: normal){
 	// paused|running|initial|inherit
 	-webkit-animation-play-state: @state;
-    animation-play-state      : @state;
+    animation-play-state        : @state;
 }
 .animation_keyframes(@name; @keyframes;){
 	@-webkit-keyframes @name {@keyframes();}
@@ -333,16 +347,16 @@
 	@colorLight: @fontColor_white;
 	@colorDark : @fontColor_black;
 	) when (lightness(@BG) >= 50%) {
-  // Its a light color return a dark output
-  color: @colorDark;
+    // Its a light color return a dark output
+    color: @colorDark;
 }
 .smart-text-color(
 	@BG        : @themeColor_BG;
 	@colorLight: @fontColor_white;
 	@colorDark : @fontColor_black;
 	) when (lightness(@BG) < 50%) {
-  // Its a dark color return a dark output
-  color: @colorLight;
+    // Its a dark color return a dark output
+    color: @colorLight;
 }
 
 
@@ -352,14 +366,14 @@
 // 		.makeRandom(5, 10);
 // 		padding   : @randNum * 1px;
 .makeRandom(
-	@min: 0;
-	@max: @min+1;
-	@int: 0;
-	) {
-  .checkInt() {
-    @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
-    @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
-  }
-  .checkInt();
-  @randNum: @base + @min;
+    @min: 0;
+    @max: @min+1;
+    @int: 0;
+    ) {
+    .checkInt() {
+        @getNum: `Math.random() * (@{max} - @{min} + @{int})`;
+        @base: unit(`@{int} == 1 ? Math.floor(@{getNum}) : @{getNum}`);
+    }
+    .checkInt();
+    @randNum: @base + @min;
 }
