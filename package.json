@@ -9,9 +9,19 @@
       "url" : "https://github.com/torian12321/webTemplate"
     },
 	"scripts"	  : {
-    	"test": "echo \"Error: no test specified\" && exit 1"
+        "start"     : "npm run build && npm run server-php",
+        "server"    : "node server.js",
+        "server-php": "node server-php.js",
+        "build"     : "gulp build",
+        "build-all" : "gulp build-dist",
+        "build-dist": "gulp build-dist",
+        "watch"     : "gulp watch",
+        "scripts"   : "gulp scripts",
+        "styles"    : "gulp styles"
 	},
     "dependencies": {
+        "express"          : "^4.13.4",
+        "express-php"      : "*",
 		"gulp"             : "*",
 		"gulp-less"        : "*",
 		"gulp-clean-css"   : "*",
