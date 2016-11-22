@@ -13,6 +13,5 @@ header('content-type: text/html; charset=utf-8');
 require_once __dir__ . '/config.php';
 require_once __dir__ . '/func.php';
 require_once __dir__ . '/components.php';
-require_once __dir__ . '/cache.php';
 
 ?>
