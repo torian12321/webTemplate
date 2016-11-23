@@ -1,9 +1,19 @@
 var
 express = require('express'),
-app     = express();            // Create our app
+chalk   = require('chalk'),
+ip      = require('ip'),
+port    = 3000,
+app     = express();
 
 app.use(express.static('public'));
-
-app.listen(3000, function () {
-  console.log('Express server is up on port 3000');
+app.listen(port, function () {
+    console.log(
+        'Server started' + chalk.green(' ✓ \n') +
+        chalk.bold('Access URLs: \n') +
+        chalk.gray('----------------------------------- \n') +
+        'Localhost: ' + chalk.blue('http://localhost:' + port) + '\n' +
+        '      LAN: ' + chalk.blue(ip.address() + ':'  + port)       + '\n' +
+        chalk.gray('----------------------------------- \n') +
+        'Press ' + chalk.blue('CTRL-C') + ' to stop'
+    );
 });

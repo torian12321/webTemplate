@@ -9,18 +9,19 @@
       "url" : "https://github.com/torian12321/webTemplate"
     },
 	"scripts"	  : {
-        "start"     : "npm run build && npm run server-php",
+        "start"     : "npm run build && npm run server:php",
         "server"    : "node server.js",
-        "server-php": "node server-php.js",
+        "server:php": "node server-php.js",
         "build"     : "gulp build",
-        "build-all" : "gulp build-dist",
-        "build-dist": "gulp build-dist",
+        "build:all" : "gulp build:dist",
+        "build:dist": "gulp build:dist",
         "watch"     : "gulp watch",
         "scripts"   : "gulp scripts",
         "styles"    : "gulp styles"
 	},
     "dependencies": {
         "express"          : "^4.13.4",
+        "chalk"            : "1.1.3",
         "express-php"      : "*",
 		"gulp"             : "*",
 		"gulp-less"        : "*",
@@ -33,6 +34,7 @@
 		"gulp-php2html"    : "*",
 		"gulp-htmlmin"     : "*",
 		"gulp-clean"       : "*",
-		"gulp-imagemin"    : "*"
+		"gulp-imagemin"    : "*",
+        "ip"               : "1.1.3"
     }
 }
