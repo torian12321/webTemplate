@@ -1,0 +1,85 @@
+ /*
+## Links
+```
+	<a href="#" class="fixie link"></a><br>
+	<a href="#" class="fixie link faded"></a><br>
+	<a href="#" class="fixie link arrowed"></a>
+```
+
+## Links - Preview
+Put your mouse hover the text
+```
+	<a href="#" class="fixie link preview"></a><br><br><br>
+	<a href="#" class="fixie link preview arrowed"></a>
+```
+*/
+.link{
+	color : @themeColor_1;
+	cursor: pointer;
+	&:hover{
+		color          : @themeColor_2;
+		//text-decoration: underline;
+	}
+	&:visited{
+		color: desaturate(@themeColor_1, 25%);
+	}
+
+	&.faded{
+		.opacity(0.8);
+		&:hover{
+			.opacity(1);
+		}
+	}
+	&.arrowed{
+		@arrow_size: 1em;
+
+		position: relative;
+		&:after{
+			position   : absolute;
+			right      : -@arrow_size * 0.75;
+			line-height: @arrow_size;
+			font-size  : @arrow_size;
+			.transition();
+
+			& when (@fontAwesome = true) {
+				content: '\f105';
+				top    : 1px;
+				.font_icons();
+			}
+			& when (@fontAwesome = false) {
+				content: '>';
+				top    : 3px;
+			}
+		}
+		&:hover:after{
+			right: -@arrow_size * 1.5;
+		}
+	}
+
+	&.preview{
+		position: relative;
+
+		&::before {
+			@BG: lighten(@themeColor_2, 10%);
+			position  : absolute;
+			content   : attr(href);
+			top       : 100%;
+			left      : 0;
+			opacity   : 0;
+			padding   : .25em 1em;
+			margin-top: 0.5em;
+			background: @BG;
+			z-index   : 1;
+			font-size : 0.8em;
+
+			@shadow: 0 0 3px 0 rgba(0,0,0,.3);
+			.shadow(@shadow);
+			.smart-text-color(@BG);
+			.transition();
+		}
+		&:hover::before {
+			opacity: 1;
+			left: 24px;
+		}
+	}
+}

@@ -1,0 +1,94 @@
+/*
+## Inputs
+```
+	<input type="text" placeholder="Name">
+	<input type="password" placeholder="Password">
+	<input type="text" class="success" placeholder="Right value">
+	<input type="text" class="error" placeholder="Wrong value">
+	<input type="text" disabled placeholder="Disabled">
+```
+
+## Text area
+```
+	<textarea placeholder="Text Area"></textarea>
+```
+*/
+
+@color_main  : @themeColor_1;
+@color_sec   : @white;
+
+
+input{
+	height   : @inputHeight;
+}
+textarea{
+	resize: none;
+	height: 200px;
+}
+
+
+input,
+textarea{
+	min-width : 200px;
+	padding   : 5px;
+	border    : @color_main 2px solid;
+	color     : @color_main;
+	background: fadeout(@color_sec, 80%);
+
+	.rounded(@BRadious);
+	.transition(0.2s);
+	&:hover,
+	&:focus{
+		background: fadeout(@color_sec, 50%);
+	}
+	&:focus{
+		@shadow: 0px 0px 30px -2px @color_main, inset 0 0 .25em @color_main;
+		.shadow(@shadow);
+	}
+
+	&.error{
+		color       : fadeout(@colorState_danger, 50%);
+		border-color: fadeout(@colorState_danger, 50%);
+		.shadow(0px 0px 30px -2px @colorState_danger);
+	}
+	&.success{
+		color       : @colorState_success;
+		border-color: @colorState_success;
+		&:focus{
+			@shadow: 0px 0px 30px -2px @colorState_success, inset 0 0 .25em @colorState_success;
+			.shadow(@shadow);
+		}
+	}
+	&:disabled{
+		background  : @colorState_disable;
+		color       : darken(@colorState_disable, 20%);
+		border-color: darken(@colorState_disable, 20%);
+		.shadow(none);
+	}
+	&:-webkit-autofill,
+	&:-webkit-autofill:focus{
+    	-webkit-box-shadow: 0 0 0px 1000px @color_sec inset;
+	}
+}
+
+
+::-webkit-input-placeholder { .placeholder(); }
+::-moz-placeholder 			{ .placeholder(); }
+:-ms-input-placeholder 		{ .placeholder(); }
+.placeholder(){
+	color      : @color_main;
+	text-shadow: 0 0 .125em transparent;
+	.transition(0.2);
+	input:focus&{
+		opacity: .5;
+	}
+	input.error&{
+		color: @colorState_danger;
+	}
+	input.success&{
+		color: @colorState_success;
+	}
+	input:disabled&{
+		color: darken(@colorState_disable, 20%);
+	}
+}

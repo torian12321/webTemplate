@@ -1,0 +1,125 @@
+
+/*
+## Loading
+```
+<div class="loading"></div>
+```
+
+## Ring
+```
+<div class="loading o"></div>
+```
+
+## Empty
+```
+<div class="loading empty"></div>
+```
+
+## Ring + Empty
+```
+<div class="loading o empty"></div>
+```
+
+## Orbits
+```
+<div class="loading orbits"></div>
+```
+
+## Orbits + empty
+```
+<div class="loading orbits empty"></div>
+```
+
+## Pulse
+```
+<div class="loading pulse"></div>
+```
+
+## Ruby
+So fancy!!
+```
+<div class="loading ruby"></div>
+```
+*/
+
+
+.loading{
+	@color_main: @themeColor_2;
+	@color_sec : @themeColor_1;
+	@size      : 7em;
+
+	position  : relative;
+	width     : 0;
+	height    : 0;
+	background: transparent;
+	font-size : 10px;
+	.rounded(50%);
+	.animation(spin; 1.5s;);
+	&,
+	&:before,
+	&:after{
+		border             : @color_main (@size * 0.25) solid;
+		border-top-color   : @color_sec;
+		border-bottom-color: @color_sec;
+	}
+
+	&.o,
+	&.orbits{
+		width : @size;
+		height: @size;
+	}
+	&.empty{
+		&,
+		&:before,
+		&:after{
+			border-top-color   : transparent;
+			border-bottom-color: transparent;
+		}
+	}
+
+	&.ruby{
+		border-top-color   : darken(@red, 10%);
+		border-right-color : @red;
+		border-left-color  : darken(@red, 30%);
+		border-bottom-color: lighten(@red, 20%);
+		.rounded(0);
+	}
+	&.orbits{
+		@ring_width: @size * 0.2;
+
+		&:after,
+		&:before{
+			content : '';
+			position: absolute;
+			top     : 50%;
+			left    : 50%;
+			height  : 0;
+			width   : 0;
+			margin  : -@ring_width;
+
+			border-width: @ring_width;
+			.rounded(50%);
+			.animation(spin; 10s);
+		}
+		&:after{
+			@distance : @size * 1.2;
+
+			width : @distance;
+			height: @distance;
+			margin: -(@distance - (2*@ring_width));
+		}
+	}
+	&.pulse{
+		@size : 1.5em;
+		@color: @themeColor_1;
+
+		width     : @size;
+		height    : @size;
+		background: fadeout(@color, 20%);
+		border    : none;
+		box-shadow: 0 0 0 fadeout(@color, 40%);
+		.rounded(50%);
+		.pulse(@color);
+		.animation(pulse; 2s);
+	}
+}

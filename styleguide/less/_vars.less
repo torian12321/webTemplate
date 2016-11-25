@@ -1,0 +1,129 @@
+//When using themes, some styles will be loaded just once
+@firstLoad  : true;
+@fontAwesome: true;
+
+//-------------------
+//--- Breakpints ----
+//-------------------
+@bp_xs: 767px;
+@bp_sm: 768px;		//@bp_xs + 1px
+@bp_md: 992px;
+@bp_lg: 1200px;
+
+@prefix-xs : xs;
+@prefix-sm : sm;
+@prefix-md : md;
+@prefix-lg : lg;
+
+@grid-columns     : 12;
+@grid-gutter-width: 30px;
+
+//== Container sizes
+//## Define the maximum width of `.container` for different screen sizes.
+@container-sm: (720px  + @grid-gutter-width);
+@container-md: (940px  + @grid-gutter-width);
+@container-lg: (1140px + @grid-gutter-width);
+
+//-------------------
+//--- Directories ---
+//-------------------
+@imgDir   : '../img';
+@iconsDir : '@{imgDir}/icons';
+@defImgDir: '@{imgDir}/default';
+
+@fontDir       : '../fonts';
+@fontAwesomeDir: '@{fontDir}/fontAwesome';
+
+//-------------------
+//----- Colors ------
+//-------------------
+@black    : #000;
+@black2   : #4c4c4c;
+@white    : #FFF;
+@white2   : #ECEEE3;
+@grey     : #797d86;
+@grey2    : #595e69;
+@grey3    : #f1f1f1;
+@red      : #ff0000;
+@yellow   : #F5DF6C;
+@orange   : #f57c00;
+@turquoise: #00bcd4;
+@pink     : #ff006b;
+@blue     : #2196f3;
+@purple   : #B209A9;
+@green    : #B2E672;
+
+@colorState_info   : #337ab7;
+@colorState_success: #5cb85c;
+@colorState_warning: #f0ad4e;
+@colorState_danger : #d9534f;
+@colorState_disable: #DDD;
+
+
+@fontColor_white: @white;
+@fontColor_grey : @grey;
+@fontColor_black: @black2;
+
+
+@themeColor_1 : #94D334;
+@themeColor_2 : #456B7C;
+@themeColor_BG: @white;
+
+@shadow: 4px 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+
+//-------------------
+//-- Font families --
+//-------------------
+@baseFontSize: 16px;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,700,300italic,900);
+.font(){
+	font-family: 'Lato', sans-serif;
+}
+.font-light(){
+	font-weight: 100;
+}
+.font-regular(){
+	font-weight: 300;
+}
+.font-bold(){
+	font-weight: 700;
+}
+.font-black(){
+	font-weight: 900;
+}
+.font-italic(){
+	font-style: italic;
+}
+
+//Special
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Playball);
+
+.font_special(){
+	font-family: 'Lobster';
+}
+.font_elegant(){
+	font-family: 'Playball', 'Lobster';
+}
+.font_icons(@defIcon: false){
+    font-family: 'FontAwesome';
+
+    // If declared, use an icon
+    & when not (@defIcon = false){
+    	content: @defIcon;
+    }
+}
+
+//-------------------
+//------- More ------
+//-------------------
+@inputHeight : 32px;
+
+// Borders
+@BRadious: 6px;
+@BStyle  : solid;
+@BWidth  : 2px;
+@BColor  : @themeColor_2;
+@border  : @BStyle @BWidth @BColor;
