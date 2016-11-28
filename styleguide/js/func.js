@@ -3,20 +3,24 @@ _doc       = document,
 _win       = window,
 sidePanel  = _doc.getElementById('stylguide_sidePanel'),
 mainArea   = _doc.getElementById('stylguide_mainArea'),
-menuOpener = _doc.getElementById('stylguide_sidePanel-opener'),
+menuOpeners= _doc.querySelectorAll('.stylguide-toggle_sidePanel'),
 init = function(){
     menu_func();
 };
 
 
-
 _doc.addEventListener('DOMContentLoaded', init);
-
 
 
 var
 menu_func = function(){
-    menuOpener.addEventListener('click', function(){
-        sidePanel.classList.toggle('active');
+    
+    Array.from(menuOpeners).forEach(menuOpener => {
+        menuOpener.addEventListener('click', function(event) {
+            sidePanel.classList.toggle('active');
+        });
     });
 };
+
+
+// less.modifyVars({ themeColor_1 : 'black' });
