@@ -2,7 +2,7 @@ var
 _doc       = document,
 _win       = window,
 sidePanel  = _doc.getElementById('stylguide_sidePanel'),
-mainArea   = _doc.getElementById('stylguide_mainArea'),
+page       = _doc.getElementById('stylguide_page'),
 menuOpeners= _doc.querySelectorAll('.stylguide-toggle_sidePanel'),
 init = function(){
     menu_func();

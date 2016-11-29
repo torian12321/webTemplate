@@ -8,6 +8,9 @@
     padding    : 0 .5em;
     line-height: 1em;
     background : @styleguide_themeColor_1;
+    
+    @shadow: 0 0 10px 0 rgba(0,0,0,0.5);
+    .shadow(@shadow);
     .smart-text-color(@styleguide_themeColor_1);
     .stylguide-toggle_sidePanel{
         position   : absolute;
@@ -24,8 +27,7 @@
 }
 
 #stylguide_sidePanel{
-    @w     : 300px;
-    @BG    : darken(@white, 20%);
+    @w     : @styleguide_sidePanel_w;
     @shadow: 0 0 10px 0 rgba(0,0,0,0.5);
 
     position  : fixed;
@@ -68,6 +70,22 @@
     }
 }
 
-#stylguide_mainArea{
+#stylguide_page{
     background: @styleguide_BG;
+}
+#stylguide_page-content{
+    width     : 100%;
+    padding   : 30px 20px;
+    .styleguide-doc{
+        position  : relative;
+        width     : 100%;
+        padding   : 24px;
+        margin    : 0 0 24px;
+        background: @white;
+        border    : 1px solid darken(@white, 10%);
+        .rounded(@styleguide_BR);
+        .styleguide-doc-text{
+            
+        }
+    }
 }
