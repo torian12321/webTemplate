@@ -236,12 +236,12 @@
     animation-delay        : @delay;
 }
 .animation_direction(@dir: normal){
-	// normal|reverse|alternate|alternate-reverse|initial|inherit
+	// normal | reverse | alternate | alternate-reverse | initial | inherit
 	-webkit-animation-direction: @dir;
     animation-direction        : @dir;
 }
 .animation_state(@state: normal){
-	// paused|running|initial|inherit
+	// paused | running | initial | inherit
 	-webkit-animation-play-state: @state;
     animation-play-state        : @state;
 }
@@ -253,6 +253,13 @@
 	@keyframes         @name {@keyframes();}
 }
 
+.userSelect(@select: text){
+    // text | none | all
+    -webkit-user-select: @select;  /* Chrome all / Safari all */
+    -moz-user-select   : @select;  /* Firefox all */
+    -ms-user-select    : @select;  /* IE 10+ */
+    user-select        : @select;  /* Likely future */
+}
 
 
 // Triangles used for the pendants on the sections

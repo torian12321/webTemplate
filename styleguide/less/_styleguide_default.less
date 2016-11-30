@@ -1,3 +1,8 @@
+body{
+    background: @styleguide_BG;
+}
+@styleguide_shadow      : 0 0 10px 0 rgba(0,0,0,0.5);
+
 #stylguide_header{
     font-size  : @styleguide_header_h;
     position   : fixed;
@@ -7,10 +12,10 @@
     height     : 1em;
     padding    : 0 .5em;
     line-height: 1em;
+    z-index    : 100;
     background : @styleguide_themeColor_1;
     
-    @shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-    .shadow(@shadow);
+    .shadow(@styleguide_shadow);
     .smart-text-color(@styleguide_themeColor_1);
     .stylguide-toggle_sidePanel{
         position   : absolute;
@@ -28,8 +33,7 @@
 
 #stylguide_sidePanel{
     @w     : @styleguide_sidePanel_w;
-    @shadow: 0 0 10px 0 rgba(0,0,0,0.5);
-
+    
     position  : fixed;
     left      : -@w;
     top       : 0;
@@ -37,10 +41,11 @@
     min-height: 500px;
     width     : @w;
     padding   : @styleguide_header_h 20px 20px;
+    z-index   : 200; 
     background: @white;
     
     .transition();
-    .shadow(@shadow);
+    .shadow(@styleguide_shadow);
     &+div{
         width     : 100vw;
         height    : 100vh;
@@ -70,9 +75,6 @@
     }
 }
 
-#stylguide_page{
-    background: @styleguide_BG;
-}
 #stylguide_page-content{
     width     : 100%;
     padding   : 30px 20px;
