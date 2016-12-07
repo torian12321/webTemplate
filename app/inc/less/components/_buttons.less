@@ -27,7 +27,7 @@
 
 ## Buttons - Status
 ```
-	<button class="btn btn-default">Default</button>
+	<button class="btn btn-main">Default</button>
 	<button class="btn btn-sec">Sec</button>
 	<button class="btn btn-success">Success</button>
 	<button class="btn btn-danger">Danger</button>
@@ -68,7 +68,7 @@
 		.rounded(@BRadious);
 		.transition(@time:0.20s);
 
-		//Status
+		// Status
 		.btn_palette();
 		&:active,
 		&.active{
@@ -85,7 +85,7 @@
 			.opacity(0.8);
 		}
 
-		//Options
+		// Options
 		&.btn-large{
 			min-width: 200px;
 		}
@@ -102,7 +102,7 @@
 			}
 		}
 
-		//Icons
+		// Icons
 		& when (@fontAwesome = true) {
 			&.i{
 				padding-right: @padding_h + @iconSize;
@@ -125,40 +125,22 @@
 		}
 	}
 
-	//Styles
-	&.btn-default,
-	&.btn-main{
-		.btn_palette();
-	}
-	&.btn-sec{
-		.btn_palette(@themeColor_2; @white;);
-	}
-	&.btn-green,
-	&.btn-accept,
-	&.btn-success{
-		.btn_palette(@green; @white;);
-	}
-	&.btn-red,
-	&.btn-cancel,
-	&.btn-danger{
-		.btn_palette(@red; @white;);
-	}
-	&.btn-orange,
-	&.btn-warning{
-		.btn_palette(@orange; @white);
-	}
-	&.btn-white{
-		.btn_palette(@white; @themeColor_1);
-	}
-	&.btn-grey{
-		.btn_palette(@grey; @white);
-	}
-	&.btn-black{
-		.btn_palette(@black; @white);
-	}
-	&.btn-blue{
-		.btn_palette(@blue; @white);
-	}
+	// Styles
+	&.btn-main   { .btn_palette(); }
+	&.btn-sec    { .btn_palette(@themeColor_2; @white;);}
+    &.btn-green  { .btn_palette(@green;        @white;); }
+	&.btn-red    { .btn_palette(@red;          @white;); }
+	&.btn-orange { .btn_palette(@orange;       @white); }
+	&.btn-white  { .btn_palette(@white;        @themeColor_1); }
+
+    &.btn-black  { .btn_palette(@black;        @white); }
+	&.btn-grey   { .btn_palette(@grey;         @white); }
+	&.btn-blue   { .btn_palette(@blue;         @white); }
+    
+    &.btn-info   { .btn_palette(@colorState_info;    @white); }
+    &.btn-success{ .btn_palette(@colorState_success; @white); }
+    &.btn-warning{ .btn_palette(@colorState_warning; @white); }
+    &.btn-danger { .btn_palette(@colorState_danger;  @white); }
 }
 
 
