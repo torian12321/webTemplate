@@ -3,10 +3,10 @@
 //-------------------
 .transition(
 	@property: all;
-	@time    : 0.5s;
+	@time    : .5s;
 	@timing  : ease-out;
 	@delay   : false;
-	@merge   : false;
+	@merge   : true;
 	){
 	& when not (@delay = false){
 		-webkit-transition-delay: @delay; /* Safari */
@@ -50,7 +50,7 @@
 	-webkit-border-radius: @radius;
 }
 
-.opacity(@opacity: 0.8;) {
+.opacity(@opacity: .8;) {
   opacity: @opacity;
   // IE8 filter
   @opacity-ie: (@opacity * 100);
