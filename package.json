@@ -10,7 +10,7 @@
     },
 	"scripts"	  : {
         "test"      : "echo \"Error: no test specified\" && exit 1",
-        "start"     : "npm run build && npm run server:php",
+        "start"     : "npm run server:php",
         "server"    : "node server.js",
         "server:php": "node server-php.js",
         "build"     : "gulp build",
