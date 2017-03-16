@@ -1,0 +1,41 @@
+/*
+## Map Marker
+```
+<div class="mapMarker">
+	<label>A</label>
+</div>
+```
+*/
+
+.mapMarker{
+	@color_main: @themeColor_1;
+	@color_sec : @themeColor_2;
+	@size      : 2em;
+
+	font-size:  30px;
+
+	height     : @size;
+	width      : @size;
+	line-height: @size;
+	background : @color_main;
+	text-align : center;
+	.rotate(-45deg);
+	.rounded(50%; 50%; 50%; 0;);
+	label{
+		@w_margin: 2px;
+		@w_border: 1px;
+		
+		width     : 100%;
+		height    : 100%;
+		margin    : @w_margin;
+		display   : block;
+		background: @color_main;
+		border    : @color_sec w_border solid;
+		.rotate(45deg);
+		.rounded(50%);
+		.smart-text-color(@color_main);
+	}
+	&.active{
+		background: @color_sec;
+	}
+}
