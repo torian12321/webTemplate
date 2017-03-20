@@ -9,6 +9,7 @@ uglify   = require('gulp-uglify'),
 php2html = require("gulp-php2html"),
 htmlmin  = require('gulp-htmlmin'),
 imagemin = require('gulp-imagemin'),
+chalk    = require('chalk'),
 clean    = require('gulp-clean');
 
 // Directories
@@ -27,6 +28,7 @@ var paths = {
 
 
 // Main tasks
+gulp.task('help',      ['info']);
 gulp.task('default',   ['build']);
 gulp.task('build'    , ['scripts', 'styles']);
 gulp.task('build-all', ['build-dist']);
@@ -43,6 +45,20 @@ gulp.task('watch', function(){
 /*****************************************************/
 /*--------------------TASKS--------------------------*/
 /*****************************************************/
+gulp.task('info', function() {
+	console.log(
+        chalk.green(' <<---------------- Info ---------------->> \n') +
+        '1 - Type '+ chalk.bold('gulp build') +' to combine js and less->css (once) \n' + 
+        '2 - Type '+ chalk.bold('gulp watch') +' to combine js and less->css (on save .js/.less) \n' + 
+        '3 - Type '+ chalk.bold('gulp build-all') +' to create the distribution version on '+ chalk.bold('./dist') +'\n' +
+        '      - Removes previous version of ./dist folder \n' +
+        '      - Hardcode HTML to PHP \n' +
+        '      - Minimaze js/css/htm \n' +
+        '      - Optimize images \n' +
+        chalk.green(' <<------------ END Info ---------------->> \n')
+    );
+});
+
 function errorLog(error){
 	console.log('ERROR');
 	console.error.bind(error);

@@ -1,34 +1,11 @@
 // Smooth Scrolling
-/*
-// Jquery version
-var
-smoothScrolling = function() {
-	$('a[href*=#]:not([href=#])').click(function() {
-
-		if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-			var target = $(this.hash);
-			target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-
-			if (target.length) {
-				$('html,body').stop().animate({
-					scrollTop: target.offset().top
-				}, 1250);
-			return false;
-			}
-		}
-	});
-};
-*/
-
-// Vanilla JS version
-var
-smoothScrolling = function() {
+!(function(){
     // https://github.com/sitepoint-editors/smooth-scrolling/blob/gh-pages/script.js
 
     var jump = function(target, options){
         var
-        // _win = window,      // Declared on main.js
-        // _doc = document,    // Declared on main.js
+        _win = window,
+        _doc = document,
         timeStart,
         timeElapsed,
         opt      = {
@@ -143,4 +120,4 @@ smoothScrolling = function() {
             element.focus();
         }
     }
-};
+})();

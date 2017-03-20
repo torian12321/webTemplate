@@ -10,7 +10,7 @@
     },
 	"scripts"	  : {
         "test"      : "echo \"Error: no test specified\" && exit 1",
-        "start"     : "npm run build && npm run server:php",
+        "start"     : "npm run server:php",
         "server"    : "node server.js",
         "server:php": "node server-php.js",
         "build"     : "gulp build",
@@ -18,7 +18,8 @@
         "build:dist": "gulp build:dist",
         "watch"     : "gulp watch",
         "scripts"   : "gulp scripts",
-        "styles"    : "gulp styles"
+        "styles"    : "gulp styles",
+        "info"      : "gulp info"
 	},
     "dependencies": {
         "express"          : "^4.13.4",
