@@ -1,0 +1,51 @@
+.gallery{
+    position  : relative;
+    width     : 400px;
+    height    : 300px;
+    overflow  : hidden;
+    background: @themeColor_2;
+    
+    .gallery_img{
+        position         : absolute;
+        top              : 0;
+        left             : 0;
+        height           : 100%;
+        width            : 100%;
+        background-repeat: no-repeat;
+        background-size  : cover;
+        
+        .transition(left);
+        .active ~.gallery_img{
+            left: 100%;
+        }
+    }
+    
+    .arrow{
+        font-size  : 40px;
+        position   : absolute;
+        top        : 50%;
+        left       : 0%;
+        width      : 1em;
+        height     : 1.5em;
+        line-height: 1.5;
+        margin     : -.75em 0;
+        text-align : center;
+        color      : @white;
+        cursor     : pointer;
+        font-family: FontAwesome;
+        opacity    : 0.8;
+        &:hover{
+            opacity: 1;
+        }
+        &:after{
+            content: "\f104";
+        }
+        &.arrow-next{
+            left : auto;
+            right: 0;
+            &:after{
+                content: "\f105";
+            }
+        }
+    }
+}
