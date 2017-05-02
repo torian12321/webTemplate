@@ -32,7 +32,6 @@
 		"gulp-php2html"    : "*",
 		"gulp-concat"      : "*",
 		"gulp-uglify"      : "*",
-		"gulp-php2html"    : "*",
 		"gulp-htmlmin"     : "*",
 		"gulp-clean"       : "*",
 		"gulp-imagemin"    : "*",
