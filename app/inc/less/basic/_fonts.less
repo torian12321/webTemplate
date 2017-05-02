@@ -1,0 +1,43 @@
+//-------------------
+//-- Font families --
+//-------------------
+@baseFontSize: 16px;
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,700,300italic,900);
+.font(){
+	font-family: 'Lato', sans-serif;
+}
+.font-light(){
+	font-weight: 100;
+}
+.font-regular(){
+	font-weight: 300;
+}
+.font-bold(){
+	font-weight: 700;
+}
+.font-black(){
+	font-weight: 900;
+}
+.font-italic(){
+	font-style: italic;
+}
+
+// Special
+@import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Playball);
+
+.font_special(){
+	font-family: 'Lobster';
+}
+.font_elegant(){
+	font-family: 'Playball', 'Lobster';
+}
+.font_icons(@defIcon: false){
+    font-family: 'FontAwesome';
+
+    // If declared, use an icon
+    & when not (@defIcon = false){
+    	content: @defIcon;
+    }
+}

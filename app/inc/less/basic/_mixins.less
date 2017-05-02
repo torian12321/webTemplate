@@ -373,6 +373,23 @@
     color: @colorLight;
 }
 
+.smart-bg-color(){}
+.smart-bg-color(
+	@txt_color : @themeColor_BG;
+	@colorLight: @white;
+	@colorDark : @black2;
+	) when (lightness(@txt_color) >= 50%) {
+    // Its a light color return a dark output
+    background: @colorDark;
+}
+.smart-bg-color(
+	@txt_color : @themeColor_BG;
+	@colorLight: @white;
+	@colorDark : @black2;
+	) when (lightness(@txt_color) < 50%) {
+    // Its a dark color return a dark output
+    background: @colorLight;
+}
 
 // Mixin to generate random number;
 // int should be 0 or 1, 1 being to make it an integer

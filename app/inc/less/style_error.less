@@ -1,0 +1,29 @@
+//------------------
+//---- 404 page ----
+//------------------
+@import "_vars.less";
+//@import "basic/_reset.less";
+@import "basic/_mixins.less";
+//@import "basic/_animations.less";
+
+
+html{
+	background: darken(@themeColor_1, 10%);
+}
+body{
+	position  : relative;
+	min-height: 100vh;
+    margin    : 0; 
+    text-align: center;
+    color     : @themeColor_1;
+    .smart-bg-color(@themeColor_BG);
+}
+
+div{
+    position   : absolute;
+    top        : 0;
+    bottom     : 0;
+    left       : 0;
+    right      : 0;
+    padding    : 200px 0;
+}

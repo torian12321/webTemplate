@@ -3,6 +3,7 @@ var
 gulp     = require('gulp'),
 less     = require('gulp-less'),
 cleanCSS = require('gulp-clean-css'),
+inlineCss= require('gulp-inline-css'),
 prefix   = require('gulp-autoprefixer'),
 concat   = require('gulp-concat'),
 uglify   = require('gulp-uglify'),
@@ -92,10 +93,19 @@ gulp.task('scripts', ['js_libs', 'js_app']);
 // Styles Tasks
 gulp.task('styles', function () {
 	gulp.start('less_main');
+	gulp.start('less_error');
 	gulp.start('less_themes');
 	});
 	gulp.task('less_main', function(){
 		return gulp.src(paths.app + paths.less + 'style.less')
+			.pipe(less())
+			.pipe(prefix('last 2 versions'))
+			.pipe(cleanCSS({compatibility: 'ie8'}))
+			.on('error', errorLog)
+			.pipe(gulp.dest(paths.app + paths.css));
+	});
+	gulp.task('less_error', function(){
+		return gulp.src(paths.app + paths.less + 'style_error.less')
 			.pipe(less())
 			.pipe(prefix('last 2 versions'))
 			.pipe(cleanCSS({compatibility: 'ie8'}))
@@ -122,11 +132,18 @@ gulp.task('styles', function () {
 // Build the distribution version
 gulp.task('build-dist', ['build_dist-remove'], function(){
 	gulp.start('build_dist-styles');
-	gulp.start('build_dist-scripts')
+	gulp.start('build_dist-scripts');
+	gulp.start('build-dist-errorpage');
 	gulp.start('build_dist-php2html');
 	gulp.start('build_dist-images');
 	gulp.start('build_dist-extraFiles');
 });
+	gulp.task('build-dist-errorpage', ['less_error'], function(){
+		// Needs to be reviewed
+		return gulp.src(paths.app + '404.html')
+			.pipe(inlineCss())
+			.pipe(gulp.dest(paths.dist));
+	});
 	// Distributions tasks
 	gulp.task('build_dist-remove', function(){
 	    return gulp.src(paths.dist, {read: false})
