@@ -19,7 +19,7 @@
         "watch"     : "gulp watch",
         "scripts"   : "gulp scripts",
         "styles"    : "gulp styles",
-        "info"      : "gulp info",
+        "info"      : "gulp info"
 	},
     "dependencies": {
         "express"          : "^4.13.4",

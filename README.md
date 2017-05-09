@@ -79,4 +79,4 @@ Technologies
 
 Autor
 ---------------
-[Aitor](http://aitorpalomares.esy.es/)
+[Aitor](torian12321.github.io/my_web/)
